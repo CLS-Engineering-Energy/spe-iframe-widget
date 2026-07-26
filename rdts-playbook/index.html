@@ -1,0 +1,5053 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="A free, private RDTS decision guide that turns nine answers into a focused 30-day action brief for an energy venture."
+    >
+    <meta name="theme-color" content="#072f4a">
+    <meta property="og:title" content="RDTS Energy Venture Navigator">
+    <meta
+      property="og:description"
+      content="Find the next evidence-backed move for your energy venture in about seven minutes."
+    >
+    <meta property="og:type" content="website">
+<title>RDTS Energy Venture Navigator</title>
+    <style>
+:root {
+  --navy-950: #05273d;
+  --navy-900: #07334e;
+  --navy-800: #0a4567;
+  --blue-700: #0c6697;
+  --blue-600: #0e79b2;
+  --blue-100: #e8f3f8;
+  --blue-050: #f3f8fb;
+  --orange-600: #d96524;
+  --orange-500: #e67832;
+  --orange-100: #fce9dc;
+  --orange-050: #fff7f1;
+  --green-700: #267056;
+  --green-100: #e5f3ec;
+  --amber-700: #8c5c12;
+  --amber-100: #fbefd5;
+  --red-700: #a13f35;
+  --red-100: #f9e6e3;
+  --ink-950: #15242c;
+  --ink-800: #2a3c45;
+  --ink-650: #4d616b;
+  --ink-500: #6b7c84;
+  --line: #d8e1e5;
+  --line-strong: #c5d1d6;
+  --paper: #ffffff;
+  --canvas: #f3f1ec;
+  --cream: #faf8f3;
+  --shadow-sm: 0 1px 2px rgba(5, 39, 61, 0.06), 0 4px 14px rgba(5, 39, 61, 0.05);
+  --shadow-md: 0 18px 50px rgba(5, 39, 61, 0.11), 0 4px 12px rgba(5, 39, 61, 0.05);
+  --radius-sm: 8px;
+  --radius: 14px;
+  --radius-lg: 22px;
+  --content: 1180px;
+  color-scheme: light;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--canvas);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  color: var(--ink-950);
+  background:
+    radial-gradient(circle at 12% 8%, rgba(14, 121, 178, 0.07), transparent 26rem),
+    var(--canvas);
+  font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button,
+label {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  border: 0;
+}
+
+a {
+  color: inherit;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+.skip-link {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 1000;
+  transform: translateY(-150%);
+  padding: 10px 14px;
+  border-radius: 6px;
+  color: white;
+  background: var(--navy-950);
+  font-weight: 750;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+:focus-visible {
+  outline: 3px solid var(--orange-500);
+  outline-offset: 3px;
+}
+
+.site-header {
+  position: relative;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 76px;
+  padding: 12px max(24px, calc((100vw - var(--content)) / 2));
+  color: white;
+  background: var(--navy-950);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 13px;
+  color: white;
+  text-decoration: none;
+}
+
+.brand-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 67px;
+  min-height: 42px;
+  padding: 6px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  border-radius: 6px;
+  color: white;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.original-brand {
+  min-width: 0;
+}
+
+.header-logo {
+  display: block;
+  width: 112px;
+  height: auto;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+.brand-copy {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+}
+
+.brand-copy strong {
+  font-size: 14px;
+  letter-spacing: 0.015em;
+}
+
+.brand-copy span {
+  margin-top: 3px;
+  color: rgba(255, 255, 255, 0.67);
+  font-size: 11px;
+}
+
+.header-meta {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.privacy-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255, 255, 255, 0.76);
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.privacy-chip > span {
+  color: #70d5a8;
+  font-size: 9px;
+}
+
+.program-link {
+  color: white;
+  font-size: 13px;
+  font-weight: 720;
+  text-decoration: none;
+}
+
+.program-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.header-nav a {
+  color: rgba(255, 255, 255, 0.74);
+  font-size: 12px;
+  font-weight: 650;
+  text-decoration: none;
+  transition: color 150ms ease;
+}
+
+.header-nav a:hover {
+  color: white;
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 76px max(24px, calc((100vw - var(--content)) / 2)) 82px;
+  color: white;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    var(--navy-950);
+  background-size: 42px 42px;
+}
+
+.original-hero {
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+
+.original-hero-inner {
+  position: relative;
+  z-index: 1;
+  max-width: var(--content);
+  margin: 0 auto;
+}
+
+.brand-eyebrow {
+  margin: 0 0 9px;
+  color: #ffd3b6;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.version-pill {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 14px;
+  padding: 5px 10px;
+  color: #ffd5b9;
+  background: rgba(230, 120, 50, 0.14);
+  border: 1px solid rgba(230, 120, 50, 0.42);
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.original-hero h1 {
+  max-width: 850px;
+  font-size: clamp(34px, 4.3vw, 52px);
+  line-height: 1.08;
+}
+
+.original-hero h1 strong {
+  font-weight: 700;
+}
+
+.original-hero .hero-lede {
+  max-width: 760px;
+  margin-top: 16px;
+  font-size: 15px;
+}
+
+.original-hero .hero-actions {
+  margin-top: 22px;
+  gap: 10px;
+}
+
+.button-hero-secondary {
+  color: white;
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.45);
+  box-shadow: none;
+}
+
+.button-hero-secondary:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.hero::before {
+  position: absolute;
+  top: -140px;
+  left: 48%;
+  width: 690px;
+  height: 690px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 90px rgba(255, 255, 255, 0.018),
+    0 0 0 180px rgba(255, 255, 255, 0.012);
+  content: "";
+  pointer-events: none;
+}
+
+.hero-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(380px, 0.82fr);
+  align-items: center;
+  gap: 76px;
+  max-width: var(--content);
+  margin: 0 auto;
+}
+
+.eyebrow {
+  margin: 0 0 13px;
+  color: var(--orange-500);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.hero .eyebrow {
+  color: #f2a36f;
+}
+
+.hero h1 {
+  max-width: 720px;
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(43px, 5.1vw, 72px);
+  font-weight: 500;
+  letter-spacing: -0.045em;
+  line-height: 0.99;
+  text-wrap: balance;
+}
+
+.hero-lede {
+  max-width: 650px;
+  margin: 27px 0 0;
+  color: rgba(255, 255, 255, 0.73);
+  font-size: clamp(17px, 1.8vw, 20px);
+  line-height: 1.58;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 34px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 46px;
+  padding: 11px 18px;
+  border: 1px solid transparent;
+  border-radius: 7px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 780;
+  letter-spacing: 0.005em;
+  transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease, border-color 160ms ease;
+}
+
+.button:hover {
+  transform: translateY(-1px);
+}
+
+.button:active {
+  transform: translateY(0);
+}
+
+.button-large {
+  min-height: 54px;
+  padding: 14px 22px;
+  font-size: 15px;
+}
+
+.button-primary {
+  color: white;
+  background: var(--orange-600);
+  box-shadow: 0 7px 20px rgba(217, 101, 36, 0.25);
+}
+
+.button-primary:hover {
+  background: #c9591d;
+  box-shadow: 0 10px 24px rgba(217, 101, 36, 0.31);
+}
+
+.button-secondary {
+  color: var(--navy-900);
+  background: white;
+  border-color: var(--line-strong);
+  box-shadow: 0 2px 7px rgba(5, 39, 61, 0.06);
+}
+
+.button-secondary:hover {
+  border-color: var(--blue-600);
+  background: var(--blue-050);
+}
+
+.button-quiet {
+  color: var(--ink-650);
+  background: transparent;
+  border-color: var(--line);
+  box-shadow: none;
+}
+
+.button-quiet:hover {
+  color: var(--navy-900);
+  background: var(--blue-050);
+}
+
+.text-button {
+  padding: 7px 0 5px;
+  color: rgba(255, 255, 255, 0.8);
+  background: transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.34);
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 690;
+}
+
+.text-button:hover {
+  color: white;
+  border-bottom-color: white;
+}
+
+.hero-facts {
+  display: flex;
+  gap: 0;
+  margin: 42px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hero-facts li {
+  display: flex;
+  flex-direction: column;
+  min-width: 122px;
+  padding: 0 22px;
+  border-left: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.hero-facts li:first-child {
+  padding-left: 0;
+  border-left: 0;
+}
+
+.hero-facts strong {
+  color: white;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.hero-facts span {
+  margin-top: 1px;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 11px;
+  letter-spacing: 0.025em;
+}
+
+.route-card {
+  position: relative;
+  padding: 26px 28px 24px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.18);
+  backdrop-filter: blur(8px);
+}
+
+.route-card::after {
+  position: absolute;
+  top: -70px;
+  right: -70px;
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  background: rgba(230, 120, 50, 0.12);
+  content: "";
+}
+
+.route-card-head {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.13);
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 11px;
+  font-weight: 760;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.route-live {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #e9b18c;
+}
+
+.route-live i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--orange-500);
+  box-shadow: 0 0 0 4px rgba(230, 120, 50, 0.14);
+}
+
+.route-track {
+  position: relative;
+  margin: 25px 0 22px;
+}
+
+.route-line {
+  position: absolute;
+  top: 14px;
+  bottom: 14px;
+  left: 17px;
+  width: 1px;
+  background: linear-gradient(var(--orange-500) 0 25%, rgba(255, 255, 255, 0.18) 25%);
+}
+
+.route-node {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 36px 1fr;
+  align-items: center;
+  gap: 16px;
+  margin: 0 0 18px;
+  color: rgba(255, 255, 255, 0.42);
+}
+
+.route-node:last-child {
+  margin-bottom: 0;
+}
+
+.route-node > span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  border: 1px solid rgba(255, 255, 255, 0.19);
+  border-radius: 50%;
+  background: var(--navy-950);
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.route-node div {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 7px 11px;
+  border-radius: 7px;
+}
+
+.route-node strong {
+  font-size: 14px;
+}
+
+.route-node small {
+  color: inherit;
+  font-size: 11px;
+}
+
+.route-node.active {
+  color: white;
+}
+
+.route-node.active > span {
+  color: white;
+  background: var(--orange-600);
+  border-color: var(--orange-500);
+  box-shadow: 0 0 0 5px rgba(230, 120, 50, 0.11);
+}
+
+.route-node.active div {
+  background: rgba(255, 255, 255, 0.075);
+}
+
+.route-card blockquote {
+  margin: 0;
+  padding: 16px 17px;
+  color: rgba(255, 255, 255, 0.7);
+  background: rgba(0, 0, 0, 0.11);
+  border-left: 2px solid var(--orange-500);
+  border-radius: 0 6px 6px 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 13px;
+  font-style: italic;
+  line-height: 1.55;
+}
+
+.method-strip {
+  display: grid;
+  grid-template-columns: 0.9fr 1.4fr;
+  gap: 20px 70px;
+  max-width: var(--content);
+  margin: 0 auto;
+  padding: 52px 24px;
+}
+
+.method-strip h2 {
+  max-width: 460px;
+  margin: 0;
+  color: var(--navy-950);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(27px, 3vw, 38px);
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  line-height: 1.16;
+}
+
+.method-flow {
+  display: flex;
+  align-items: center;
+  align-self: end;
+  gap: 10px;
+  padding-bottom: 4px;
+}
+
+.method-flow span {
+  padding: 8px 10px;
+  color: var(--navy-900);
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 760;
+  text-align: center;
+}
+
+.method-flow i {
+  color: var(--orange-600);
+  font-style: normal;
+}
+
+.method-strip > p {
+  grid-column: 2;
+  max-width: 760px;
+  margin: 0;
+  color: var(--ink-650);
+  font-size: 14px;
+}
+
+.overview-card {
+  max-width: var(--content);
+  margin: 28px auto 0;
+  padding: 29px 31px 31px;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+}
+
+.overview-head h2 {
+  margin: 0;
+  color: var(--navy-950);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 21px;
+  font-weight: 550;
+  letter-spacing: -0.015em;
+  line-height: 1.25;
+}
+
+.overview-head > p {
+  margin: 8px 0 0;
+  padding-bottom: 18px;
+  color: var(--ink-650);
+  border-bottom: 1px solid var(--line);
+  font-size: 13px;
+}
+
+.visual-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.12fr) minmax(330px, 0.88fr);
+  align-items: center;
+  gap: 28px;
+  padding: 25px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.visual-grid-reverse {
+  grid-template-columns: minmax(330px, 0.88fr) minmax(0, 1.12fr);
+}
+
+.body-copy > p {
+  margin: 0 0 12px;
+  color: var(--ink-800);
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.body-copy > p:last-of-type {
+  margin-bottom: 0;
+}
+
+.legacy-info-box {
+  display: grid;
+  grid-template-columns: 25px 1fr;
+  gap: 11px;
+  margin-top: 17px;
+  padding: 14px 15px;
+  border-radius: 7px;
+}
+
+.legacy-info-box.orange {
+  color: #713b19;
+  background: var(--orange-050);
+  border-left: 4px solid var(--orange-500);
+}
+
+.legacy-info-box > span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  color: white;
+  background: var(--orange-600);
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.legacy-info-box p {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.58;
+}
+
+.visual-card,
+.pathway-figure {
+  margin: 0;
+}
+
+.visual-card {
+  overflow: hidden;
+  background: var(--blue-050);
+  border: 1px solid var(--line);
+  border-radius: 11px;
+}
+
+.visual-card img,
+.pathway-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.principles-copy .section-label {
+  margin: 0 0 10px;
+  color: var(--blue-700);
+  font-size: 10px;
+  font-weight: 820;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.principles-copy ul {
+  margin: 0;
+  padding-left: 20px;
+  color: var(--ink-800);
+  font-size: 13px;
+}
+
+.principles-copy li {
+  margin-bottom: 8px;
+  line-height: 1.55;
+}
+
+.principles-copy li:last-child {
+  margin-bottom: 0;
+}
+
+.pathway-figure {
+  padding-top: 25px;
+}
+
+.pathway-figure img {
+  border: 1px solid var(--line);
+  border-radius: 11px;
+}
+
+.workbook-intro {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 35px;
+  max-width: var(--content);
+  margin: 50px auto 0;
+  padding: 0 8px;
+  scroll-margin-top: 20px;
+}
+
+.workbook-intro h2 {
+  margin: 0;
+  color: var(--navy-950);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(29px, 3.5vw, 43px);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  line-height: 1.12;
+}
+
+.workbook-intro > div > p:last-child {
+  max-width: 650px;
+  margin: 12px 0 0;
+  color: var(--ink-650);
+  font-size: 13px;
+}
+
+.workbook-intro ul {
+  display: flex;
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.workbook-intro li {
+  display: flex;
+  flex-direction: column;
+  min-width: 112px;
+  padding: 0 14px;
+  border-left: 1px solid var(--line-strong);
+}
+
+.workbook-intro strong {
+  color: var(--navy-950);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 15px;
+}
+
+.workbook-intro span {
+  margin-top: 2px;
+  color: var(--ink-500);
+  font-size: 8px;
+}
+
+.guide-shell {
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr);
+  max-width: var(--content);
+  min-height: 720px;
+  margin: 20px auto 82px;
+  overflow: hidden;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.guide-sidebar {
+  display: flex;
+  flex-direction: column;
+  padding: 31px 24px 25px;
+  color: white;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    var(--navy-950);
+  background-size: 100% 44px;
+}
+
+.sidebar-intro {
+  padding: 0 7px 26px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.13);
+}
+
+.sidebar-kicker {
+  color: #e7a276;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.sidebar-intro > strong {
+  display: block;
+  margin-top: 8px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.sidebar-intro p {
+  margin: 4px 0 0;
+  color: rgba(255, 255, 255, 0.52);
+  font-size: 12px;
+}
+
+.step-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 23px;
+}
+
+.step-nav-item {
+  display: grid;
+  grid-template-columns: 32px 1fr;
+  align-items: center;
+  gap: 11px;
+  width: 100%;
+  padding: 10px 9px;
+  color: rgba(255, 255, 255, 0.47);
+  background: transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.step-nav-item:disabled {
+  cursor: default;
+  opacity: 0.72;
+}
+
+.step-nav-item > span:first-child {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 50%;
+  font-size: 9px;
+  font-weight: 820;
+}
+
+.step-nav-item > span:last-child {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+}
+
+.step-nav-item strong {
+  font-size: 12px;
+}
+
+.step-nav-item small {
+  margin-top: 2px;
+  color: inherit;
+  font-size: 10px;
+}
+
+.step-nav-item.active {
+  color: white;
+  background: rgba(255, 255, 255, 0.075);
+}
+
+.step-nav-item.active > span:first-child {
+  color: white;
+  background: var(--orange-600);
+  border-color: var(--orange-500);
+}
+
+.step-nav-item.complete {
+  color: rgba(255, 255, 255, 0.73);
+}
+
+.step-nav-item.complete > span:first-child {
+  color: #a8e0c8;
+  background: rgba(69, 160, 119, 0.16);
+  border-color: rgba(126, 210, 171, 0.42);
+}
+
+.sidebar-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  margin-top: auto;
+  padding: 15px 13px;
+  color: rgba(255, 255, 255, 0.63);
+  background: rgba(255, 255, 255, 0.055);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 9px;
+}
+
+.sidebar-note > span {
+  color: #89d5b2;
+  font-size: 16px;
+}
+
+.sidebar-note p {
+  margin: 0;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.sidebar-note strong {
+  display: block;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 11px;
+}
+
+.guide-main {
+  min-width: 0;
+  background: var(--paper);
+}
+
+.mobile-progress {
+  display: none;
+}
+
+.progress-track {
+  width: 100%;
+  height: 4px;
+  overflow: hidden;
+  background: #e9eef0;
+}
+
+.progress-track > span {
+  display: block;
+  height: 100%;
+  background: var(--orange-600);
+  transition: width 300ms ease;
+}
+
+#navigatorForm {
+  min-height: 716px;
+  display: flex;
+  flex-direction: column;
+}
+
+.question-screen {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 44px 48px 24px;
+  animation: screen-in 260ms ease both;
+}
+
+.result-screen {
+  width: 100%;
+  padding: 0;
+  animation: screen-in 260ms ease both;
+}
+
+@keyframes screen-in {
+  from {
+    opacity: 0;
+    transform: translateY(7px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.screen-head {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr);
+  gap: 18px;
+  margin-bottom: 35px;
+}
+
+.screen-count {
+  margin: 4px 0 0;
+  color: var(--ink-500);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+}
+
+.screen-head .eyebrow {
+  margin-bottom: 7px;
+}
+
+.screen-head h2 {
+  margin: 0;
+  color: var(--navy-950);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(27px, 3.1vw, 38px);
+  font-weight: 500;
+  letter-spacing: -0.028em;
+  line-height: 1.12;
+}
+
+.screen-head div > p:last-child {
+  max-width: 620px;
+  margin: 10px 0 0;
+  color: var(--ink-650);
+  font-size: 14px;
+}
+
+.field {
+  min-width: 0;
+  margin: 0 0 32px;
+  padding: 0;
+  border: 0;
+}
+
+.field:last-child {
+  margin-bottom: 14px;
+}
+
+.field legend,
+.field > label {
+  display: block;
+  width: 100%;
+  margin: 0 0 6px;
+  color: var(--navy-950);
+  font-size: 14px;
+  font-weight: 790;
+  line-height: 1.4;
+}
+
+.field > label span {
+  margin-left: 6px;
+  color: var(--ink-500);
+  font-size: 10px;
+  font-weight: 670;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.field-help {
+  margin: 0 0 11px;
+  color: var(--ink-650);
+  font-size: 12px;
+}
+
+.text-field input,
+.text-field textarea {
+  width: 100%;
+  color: var(--ink-950);
+  background: white;
+  border: 1px solid var(--line-strong);
+  border-radius: 8px;
+  box-shadow: inset 0 1px 2px rgba(5, 39, 61, 0.035);
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+.text-field input {
+  height: 48px;
+  padding: 10px 13px;
+}
+
+.text-field textarea {
+  min-height: 98px;
+  padding: 12px 13px;
+  line-height: 1.5;
+  resize: vertical;
+}
+
+.text-field input::placeholder,
+.text-field textarea::placeholder {
+  color: #8b989e;
+}
+
+.text-field input:focus,
+.text-field textarea:focus {
+  border-color: var(--blue-600);
+  outline: 0;
+  box-shadow: 0 0 0 3px rgba(14, 121, 178, 0.12);
+}
+
+.optional-field {
+  max-width: 430px;
+}
+
+.option-grid {
+  display: grid;
+  gap: 9px;
+}
+
+.option-grid-5 {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.option-grid-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.option-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 112px;
+  padding: 12px 11px;
+  color: var(--ink-650);
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  cursor: pointer;
+  transition: border-color 140ms ease, background 140ms ease, box-shadow 140ms ease, transform 140ms ease;
+}
+
+.option-card:hover {
+  transform: translateY(-1px);
+  border-color: #94b9ca;
+  box-shadow: 0 5px 14px rgba(5, 39, 61, 0.07);
+}
+
+.option-card:has(input:checked) {
+  color: var(--navy-900);
+  background: var(--blue-050);
+  border-color: var(--blue-600);
+  box-shadow: 0 0 0 1px var(--blue-600);
+}
+
+.option-card:has(input:focus-visible) {
+  outline: 3px solid var(--orange-500);
+  outline-offset: 2px;
+}
+
+.option-card input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.option-index {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 23px;
+  height: 23px;
+  margin-bottom: 12px;
+  color: var(--ink-500);
+  background: var(--cream);
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  font-size: 9px;
+  font-weight: 850;
+}
+
+.option-card:has(input:checked) .option-index {
+  color: white;
+  background: var(--blue-700);
+  border-color: var(--blue-700);
+}
+
+.option-copy {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.option-copy strong {
+  color: var(--navy-950);
+  font-size: 11px;
+  line-height: 1.32;
+}
+
+.option-copy small {
+  margin-top: 5px;
+  color: var(--ink-650);
+  font-size: 9px;
+  line-height: 1.35;
+}
+
+.option-card-wide {
+  grid-column: 1 / -1;
+  min-height: 72px;
+}
+
+.option-card-wide .option-index {
+  margin-bottom: 7px;
+}
+
+.compact-options .option-card {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: 11px;
+  min-height: 76px;
+  padding: 12px 13px;
+}
+
+.compact-options .option-index {
+  margin: 0;
+}
+
+.compact-options .option-copy strong {
+  font-size: 12px;
+}
+
+.compact-options .option-copy small {
+  font-size: 10px;
+}
+
+.option-list {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+
+.option-row {
+  position: relative;
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  align-items: start;
+  gap: 12px;
+  padding: 12px 14px;
+  cursor: pointer;
+  border-bottom: 1px solid var(--line);
+  transition: background 140ms ease;
+}
+
+.option-row:last-child {
+  border-bottom: 0;
+}
+
+.option-row:hover {
+  background: var(--blue-050);
+}
+
+.option-row:has(input:checked) {
+  background: var(--blue-050);
+}
+
+.option-row:has(input:focus-visible) {
+  outline: 3px solid var(--orange-500);
+  outline-offset: -3px;
+}
+
+.option-row input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.radio-ui {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  background: white;
+  border: 1.5px solid #9bacb4;
+  border-radius: 50%;
+}
+
+.option-row:has(input:checked) .radio-ui {
+  border: 5px solid var(--blue-700);
+}
+
+.option-row > span:last-child {
+  display: flex;
+  flex-direction: column;
+}
+
+.option-row strong {
+  color: var(--navy-950);
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.option-row small {
+  margin-top: 3px;
+  color: var(--ink-650);
+  font-size: 10px;
+  line-height: 1.4;
+}
+
+.checkbox-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 9px;
+}
+
+.check-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 19px 1fr;
+  gap: 11px;
+  min-height: 71px;
+  padding: 12px 13px;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  cursor: pointer;
+  transition: border-color 140ms ease, background 140ms ease;
+}
+
+.check-card:hover {
+  border-color: #94b9ca;
+  background: var(--blue-050);
+}
+
+.check-card:has(input:checked) {
+  background: var(--blue-050);
+  border-color: var(--blue-600);
+  box-shadow: 0 0 0 1px var(--blue-600);
+}
+
+.check-card:has(input:focus-visible) {
+  outline: 3px solid var(--orange-500);
+  outline-offset: 2px;
+}
+
+.check-card input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.check-ui {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  margin-top: 1px;
+  background: white;
+  border: 1.5px solid #9bacb4;
+  border-radius: 4px;
+}
+
+.check-card:has(input:checked) .check-ui {
+  background: var(--blue-700);
+  border-color: var(--blue-700);
+}
+
+.check-card:has(input:checked) .check-ui::after {
+  position: absolute;
+  top: 1px;
+  left: 5px;
+  width: 5px;
+  height: 9px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  content: "";
+  transform: rotate(45deg);
+}
+
+.check-card > span:last-child {
+  display: flex;
+  flex-direction: column;
+}
+
+.check-card strong {
+  color: var(--navy-950);
+  font-size: 12px;
+}
+
+.check-card small {
+  margin-top: 2px;
+  color: var(--ink-650);
+  font-size: 10px;
+}
+
+.check-card-wide {
+  grid-column: 1 / -1;
+}
+
+.field-foot {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 15px;
+  min-height: 21px;
+  margin-top: 6px;
+}
+
+.field-error {
+  flex: 1;
+  margin: 0;
+  color: var(--red-700);
+  font-size: 11px;
+  font-weight: 660;
+}
+
+.char-count,
+.selection-count {
+  flex-shrink: 0;
+  color: var(--ink-500);
+  font-size: 10px;
+}
+
+.field.invalid .option-grid,
+.field.invalid .option-list,
+.field.invalid .checkbox-grid,
+.field.invalid input,
+.field.invalid textarea,
+.field.invalid .segmented-options {
+  border-color: var(--red-700);
+}
+
+.field.invalid .option-grid,
+.field.invalid .checkbox-grid {
+  outline: 2px solid rgba(161, 63, 53, 0.32);
+  outline-offset: 4px;
+  border-radius: 8px;
+}
+
+.segmented-options {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  overflow: hidden;
+  border: 1px solid var(--line-strong);
+  border-radius: 8px;
+}
+
+.segmented-options label {
+  position: relative;
+  border-right: 1px solid var(--line);
+}
+
+.segmented-options label:last-child {
+  border-right: 0;
+}
+
+.segmented-options input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.segmented-options span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 43px;
+  padding: 7px 8px;
+  color: var(--ink-650);
+  background: white;
+  cursor: pointer;
+  font-size: 10px;
+  font-weight: 690;
+  text-align: center;
+}
+
+.segmented-options label:has(input:checked) span {
+  color: white;
+  background: var(--blue-700);
+}
+
+.segmented-options label:has(input:focus-visible) {
+  outline: 3px solid var(--orange-500);
+  outline-offset: -3px;
+}
+
+.form-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+  margin-top: auto;
+  padding: 18px 48px 21px;
+  background: var(--cream);
+  border-top: 1px solid var(--line);
+}
+
+.action-spacer {
+  flex: 1;
+}
+
+.required-note {
+  max-width: 240px;
+  color: var(--ink-500);
+  font-size: 9px;
+  line-height: 1.4;
+  text-align: right;
+}
+
+.result-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 42px 48px 40px;
+  color: white;
+  background: var(--navy-950);
+}
+
+.result-hero::after {
+  position: absolute;
+  top: -95px;
+  right: -60px;
+  width: 260px;
+  height: 260px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+  box-shadow: 0 0 0 58px rgba(255, 255, 255, 0.025);
+  content: "";
+}
+
+.result-phase-row {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.phase-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+  padding: 6px 10px;
+  color: #ffd0b3;
+  background: rgba(230, 120, 50, 0.13);
+  border: 1px solid rgba(230, 120, 50, 0.4);
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.phase-badge i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--orange-500);
+}
+
+.result-hero h2 {
+  max-width: 620px;
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(34px, 4.2vw, 49px);
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  line-height: 1.05;
+}
+
+.result-hero .result-summary {
+  max-width: 670px;
+  margin: 15px 0 0;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.phase-number {
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+  color: rgba(255, 255, 255, 0.09);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 92px;
+  line-height: 0.9;
+}
+
+.result-toolbar {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 26px;
+}
+
+.result-toolbar .button-primary {
+  background: var(--orange-600);
+}
+
+.result-toolbar .button-secondary {
+  color: white;
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.28);
+  box-shadow: none;
+}
+
+.result-toolbar .button-secondary:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.result-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1.42fr) minmax(250px, 0.78fr);
+  gap: 20px;
+  padding: 26px 30px 36px;
+  background: var(--canvas);
+}
+
+.result-column {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  min-width: 0;
+}
+
+.report-card {
+  padding: 23px 24px;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  box-shadow: var(--shadow-sm);
+}
+
+.report-card-accent {
+  border-top: 3px solid var(--orange-500);
+}
+
+.report-kicker {
+  display: block;
+  margin-bottom: 7px;
+  color: var(--orange-600);
+  font-size: 9px;
+  font-weight: 820;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.report-card h3 {
+  margin: 0;
+  color: var(--navy-950);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 21px;
+  font-weight: 550;
+  letter-spacing: -0.017em;
+  line-height: 1.2;
+}
+
+.report-card > p {
+  margin: 9px 0 0;
+  color: var(--ink-650);
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.opportunity-statement {
+  margin-top: 15px;
+  padding: 14px 16px;
+  color: var(--navy-950);
+  background: var(--orange-050);
+  border-left: 3px solid var(--orange-500);
+  border-radius: 0 7px 7px 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.why-trace {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 14px;
+}
+
+.why-trace span {
+  padding: 5px 8px;
+  color: var(--ink-650);
+  background: var(--cream);
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  font-size: 9px;
+  font-weight: 660;
+}
+
+.action-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: 15px;
+}
+
+.action-item {
+  display: grid;
+  grid-template-columns: 27px 1fr;
+  gap: 12px;
+  padding: 13px 0;
+  border-top: 1px solid var(--line);
+}
+
+.action-item:first-child {
+  border-top: 0;
+  padding-top: 2px;
+}
+
+.action-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  color: white;
+  background: var(--navy-900);
+  border-radius: 50%;
+  font-size: 10px;
+  font-weight: 820;
+}
+
+.action-item strong {
+  display: block;
+  color: var(--navy-950);
+  font-size: 12px;
+}
+
+.action-item p {
+  margin: 3px 0 0;
+  color: var(--ink-650);
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.exit-gate {
+  margin-top: 13px;
+  padding: 12px 14px;
+  color: var(--green-700);
+  background: var(--green-100);
+  border-radius: 7px;
+  font-size: 11px;
+  line-height: 1.48;
+}
+
+.exit-gate strong {
+  display: block;
+  margin-bottom: 2px;
+  font-size: 9px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.week-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 9px;
+  margin-top: 15px;
+}
+
+.week-card {
+  min-height: 118px;
+  padding: 13px 14px;
+  background: var(--cream);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.week-card span {
+  color: var(--orange-600);
+  font-size: 9px;
+  font-weight: 820;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.week-card strong {
+  display: block;
+  margin-top: 5px;
+  color: var(--navy-950);
+  font-size: 12px;
+}
+
+.week-card p {
+  margin: 4px 0 0;
+  color: var(--ink-650);
+  font-size: 10px;
+  line-height: 1.46;
+}
+
+.cue-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.cue-item {
+  padding: 14px;
+  background: var(--blue-050);
+  border: 1px solid #d3e5ed;
+  border-radius: 8px;
+}
+
+.cue-item strong {
+  display: block;
+  color: var(--navy-950);
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+.cue-item p {
+  margin: 5px 0 0;
+  color: var(--ink-650);
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.readiness-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 17px;
+}
+
+.readiness-row {
+  display: grid;
+  grid-template-columns: 82px 1fr 31px;
+  align-items: center;
+  gap: 9px;
+}
+
+.readiness-row > span:first-child {
+  color: var(--ink-650);
+  font-size: 10px;
+  font-weight: 720;
+}
+
+.readiness-bar {
+  height: 7px;
+  overflow: hidden;
+  background: #e9eef0;
+  border-radius: 999px;
+}
+
+.readiness-bar i {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+}
+
+.readiness-row.high .readiness-bar i {
+  background: var(--green-700);
+}
+
+.readiness-row.medium .readiness-bar i {
+  background: #d4962a;
+}
+
+.readiness-row.low .readiness-bar i {
+  background: var(--red-700);
+}
+
+.readiness-row > strong {
+  color: var(--ink-650);
+  font-size: 9px;
+  text-align: right;
+}
+
+.risk-list {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  margin-top: 14px;
+}
+
+.risk-item {
+  padding: 11px 12px;
+  background: var(--orange-050);
+  border: 1px solid #f1d9c8;
+  border-radius: 7px;
+}
+
+.risk-item strong {
+  display: block;
+  color: #773d1c;
+  font-size: 11px;
+}
+
+.risk-item p {
+  margin: 3px 0 0;
+  color: #6d4b37;
+  font-size: 10px;
+  line-height: 1.48;
+}
+
+.funding-now {
+  margin-top: 14px;
+  padding: 13px;
+  color: var(--navy-950);
+  background: var(--blue-050);
+  border: 1px solid #cfe3ec;
+  border-radius: 8px;
+}
+
+.funding-now span {
+  display: block;
+  margin-bottom: 3px;
+  color: var(--blue-700);
+  font-size: 9px;
+  font-weight: 820;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.funding-now strong {
+  font-size: 12px;
+  line-height: 1.42;
+}
+
+.funding-after,
+.avoid-now {
+  margin: 10px 0 0;
+  color: var(--ink-650);
+  font-size: 10px;
+  line-height: 1.48;
+}
+
+.funding-after strong,
+.avoid-now strong {
+  color: var(--navy-950);
+}
+
+.rdts-ask {
+  margin-top: 14px;
+  padding: 14px;
+  color: white;
+  background: var(--navy-900);
+  border-radius: 8px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.copy-ask {
+  margin-top: 9px;
+  color: var(--blue-700);
+  background: transparent;
+  cursor: pointer;
+  font-size: 10px;
+  font-weight: 760;
+}
+
+.copy-ask:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.mismatch-note {
+  margin-top: 13px;
+  padding: 10px 12px;
+  color: var(--amber-700);
+  background: var(--amber-100);
+  border-radius: 7px;
+  font-size: 10px;
+  line-height: 1.45;
+}
+
+.answer-details {
+  margin-top: 18px;
+}
+
+.answer-details summary {
+  color: var(--blue-700);
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 760;
+}
+
+.answer-snapshot {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.answer-snapshot div {
+  padding: 9px 10px;
+  background: var(--cream);
+  border-radius: 6px;
+}
+
+.answer-snapshot span {
+  display: block;
+  color: var(--ink-500);
+  font-size: 8px;
+  font-weight: 780;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.answer-snapshot strong {
+  display: block;
+  margin-top: 3px;
+  color: var(--navy-950);
+  font-size: 10px;
+  font-weight: 670;
+}
+
+.report-disclaimer {
+  margin-top: 14px;
+  color: var(--ink-500);
+  font-size: 8px;
+  line-height: 1.5;
+}
+
+.closing-note {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 24px 84px;
+  text-align: center;
+}
+
+.closing-note h2 {
+  margin: 0;
+  color: var(--navy-950);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(30px, 4vw, 46px);
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  line-height: 1.12;
+}
+
+.closing-note > p:last-child {
+  max-width: 650px;
+  margin: 17px auto 0;
+  color: var(--ink-650);
+  font-size: 14px;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  padding: 26px max(24px, calc((100vw - var(--content)) / 2));
+  color: rgba(255, 255, 255, 0.66);
+  background: var(--navy-950);
+  font-size: 10px;
+}
+
+footer > div {
+  display: flex;
+  flex-direction: column;
+}
+
+footer strong {
+  color: white;
+  font-size: 11px;
+}
+
+footer p {
+  max-width: 520px;
+  margin: 0;
+  text-align: right;
+}
+
+.toast {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 100;
+  max-width: 360px;
+  padding: 11px 14px;
+  color: white;
+  background: var(--navy-950);
+  border-radius: 7px;
+  box-shadow: var(--shadow-md);
+  font-size: 12px;
+  font-weight: 650;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(8px);
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.toast.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.embed .site-header,
+.embed .hero,
+.embed .method-strip,
+.embed .overview-card,
+.embed .workbook-intro,
+.embed .closing-note,
+.embed footer {
+  display: none !important;
+}
+
+.embed .guide-shell {
+  margin-top: 14px;
+  margin-bottom: 14px;
+}
+
+@media (max-width: 1060px) {
+  .hero-grid {
+    gap: 44px;
+  }
+
+  .option-grid-5 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .option-grid-5 .option-card:nth-child(4),
+  .option-grid-5 .option-card:nth-child(5) {
+    min-height: 95px;
+  }
+}
+
+@media (max-width: 900px) {
+  .site-header {
+    min-height: 68px;
+  }
+
+  .privacy-chip {
+    display: none;
+  }
+
+  .header-nav {
+    display: none;
+  }
+
+  .hero {
+    padding-top: 58px;
+    padding-bottom: 64px;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 42px;
+  }
+
+  .route-card {
+    max-width: 580px;
+  }
+
+  .method-strip {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .method-flow {
+    align-self: auto;
+  }
+
+  .method-strip > p {
+    grid-column: 1;
+  }
+
+  .overview-card {
+    margin-right: 18px;
+    margin-left: 18px;
+  }
+
+  .visual-grid,
+  .visual-grid-reverse {
+    grid-template-columns: 1fr;
+  }
+
+  .visual-grid-reverse .visual-card {
+    order: 2;
+  }
+
+  .workbook-intro {
+    align-items: flex-start;
+    flex-direction: column;
+    margin-right: 18px;
+    margin-left: 18px;
+  }
+
+  .guide-shell {
+    grid-template-columns: 1fr;
+    margin: 32px 18px 60px;
+  }
+
+  .guide-sidebar {
+    display: none;
+  }
+
+  .mobile-progress {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 17px 25px 13px;
+    background: var(--cream);
+  }
+
+  .mobile-progress > div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mobile-progress span {
+    color: var(--ink-500);
+    font-size: 9px;
+    font-weight: 760;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .mobile-progress strong {
+    margin-top: 2px;
+    color: var(--navy-950);
+    font-size: 13px;
+  }
+
+  .result-body {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 680px) {
+  .site-header {
+    padding: 10px 17px;
+  }
+
+  .brand-copy span {
+    display: none;
+  }
+
+  .header-logo {
+    width: 76px;
+  }
+
+  .brand-copy strong {
+    max-width: 210px;
+    font-size: 10px;
+  }
+
+  .program-link {
+    font-size: 11px;
+  }
+
+  .hero {
+    padding: 47px 20px 54px;
+  }
+
+  .original-hero {
+    padding-top: 38px;
+    padding-bottom: 40px;
+  }
+
+  .hero h1 {
+    font-size: clamp(40px, 13vw, 57px);
+  }
+
+  .hero-lede {
+    font-size: 16px;
+  }
+
+  .hero-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .original-hero .hero-actions {
+    align-items: stretch;
+  }
+
+  .text-button {
+    align-self: flex-start;
+  }
+
+  .hero-facts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .hero-facts li {
+    min-width: 0;
+    padding: 0 10px;
+  }
+
+  .hero-facts strong {
+    font-size: 17px;
+  }
+
+  .hero-facts span {
+    font-size: 9px;
+  }
+
+  .route-card {
+    padding: 22px 20px;
+  }
+
+  .route-node div {
+    gap: 10px;
+  }
+
+  .method-strip {
+    padding: 42px 20px;
+  }
+
+  .overview-card {
+    margin: 15px 10px 0;
+    padding: 22px 17px;
+  }
+
+  .overview-head h2 {
+    font-size: 19px;
+  }
+
+  .visual-grid {
+    gap: 20px;
+    padding: 21px 0;
+  }
+
+  .workbook-intro {
+    margin: 38px 18px 0;
+    padding: 0;
+  }
+
+  .workbook-intro ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+  }
+
+  .workbook-intro li {
+    min-width: 0;
+    padding: 0 9px;
+  }
+
+  .workbook-intro li:first-child {
+    padding-left: 0;
+    border-left: 0;
+  }
+
+  .workbook-intro strong {
+    font-size: 13px;
+  }
+
+  .method-flow {
+    display: grid;
+    grid-template-columns: 1fr 20px 1fr;
+  }
+
+  .method-flow i:nth-of-type(2) {
+    display: none;
+  }
+
+  .method-flow span:nth-of-type(3) {
+    grid-column: 1;
+  }
+
+  .method-flow i:nth-of-type(3) {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .method-flow span:nth-of-type(4) {
+    grid-column: 3;
+    grid-row: 2;
+  }
+
+  .guide-shell {
+    margin: 20px 10px 50px;
+    border-radius: 14px;
+  }
+
+  .mobile-progress {
+    padding-inline: 18px;
+  }
+
+  .question-screen {
+    padding: 30px 18px 18px;
+  }
+
+  .screen-head {
+    grid-template-columns: 1fr;
+    gap: 7px;
+    margin-bottom: 27px;
+  }
+
+  .screen-count {
+    margin: 0;
+  }
+
+  .screen-head h2 {
+    font-size: 29px;
+  }
+
+  .field {
+    margin-bottom: 27px;
+  }
+
+  .option-grid-5,
+  .option-grid-2,
+  .checkbox-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .option-card,
+  .option-grid-5 .option-card:nth-child(4),
+  .option-grid-5 .option-card:nth-child(5) {
+    display: grid;
+    grid-template-columns: 28px 1fr;
+    gap: 11px;
+    min-height: 74px;
+    padding: 12px 13px;
+  }
+
+  .option-index {
+    margin: 0;
+  }
+
+  .option-copy strong {
+    font-size: 12px;
+  }
+
+  .option-copy small {
+    font-size: 10px;
+  }
+
+  .segmented-options {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .segmented-options label {
+    border-bottom: 1px solid var(--line);
+  }
+
+  .segmented-options label:nth-child(2n) {
+    border-right: 0;
+  }
+
+  .segmented-options label:last-child {
+    grid-column: 1 / -1;
+    border-bottom: 0;
+  }
+
+  .form-actions {
+    position: sticky;
+    bottom: 0;
+    z-index: 8;
+    flex-wrap: wrap;
+    padding: 13px 15px;
+    box-shadow: 0 -7px 20px rgba(5, 39, 61, 0.07);
+  }
+
+  .form-actions .button {
+    flex: 1;
+  }
+
+  .required-note {
+    display: none;
+  }
+
+  .result-hero {
+    padding: 33px 23px 31px;
+  }
+
+  .phase-number {
+    display: none;
+  }
+
+  .result-toolbar .button {
+    flex: 1;
+    min-width: 140px;
+  }
+
+  .result-body {
+    padding: 18px 13px 26px;
+  }
+
+  .report-card {
+    padding: 20px 18px;
+  }
+
+  .week-grid,
+  .cue-grid,
+  .answer-snapshot {
+    grid-template-columns: 1fr;
+  }
+
+  .readiness-row {
+    grid-template-columns: 74px 1fr 28px;
+  }
+
+  .closing-note {
+    padding-bottom: 62px;
+  }
+
+  footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  footer p {
+    text-align: left;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 12mm;
+  }
+
+  body {
+    color: #111;
+    background: white;
+    font-size: 10pt;
+  }
+
+  .site-header,
+  .hero,
+  .method-strip,
+  .overview-card,
+  .workbook-intro,
+  .guide-sidebar,
+  .mobile-progress,
+  .progress-track,
+  .form-actions,
+  .closing-note,
+  footer,
+  .toast,
+  .result-toolbar,
+  .copy-ask {
+    display: none !important;
+  }
+
+  .guide-shell {
+    display: block !important;
+    min-height: 0;
+    margin: 0;
+    overflow: visible;
+    border: 0;
+    box-shadow: none;
+  }
+
+  .question-screen {
+    display: none !important;
+  }
+
+  .result-screen {
+    display: block !important;
+  }
+
+  .result-hero {
+    padding: 9mm 10mm;
+    color: white !important;
+    background: var(--navy-950) !important;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .result-hero h2 {
+    font-size: 25pt;
+  }
+
+  .result-body {
+    display: block;
+    padding: 6mm 0;
+    background: white;
+  }
+
+  .result-column {
+    display: block;
+  }
+
+  .report-card {
+    margin: 0 0 5mm;
+    padding: 5mm;
+    break-inside: avoid;
+    box-shadow: none;
+  }
+
+  .week-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .phase-number {
+    display: none;
+  }
+}
+
+    </style>
+    <script type="module">
+const LABELS = {
+  solutionType: {
+    software: "Software / data / AI",
+    hardware: "Hardware / equipment",
+    process: "Industrial process / material",
+    service: "Engineering service / integration",
+    hybrid: "Hybrid solution",
+  },
+  buyer: {
+    independent: "Independent operator or industrial SME",
+    major: "Major operator, NOC, or utility",
+    channel: "OEM, OFS, or system integrator",
+    regulated: "Public or regulated infrastructure owner",
+    unknown: "Buyer not yet clear",
+  },
+  customerEvidence: {
+    none: "No target-customer interviews",
+    exploratory: "1–5 exploratory conversations",
+    repeated: "Repeated pain, not yet quantified",
+    quantified: "Quantified pain + budget-owner urgency",
+    paid: "Paid or repeated purchase evidence",
+  },
+  decisionPath: {
+    full: "Full user-to-approval path known",
+    buyer_known: "User/champion and buyer known",
+    champion_only: "User or champion only",
+    none: "No named stakeholder",
+  },
+  focus: {
+    sharp: "One sharp first use case",
+    one_gap: "Focused with one gap",
+    broad: "Several segments or use cases",
+    unclear: "First use case not defined",
+  },
+  technicalProof: {
+    concept: "Concept only",
+    lab: "Lab test or simulation",
+    representative: "Representative data or realistic test",
+    field: "Relevant field or site conditions",
+    operational: "Reliable operational deployment",
+  },
+  commitment: {
+    none: "No customer commitment",
+    interest: "Interested contacts",
+    champion: "Champion + data/site access",
+    loi_free: "LOI or proposed free trial",
+    paid_pilot: "Paid or cost-shared pilot",
+    repeat: "Repeat paid deployment",
+  },
+  barriers: {
+    ip: "IP & ownership",
+    data: "Data & integration",
+    hse: "HSE & regulation",
+    delivery: "Delivery & reliability",
+    procurement: "Procurement & budget",
+    champion: "No operational champion",
+    unknown: "Adoption gates not assessed",
+  },
+  resourceNeed: {
+    under25: "Founder time or less than $25k",
+    "25to250": "$25k–$250k",
+    over250: "More than $250k",
+    access: "Customer data/site access matters more than cash",
+    unknown: "Resource need not estimated",
+  },
+  runway: {
+    under3: "Under 3 months",
+    "3to9": "3–9 months",
+    "9to18": "9–18 months",
+    over18: "18+ months",
+    unknown: "Unknown",
+    not_needed: "Not requested",
+  },
+};
+
+const REQUIRED_BY_STEP = [
+  ["solutionType", "buyer", "problem"],
+  ["customerEvidence", "decisionPath", "focus"],
+  ["technicalProof", "commitment", "successMetric"],
+  ["barriers", "resourceNeed"],
+];
+
+const evidenceRank = {
+  none: 0,
+  exploratory: 1,
+  repeated: 2,
+  quantified: 3,
+  paid: 4,
+};
+
+const proofRank = {
+  concept: 0,
+  lab: 1,
+  representative: 2,
+  field: 3,
+  operational: 4,
+};
+
+const commitmentRank = {
+  none: 0,
+  interest: 1,
+  champion: 2,
+  loi_free: 3,
+  paid_pilot: 4,
+  repeat: 5,
+};
+
+const solutionProofOverlays = {
+  software: {
+    title: "Test with representative data—not a polished interface.",
+    detail:
+      "Compare against the current baseline. Predefine accuracy or error, false positives, latency, integration, cybersecurity, and the decision that improves.",
+  },
+  hardware: {
+    title: "Bring field constraints into the proof early.",
+    detail:
+      "Test form, fit, durability, calibration, safety or hazardous-area needs, install time, maintainability, and the supply/service path.",
+  },
+  process: {
+    title: "Make scale-up conditions explicit.",
+    detail:
+      "Define feedstock variability, mass and energy balance, operating envelope, repeatability, permitting, HSE, and the next scale step.",
+  },
+  service: {
+    title: "Prove repeatability before automating.",
+    detail:
+      "Deliver the value manually, measure cycle time and gross margin, document the method, and identify what becomes the data or knowledge moat.",
+  },
+  hybrid: {
+    title: "Test the highest-uncertainty component first.",
+    detail:
+      "Separate the system into technical modules, interfaces, and evidence gates. Prove the cheapest critical uncertainty before integrating the full solution.",
+  },
+};
+
+const buyerOverlays = {
+  independent: {
+    title: "Make the ROI legible to an operating owner.",
+    detail:
+      "Lead with payback, operational impact, and a small paid test. Keep scope narrow enough for a lean customer team to approve and support.",
+  },
+  major: {
+    title: "Run the technical and qualification paths in parallel.",
+    detail:
+      "Pair a technical champion with an economic owner and start HSE, cybersecurity, procurement, vendor registration, and budget-cycle mapping early.",
+  },
+  channel: {
+    title: "Define the partner economics before sharing the market.",
+    detail:
+      "Clarify channel margin, exclusivity, customer ownership, IP, data rights, integration effort, and whether the partner is also a future competitor.",
+  },
+  regulated: {
+    title: "Design around standards, tenders, and budget timing.",
+    detail:
+      "Map applicable standards, tender requirements, public budget cycles, local-content rules, and consortium or reference-site needs.",
+  },
+  unknown: {
+    title: "Select the buyer before expanding the product.",
+    detail:
+      "Compare no more than three segments on pain, access, budget ownership, switching friction, and time-to-proof. Choose one for the next learning sprint.",
+  },
+};
+
+const barrierActions = {
+  ip: {
+    title: "Establish the IP and ownership chain",
+    detail:
+      "Document inventors, employer/university obligations, confidentiality, public disclosures, data ownership, and the need for qualified patentability or freedom-to-operate review.",
+    rdts: "an IP commercialization mentor who can review ownership, disclosure timing, and the right questions for counsel",
+  },
+  data: {
+    title: "Secure usable data and integration rights",
+    detail:
+      "Create a data inventory and agree access, permitted use, retention, security, test environment, integration interfaces, and who can see the results.",
+    rdts: "a data-access or industrial cybersecurity mentor and a realistic test-data introduction",
+  },
+  hse: {
+    title: "Map the HSE and approval route",
+    detail:
+      "Identify certifications, permits, operating limits, site procedures, evidence owners, and review timing with the customer’s safety or regulatory lead.",
+    rdts: "an HSE or regulatory practitioner familiar with the intended operating context",
+  },
+  delivery: {
+    title: "Prove the delivery system, not only the technology",
+    detail:
+      "Document suppliers, interfaces, installation, reliability, maintenance, training, field support, failure recovery, and the cost of serving one site.",
+    rdts: "an operations or field-service mentor who can challenge the installation, reliability, and support model",
+  },
+  procurement: {
+    title: "Map procurement before the pilot ends",
+    detail:
+      "Identify supplier registration, MSA, insurance, tender, cybersecurity, invoicing, budget owner, approval gates, and the dates that control a purchase.",
+    rdts: "a procurement or MSA mentor who can review the customer’s path from pilot to purchase",
+  },
+  champion: {
+    title: "Find an operational champion and economic buyer",
+    detail:
+      "Stop widening the build. Find one person who owns the workflow and one person who owns the value or budget, then confirm what would trigger action.",
+    rdts: "three introductions to practitioners who own the target workflow and can identify the economic buyer",
+  },
+  unknown: {
+    title: "Run an adoption pre-mortem",
+    detail:
+      "Before more build work, review IP, data, HSE, cybersecurity, integration, procurement, delivery, ownership, and budget timing with the intended customer.",
+    rdts: "a cross-functional mentor to run a one-hour adoption pre-mortem",
+  },
+};
+
+const phases = {
+  discover: {
+    id: "discover",
+    number: "01",
+    label: "Discover",
+    title: "Prove the problem before the product.",
+    summary:
+      "Your fastest route forward is customer evidence. Building, piloting, or fundraising now would lock in assumptions that are still cheap to test.",
+    actions: ({ buyerLabel, problem }) => [
+      {
+        title: `Interview 8–10 people in one ${buyerLabel.toLowerCase()} context`,
+        detail:
+          "Ask about the workflow, trigger event, current workaround, frequency, consequence, switching friction, and who owns the budget. Do not pitch the solution.",
+      },
+      {
+        title: "Quantify the cost or risk in customer terms",
+        detail: `Test whether “${problem}” creates enough downtime, labor, safety, compliance, emissions, or lost production to justify a change.`,
+      },
+      {
+        title: "Write a one-page evidence memo",
+        detail:
+          "Capture repeated phrases, disconfirming evidence, the current alternative, the budget owner, and one narrower problem worth validating next.",
+      },
+    ],
+    exit:
+      "6 of 10 target interviews independently describe the same painful workflow, and at least two people identify a trigger and budget owner.",
+    avoid: "A large build, a broad business plan, or investor outreach before the customer pattern is visible.",
+    weeks: ({ buyerLabel }) => [
+      { title: "Recruit", detail: `Build a list of 20 people across users, champions, and buyers at ${buyerLabel.toLowerCase()} organizations.` },
+      { title: "Listen", detail: "Complete five problem interviews and capture exact customer language, workarounds, and consequences." },
+      { title: "Quantify", detail: "Complete five more interviews; estimate frequency, cost/risk, urgency, and switching triggers." },
+      { title: "Decide", detail: "Choose one pain to pursue, change, or stop based on the evidence—not enthusiasm." },
+    ],
+  },
+  focus: {
+    id: "focus",
+    number: "02",
+    label: "Focus & validate",
+    title: "Narrow the beachhead and quantify urgency.",
+    summary:
+      "A customer pattern is emerging, but the first buyer, workflow, or measurable outcome is not sharp enough to guide proof and commercial decisions.",
+    actions: ({ buyerLabel, metric }) => [
+      {
+        title: "Score no more than three entry wedges",
+        detail:
+          "Compare pain severity, frequency, customer access, budget ownership, regulatory pull, switching friction, and time-to-proof. Pick one—not a portfolio.",
+      },
+      {
+        title: `Lock one ${buyerLabel.toLowerCase()} workflow and outcome`,
+        detail: `Turn the first use case into: one buyer, one workflow or asset context, and the target result “${metric}”.`,
+      },
+      {
+        title: "Confirm the wedge with two target customers",
+        detail:
+          "Ask them to correct the quantified problem, decision path, realistic constraint, and what evidence would justify a pilot or purchase.",
+      },
+    ],
+    exit:
+      "Two target customers confirm the same buyer/workflow/context, quantify the pain, and agree on evidence that would justify a test.",
+    avoid: "Serving multiple customer segments, adding features for every conversation, or choosing a funding source before the evidence milestone is scoped.",
+    weeks: () => [
+      { title: "Compare", detail: "Score up to three wedges on pain, access, budget, competition, and time-to-proof." },
+      { title: "Choose", detail: "Write one beachhead statement and remove adjacent segments from the near-term scope." },
+      { title: "Validate", detail: "Review the statement and measurable consequence with two target customers." },
+      { title: "Specify", detail: "Define the single technical or commercial hypothesis the next proof must answer." },
+    ],
+  },
+  prove: {
+    id: "prove",
+    number: "03",
+    label: "Prove",
+    title: "Run the cheapest falsifiable proof.",
+    summary:
+      "The problem is focused enough to test, but technical evidence has not yet reached representative conditions. The next milestone should eliminate one critical uncertainty.",
+    actions: ({ solutionOverlay, metric }) => [
+      {
+        title: "Write one falsifiable hypothesis",
+        detail: `Define the baseline, target “${metric}”, operating constraint, sample or test window, and a go / iterate / stop decision before running the test.`,
+      },
+      solutionOverlay,
+      {
+        title: "Secure representative conditions and evidence rights",
+        detail:
+          "Use realistic data, equipment, feedstock, environment, or workflow. Agree who owns inputs, outputs, learning, and any disclosure before the test.",
+      },
+    ],
+    exit:
+      "The pre-agreed threshold is reached in representative conditions, the result is reproducible, and data/IP rights are clear enough to share an evidence summary.",
+    avoid: "A full product build, a vague demo, or scaling a lab result before the hardest real-world constraint is present.",
+    weeks: () => [
+      { title: "Frame", detail: "Choose the single highest-risk assumption and define baseline, threshold, constraint, and stop rule." },
+      { title: "Secure", detail: "Obtain representative inputs, permissions, equipment, and a test owner." },
+      { title: "Test", detail: "Run the smallest valid experiment and record failures, not only the best result." },
+      { title: "Decide", detail: "Package the evidence; kill, iterate, or draft a pilot hypothesis based on the pre-agreed gate." },
+    ],
+  },
+  prepare: {
+    id: "prepare",
+    number: "04",
+    label: "Prepare a pilot",
+    title: "Turn proof into a commercial pilot.",
+    summary:
+      "The problem and technical case are credible, but interest has not yet become a decision-backed pilot. Co-design the commercial path before field work begins.",
+    actions: ({ buyerOverlay, metric }) => [
+      {
+        title: "Co-design a paid or cost-shared pilot",
+        detail: `Set a baseline and “${metric}” as the success target. Name the customer owner, decision maker, scope, duration, deliverables, and decision date.`,
+      },
+      buyerOverlay,
+      {
+        title: "Write the adoption path into the pilot brief",
+        detail:
+          "Include HSE, data, IP, cybersecurity, integration, procurement, pricing, scale-up barriers, and the commercial action triggered if criteria are met.",
+      },
+    ],
+    exit:
+      "A customer signs a paid/cost-shared SOW or a specific LOI with owner, baseline, success criteria, decision date, rights, price, and commercial next step.",
+    avoid: "An open-ended free trial, a pilot owned only by innovation, or field work without a purchase decision and budget path.",
+    weeks: () => [
+      { title: "Align", detail: "Confirm the operational owner, economic buyer, baseline, decision date, and value at stake." },
+      { title: "Design", detail: "Draft scope, responsibilities, success metrics, constraints, and data/IP terms." },
+      { title: "Qualify", detail: "Start safety, cyber, integration, vendor, insurance, and procurement work." },
+      { title: "Commit", detail: "Agree price or cost share and the commercial action that follows a successful pilot." },
+    ],
+  },
+  convert: {
+    id: "convert",
+    number: "05",
+    label: "Convert the pilot",
+    title: "Make the pilot end in a purchase decision.",
+    summary:
+      "Customer commitment exists. Protect the pilot from scope drift and make acceptance, adoption, and rollout decisions explicit before the evidence window closes.",
+    actions: ({ metric, buyerOverlay }) => [
+      {
+        title: "Freeze acceptance and rollout criteria",
+        detail: `Tie “${metric}” to a named approver, evidence format, review date, price, purchase mechanism, and rollout trigger.`,
+      },
+      {
+        title: "Control scope and commercial learning",
+        detail:
+          "Track baseline, outcome, customer effort, time-to-value, delivery cost, support burden, and every new requirement separately from the agreed pilot.",
+      },
+      buyerOverlay,
+    ],
+    exit:
+      "The customer issues a purchase order, paid expansion, repeat deployment, or a time-bound commercial decision with documented objections.",
+    avoid: "Extending a free pilot to preserve goodwill, adding unpriced scope, or accepting technical success without a commercial review.",
+    weeks: () => [
+      { title: "Lock", detail: "Confirm baseline, acceptance criteria, approver, review date, and rollout mechanism in writing." },
+      { title: "Measure", detail: "Track technical result, user behavior, customer effort, delivery cost, and decision risks." },
+      { title: "Prepare", detail: "Draft the commercial proposal, implementation plan, price, support model, and reference request." },
+      { title: "Decide", detail: "Run the formal review and secure purchase, expansion, or a documented no-go." },
+    ],
+  },
+  scale: {
+    id: "scale",
+    number: "06",
+    label: "Scale",
+    title: "Make delivery and sales repeatable.",
+    summary:
+      "Repeated paid use shifts the question from feasibility to repeatability. Standardize what works before adding markets, products, or heavy growth capital.",
+    actions: ({ buyerOverlay }) => [
+      {
+        title: "Standardize the delivery unit",
+        detail:
+          "Define onboarding, implementation, integrations, training, support, reliability, acceptance, handoff, and the true cost and cycle time per deployment.",
+      },
+      {
+        title: "Track the economics and retention signals",
+        detail:
+          "Measure gross margin, time-to-value, renewal or repeat behavior, service load, reliability, referenceability, and sales-cycle conversion by segment.",
+      },
+      buyerOverlay,
+    ],
+    exit:
+      "At least three comparable wins show predictable sales, delivery, customer value, retention, and a credible contribution margin.",
+    avoid: "Expanding to several markets at once, hiring ahead of a repeatable delivery model, or raising growth capital to hide weak unit economics.",
+    weeks: () => [
+      { title: "Instrument", detail: "Baseline sales cycle, implementation time, support load, margin, reliability, and retention." },
+      { title: "Standardize", detail: "Turn the best deployment into a repeatable package, checklist, price, and handoff." },
+      { title: "Reference", detail: "Secure an evidence-backed case study, reference call, and objection log." },
+      { title: "Choose", detail: "Select one expansion vector: more sites, one adjacent asset, or one channel—not all three." },
+    ],
+  },
+};
+
+function clean(value, fallback = "") {
+  return typeof value === "string" && value.trim() ? value.trim() : fallback;
+}
+
+function label(group, value) {
+  return LABELS[group]?.[value] ?? clean(value, "Not answered");
+}
+
+function normalizeState(raw) {
+  return {
+    ventureName: clean(raw.ventureName, "Your venture"),
+    solutionType: clean(raw.solutionType),
+    buyer: clean(raw.buyer),
+    problem: clean(raw.problem),
+    customerEvidence: clean(raw.customerEvidence),
+    decisionPath: clean(raw.decisionPath),
+    focus: clean(raw.focus),
+    technicalProof: clean(raw.technicalProof),
+    commitment: clean(raw.commitment),
+    successMetric: clean(raw.successMetric),
+    barriers: Array.isArray(raw.barriers) ? [...new Set(raw.barriers)] : [],
+    resourceNeed: clean(raw.resourceNeed),
+    runway: clean(raw.runway, "not_needed"),
+  };
+}
+
+function shouldAskRunway(resourceNeed) {
+  return ["25to250", "over250", "unknown"].includes(resourceNeed);
+}
+
+function validateStep(rawState, stepIndex) {
+  const state = normalizeState(rawState);
+  const required = [...(REQUIRED_BY_STEP[stepIndex] ?? [])];
+  if (stepIndex === 3 && shouldAskRunway(state.resourceNeed)) {
+    required.push("runway");
+  }
+
+  const errors = {};
+  for (const key of required) {
+    if (key === "barriers") {
+      if (!state.barriers.length) {
+        errors[key] = "Select at least one barrier or choose “Not assessed yet.”";
+      } else if (state.barriers.length > 3) {
+        errors[key] = "Select no more than three barriers.";
+      }
+    } else if (!state[key]) {
+      errors[key] = "Choose or enter an answer to continue.";
+    }
+  }
+  return errors;
+}
+
+function derivePhase(rawState) {
+  const state = normalizeState(rawState);
+  if (
+    evidenceRank[state.customerEvidence] <= 1 ||
+    state.decisionPath === "none"
+  ) {
+    return phases.discover;
+  }
+
+  if (
+    state.buyer === "unknown" ||
+    ["broad", "unclear"].includes(state.focus) ||
+    evidenceRank[state.customerEvidence] === 2
+  ) {
+    return phases.focus;
+  }
+
+  if (proofRank[state.technicalProof] <= 1) {
+    return phases.prove;
+  }
+
+  if (commitmentRank[state.commitment] <= 2) {
+    return phases.prepare;
+  }
+
+  if (commitmentRank[state.commitment] <= 4) {
+    return phases.convert;
+  }
+
+  return phases.scale;
+}
+
+function claimedPhaseFromCommitment(state) {
+  if (state.commitment === "repeat") return "scale";
+  if (["loi_free", "paid_pilot"].includes(state.commitment)) return "convert";
+  if (state.commitment === "champion") return "prepare";
+  if (proofRank[state.technicalProof] >= 2) return "prepare";
+  if (proofRank[state.technicalProof] >= 1) return "prove";
+  return "discover";
+}
+
+function readiness(state) {
+  const problem = {
+    none: 10,
+    exploratory: 28,
+    repeated: 56,
+    quantified: 83,
+    paid: 100,
+  }[state.customerEvidence];
+
+  let buyer = {
+    none: 10,
+    champion_only: 44,
+    buyer_known: 76,
+    full: 100,
+  }[state.decisionPath];
+  if (state.buyer === "unknown") buyer = Math.min(buyer, 20);
+  if (state.focus === "unclear") buyer = Math.min(buyer, 25);
+  if (state.focus === "broad") buyer = Math.min(buyer, 45);
+
+  const proof = {
+    concept: 14,
+    lab: 39,
+    representative: 70,
+    field: 87,
+    operational: 100,
+  }[state.technicalProof];
+
+  let adoption = {
+    none: 10,
+    interest: 27,
+    champion: 50,
+    loi_free: 66,
+    paid_pilot: 83,
+    repeat: 100,
+  }[state.commitment];
+  if (state.barriers.includes("unknown")) adoption = Math.min(adoption, 42);
+  if (state.barriers.includes("champion")) adoption = Math.min(adoption, 35);
+
+  const toGate = (name, value, need) => ({
+    name,
+    value,
+    status: value >= 75 ? "high" : value >= 45 ? "medium" : "low",
+    need,
+  });
+
+  return [
+    toGate("Problem", problem, "Repeated, quantified customer pain and a known trigger."),
+    toGate("Buyer path", buyer, "Named user, champion, economic buyer, and approval gates."),
+    toGate("Technical proof", proof, "A reproducible result under representative operating constraints."),
+    toGate("Adoption", adoption, "Committed owner, access, decision criteria, and a purchase path."),
+  ];
+}
+
+function fundingPath(state, phase) {
+  const shortRunway =
+    shouldAskRunway(state.resourceNeed) && state.runway === "under3";
+
+  if (state.resourceNeed === "access") {
+    return {
+      now:
+        "Seek a data/site agreement, deployment partner, or customer-backed test—not an equity round.",
+      after:
+        "After representative evidence and a decision-backed pilot path, consider customer cost share, a strategic partner, or aligned non-dilutive funding.",
+      avoid:
+        "Avoid raising cash to compensate for missing access. Capital cannot replace customer permission or operating context.",
+    };
+  }
+
+  let now;
+  let after;
+  let avoid;
+
+  if (["discover", "focus"].includes(phase.id)) {
+    now =
+      "Bootstrap discovery and focus work. Use a small research or commercialization grant only when it directly funds evidence—not product scope.";
+    after =
+      "Revisit grants, accelerators, or aligned angels after the problem is quantified and the next proof is tightly scoped.";
+    avoid =
+      "Venture capital and a large technical build are premature before a narrow problem, buyer, and evidence milestone exist.";
+  } else if (phase.id === "prove") {
+    if (state.resourceNeed === "under25") {
+      now =
+        "Bootstrap the lean proof and prioritize customer data, access, and a credible reviewer over fundraising.";
+      after =
+        "If the representative proof passes, pursue a customer-backed pilot, small non-dilutive funding, or an aligned angel.";
+    } else if (state.resourceNeed === "over250") {
+      now =
+        "Break the proof into stage gates. Combine non-dilutive funding with strategic or customer cost share for the smallest critical experiment.";
+      after =
+        "Raise larger strategic, angel, or seed capital only after the first uncertainty is retired and the follow-on gate is explicit.";
+    } else {
+      now =
+        "Target grant or non-dilutive funding, a relevant accelerator, or aligned angels after showing quantified customer pain and a scoped proof.";
+      after =
+        "Use a passing representative proof to secure a customer-funded pilot or strategic cost share.";
+    }
+    avoid =
+      "Do not finance the full product before the highest-risk technical assumption passes a representative test.";
+  } else if (["prepare", "convert"].includes(phase.id)) {
+    now =
+      "Make customer-paid or cost-shared pilot funding the first choice. Use grants, strategic partners, CVC, angels, or seed only to reach a defined commercial milestone.";
+    after =
+      "After a successful conversion, choose capital based on repeatable sales, delivery economics, and whether speed creates a defensible advantage.";
+    avoid =
+      "Avoid an investor-funded free-pilot pipeline with no customer budget, acceptance criteria, or rollout commitment.";
+  } else {
+    now =
+      "Use customer revenue and operating discipline first. Add growth or financial VC only when sales and delivery are repeatable and capital clearly accelerates a proven motion.";
+    after =
+      "Fund one chosen expansion vector after margin, retention, reliability, and time-to-value are visible across comparable deployments.";
+    avoid =
+      "Avoid using growth capital to hide inconsistent delivery, custom project economics, or weak retention.";
+  }
+
+  if (shortRunway) {
+    now =
+      "Runway is under three months: reduce the milestone to the fastest paid or decision-changing evidence, pursue immediate customer/bridge cash, and cut nonessential scope. " +
+      now;
+    avoid +=
+      " Do not rely solely on a slow grant or enterprise procurement process.";
+  }
+
+  return { now, after, avoid };
+}
+
+function rdtsRequest(state, phase) {
+  const prioritizedBarrier = ["champion", "hse", "ip", "data", "procurement", "delivery", "unknown"]
+    .find((barrier) => state.barriers.includes(barrier));
+
+  let need = prioritizedBarrier
+    ? barrierActions[prioritizedBarrier].rdts
+    : "a practitioner who can challenge the next evidence milestone";
+
+  if (!prioritizedBarrier) {
+    if (phase.id === "discover") need = "three introductions to people who own the target workflow";
+    if (phase.id === "focus") need = "two practitioners who can compare the proposed beachhead with adjacent entry wedges";
+    if (phase.id === "prove") need = "a technical reviewer who can challenge the baseline, constraint, and go/no-go threshold";
+    if (phase.id === "prepare") need = "a pilot sponsor and a mentor who has converted field trials into purchases";
+    if (phase.id === "convert") need = "a procurement or commercialization mentor to review the rollout decision";
+    if (phase.id === "scale") need = "a scale-up operator who can challenge delivery economics and channel choices";
+  }
+
+  return `I’m building ${state.ventureName}. Our current priority is ${phase.label.toLowerCase()}. Could RDTS connect me with ${need}? I’d like a 30-minute conversation focused on one outcome: ${state.successMetric}`;
+}
+
+function mismatchNote(state, phase) {
+  const order = ["discover", "focus", "prove", "prepare", "convert", "scale"];
+  const claimed = claimedPhaseFromCommitment(state);
+  if (order.indexOf(claimed) <= order.indexOf(phase.id)) return "";
+  return `Your customer commitment or proof suggests “${phases[claimed].label},” but earlier evidence is incomplete. This roadmap starts at the earliest unmet gate: ${phase.label}.`;
+}
+
+function buildSnapshot(state) {
+  return [
+    ["Venture", state.ventureName],
+    ["Solution", label("solutionType", state.solutionType)],
+    ["First buyer", label("buyer", state.buyer)],
+    ["Customer evidence", label("customerEvidence", state.customerEvidence)],
+    ["Decision path", label("decisionPath", state.decisionPath)],
+    ["First-use focus", label("focus", state.focus)],
+    ["Technical proof", label("technicalProof", state.technicalProof)],
+    ["Customer commitment", label("commitment", state.commitment)],
+    ["Adoption barriers", state.barriers.map((item) => label("barriers", item)).join(", ")],
+    ["Next-milestone resources", label("resourceNeed", state.resourceNeed)],
+    ["Runway", label("runway", state.runway)],
+  ];
+}
+
+function buildReport(rawState, options = {}) {
+  const state = normalizeState(rawState);
+  const allErrors = {};
+  for (let index = 0; index < REQUIRED_BY_STEP.length; index += 1) {
+    Object.assign(allErrors, validateStep(state, index));
+  }
+  if (Object.keys(allErrors).length) {
+    const error = new Error("Cannot build a report from incomplete answers.");
+    error.fields = allErrors;
+    throw error;
+  }
+
+  const phase = derivePhase(state);
+  const buyerLabel = label("buyer", state.buyer);
+  const context = {
+    buyerLabel,
+    problem: state.problem,
+    metric: state.successMetric,
+    solutionOverlay: solutionProofOverlays[state.solutionType],
+    buyerOverlay: buyerOverlays[state.buyer],
+  };
+
+  const barriers = state.barriers.map((barrier) => ({
+    id: barrier,
+    label: label("barriers", barrier),
+    ...barrierActions[barrier],
+  }));
+
+  const createdAt = options.now instanceof Date ? options.now : new Date();
+  const createdDate = new Intl.DateTimeFormat("en", {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+  }).format(createdAt);
+
+  return {
+    version: "Prototype 1.0 · based on current RDTS web workbook",
+    createdAt: createdAt.toISOString(),
+    createdDate,
+    state,
+    phase: {
+      id: phase.id,
+      number: phase.number,
+      label: phase.label,
+      title: phase.title,
+      summary: phase.summary,
+    },
+    opportunity: `For ${buyerLabel.toLowerCase()}, address this problem: ${state.problem} Target evidence outcome: ${state.successMetric}`,
+    trace: [
+      `Customer: ${label("customerEvidence", state.customerEvidence)}`,
+      `Proof: ${label("technicalProof", state.technicalProof)}`,
+      `Commitment: ${label("commitment", state.commitment)}`,
+    ],
+    mismatch: mismatchNote(state, phase),
+    actions: phase.actions(context),
+    exitGate: phase.exit,
+    weeks: phase.weeks(context),
+    proofCue: solutionProofOverlays[state.solutionType],
+    buyerCue: buyerOverlays[state.buyer],
+    barriers,
+    readiness: readiness(state),
+    funding: fundingPath(state, phase),
+    rdtsAsk: rdtsRequest(state, phase),
+    avoid: phase.avoid,
+    snapshot: buildSnapshot(state),
+    disclaimer:
+      "This quick guide is a provisional decision aid derived from the current RDTS Entrepreneurship Program web workbook. Recommendations should be checked against the playbook PDF when it becomes available. It supplements—not replaces—qualified legal, IP, technical, financial, HSE, regulatory, cybersecurity, or environmental advice.",
+  };
+}
+
+
+const PAGE_WIDTH = 595.28;
+const PAGE_HEIGHT = 841.89;
+const MARGIN_X = 46;
+const TOP = 786;
+const BOTTOM = 48;
+const CONTENT_WIDTH = PAGE_WIDTH - MARGIN_X * 2;
+
+const COLORS = {
+  navy: [0.02, 0.16, 0.24],
+  blue: [0.05, 0.4, 0.59],
+  orange: [0.85, 0.36, 0.12],
+  ink: [0.08, 0.14, 0.17],
+  muted: [0.31, 0.39, 0.42],
+  line: [0.82, 0.87, 0.89],
+  cream: [0.98, 0.97, 0.94],
+  paleBlue: [0.93, 0.97, 0.98],
+  paleOrange: [1, 0.96, 0.93],
+  paleGreen: [0.91, 0.96, 0.93],
+  green: [0.15, 0.44, 0.34],
+  white: [1, 1, 1],
+};
+
+function latinText(value) {
+  return String(value ?? "")
+    .replaceAll("–", "-")
+    .replaceAll("—", "-")
+    .replaceAll("’", "'")
+    .replaceAll("‘", "'")
+    .replaceAll("“", '"')
+    .replaceAll("”", '"')
+    .replaceAll("…", "...")
+    .replaceAll("•", "-")
+    .replaceAll("→", "->")
+    .replaceAll("≤", "<=")
+    .replaceAll("≥", ">=")
+    .replaceAll("ß", "ss")
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^\x20-\x7e]/g, "?");
+}
+
+function pdfEscape(value) {
+  return latinText(value)
+    .replaceAll("\\", "\\\\")
+    .replaceAll("(", "\\(")
+    .replaceAll(")", "\\)");
+}
+
+function colorCommand(color) {
+  return `${color.map((part) => part.toFixed(3)).join(" ")} rg`;
+}
+
+function estimateTextWidth(text, size, bold = false) {
+  const base = bold ? 0.535 : 0.49;
+  let units = 0;
+  for (const character of latinText(text)) {
+    if ("ilI.,' ".includes(character)) units += base * 0.52;
+    else if ("MW@%".includes(character)) units += base * 1.46;
+    else units += base;
+  }
+  return units * size;
+}
+
+function splitLongWord(word, size, maxWidth, bold) {
+  const parts = [];
+  let current = "";
+  for (const character of word) {
+    const candidate = current + character;
+    if (current && estimateTextWidth(candidate, size, bold) > maxWidth) {
+      parts.push(current);
+      current = character;
+    } else {
+      current = candidate;
+    }
+  }
+  if (current) parts.push(current);
+  return parts;
+}
+
+function wrapText(value, size, maxWidth, bold = false) {
+  const paragraphs = latinText(value).split(/\r?\n/);
+  const lines = [];
+
+  paragraphs.forEach((paragraph, paragraphIndex) => {
+    const sourceWords = paragraph.trim().split(/\s+/).filter(Boolean);
+    const words = sourceWords.flatMap((word) =>
+      estimateTextWidth(word, size, bold) > maxWidth
+        ? splitLongWord(word, size, maxWidth, bold)
+        : [word],
+    );
+    let current = "";
+
+    for (const word of words) {
+      const candidate = current ? `${current} ${word}` : word;
+      if (current && estimateTextWidth(candidate, size, bold) > maxWidth) {
+        lines.push(current);
+        current = word;
+      } else {
+        current = candidate;
+      }
+    }
+    if (current) lines.push(current);
+    if (!words.length) lines.push("");
+    if (paragraphIndex < paragraphs.length - 1) lines.push("");
+  });
+
+  return lines.length ? lines : [""];
+}
+
+class PdfLayout {
+  constructor(report) {
+    this.report = report;
+    this.pages = [];
+    this.page = null;
+    this.y = TOP;
+    this.pageNumber = 0;
+    this.newPage();
+  }
+
+  newPage() {
+    this.pageNumber += 1;
+    this.page = [];
+    this.pages.push(this.page);
+    this.y = TOP;
+
+    this.rect(0, PAGE_HEIGHT - 23, PAGE_WIDTH, 23, COLORS.navy);
+    this.text("RDTS  /  ENTREPRENEURSHIP PROGRAM", MARGIN_X, PAGE_HEIGHT - 16, 7.3, true, COLORS.white);
+    this.text("FOUNDER ACTION BRIEF", PAGE_WIDTH - MARGIN_X, PAGE_HEIGHT - 16, 7.3, true, COLORS.white, "right");
+    this.text(this.report.createdDate, PAGE_WIDTH - MARGIN_X, 25, 7.2, false, COLORS.muted, "right");
+    this.text(`Page ${this.pageNumber}`, MARGIN_X, 25, 7.2, false, COLORS.muted);
+  }
+
+  ensure(height, forceNew = false) {
+    if (forceNew || this.y - height < BOTTOM) this.newPage();
+  }
+
+  rect(x, y, width, height, color, strokeColor = null) {
+    this.page.push("q");
+    this.page.push(colorCommand(color));
+    if (strokeColor) {
+      this.page.push(`${strokeColor.map((part) => part.toFixed(3)).join(" ")} RG`);
+      this.page.push(`${x.toFixed(2)} ${y.toFixed(2)} ${width.toFixed(2)} ${height.toFixed(2)} re B`);
+    } else {
+      this.page.push(`${x.toFixed(2)} ${y.toFixed(2)} ${width.toFixed(2)} ${height.toFixed(2)} re f`);
+    }
+    this.page.push("Q");
+  }
+
+  line(x1, y1, x2, y2, color = COLORS.line, width = 0.7) {
+    this.page.push("q");
+    this.page.push(`${color.map((part) => part.toFixed(3)).join(" ")} RG`);
+    this.page.push(`${width.toFixed(2)} w`);
+    this.page.push(`${x1.toFixed(2)} ${y1.toFixed(2)} m ${x2.toFixed(2)} ${y2.toFixed(2)} l S`);
+    this.page.push("Q");
+  }
+
+  text(value, x, y, size = 9.5, bold = false, color = COLORS.ink, align = "left") {
+    const safe = latinText(value);
+    let positionedX = x;
+    if (align === "right") positionedX -= estimateTextWidth(safe, size, bold);
+    if (align === "center") positionedX -= estimateTextWidth(safe, size, bold) / 2;
+    this.page.push(
+      `BT /${bold ? "F2" : "F1"} ${size.toFixed(2)} Tf ${colorCommand(color)} ` +
+      `1 0 0 1 ${positionedX.toFixed(2)} ${y.toFixed(2)} Tm (${pdfEscape(safe)}) Tj ET`,
+    );
+  }
+
+  paragraph(value, options = {}) {
+    const {
+      x = MARGIN_X,
+      width = CONTENT_WIDTH,
+      size = 9.2,
+      lineHeight = size * 1.42,
+      bold = false,
+      color = COLORS.ink,
+      gapAfter = 7,
+    } = options;
+    const lines = wrapText(value, size, width, bold);
+    this.ensure(lines.length * lineHeight + gapAfter);
+    lines.forEach((line) => {
+      this.text(line, x, this.y, size, bold, color);
+      this.y -= lineHeight;
+    });
+    this.y -= gapAfter;
+  }
+
+  heading(value, options = {}) {
+    const { size = 12.2, gapBefore = 8, gapAfter = 7 } = options;
+    this.ensure(size * 1.5 + gapBefore + gapAfter);
+    this.y -= gapBefore;
+    this.text(value, MARGIN_X, this.y, size, true, COLORS.navy);
+    this.y -= size * 1.25 + gapAfter;
+  }
+
+  label(value, color = COLORS.orange) {
+    this.ensure(17);
+    this.text(value.toUpperCase(), MARGIN_X, this.y, 7.1, true, color);
+    this.y -= 15;
+  }
+
+  bullet(title, detail, index) {
+    const detailLines = wrapText(detail, 8.7, CONTENT_WIDTH - 35, false);
+    const height = 19 + detailLines.length * 11.4 + 5;
+    this.ensure(height);
+    this.rect(MARGIN_X, this.y - 16, 20, 20, COLORS.navy);
+    this.text(String(index), MARGIN_X + 10, this.y - 9, 8.1, true, COLORS.white, "center");
+    this.text(title, MARGIN_X + 31, this.y, 9.4, true, COLORS.navy);
+    this.y -= 14;
+    detailLines.forEach((line) => {
+      this.text(line, MARGIN_X + 31, this.y, 8.7, false, COLORS.muted);
+      this.y -= 11.4;
+    });
+    this.y -= 6;
+  }
+
+  note(title, detail, color = COLORS.paleGreen, ink = COLORS.green) {
+    const lines = wrapText(detail, 8.6, CONTENT_WIDTH - 24, false);
+    const height = 27 + lines.length * 11.2;
+    this.ensure(height + 6);
+    this.rect(MARGIN_X, this.y - height + 6, CONTENT_WIDTH, height, color);
+    this.text(title.toUpperCase(), MARGIN_X + 12, this.y - 10, 7, true, ink);
+    let lineY = this.y - 24;
+    lines.forEach((line) => {
+      this.text(line, MARGIN_X + 12, lineY, 8.6, false, ink);
+      lineY -= 11.2;
+    });
+    this.y -= height + 8;
+  }
+
+  readiness(gates) {
+    const rowHeight = 24;
+    this.ensure(gates.length * rowHeight + 8);
+    gates.forEach((gate) => {
+      this.text(gate.name, MARGIN_X, this.y, 8.5, true, COLORS.muted);
+      const barX = MARGIN_X + 86;
+      const barWidth = CONTENT_WIDTH - 118;
+      this.rect(barX, this.y - 1, barWidth, 6, COLORS.line);
+      const fillColor =
+        gate.status === "high"
+          ? COLORS.green
+          : gate.status === "medium"
+            ? [0.82, 0.55, 0.13]
+            : [0.63, 0.25, 0.21];
+      this.rect(barX, this.y - 1, barWidth * (gate.value / 100), 6, fillColor);
+      this.text(`${gate.value}%`, PAGE_WIDTH - MARGIN_X, this.y, 8.1, true, COLORS.muted, "right");
+      this.y -= rowHeight;
+    });
+    this.y -= 2;
+  }
+
+  weekGrid(weeks) {
+    const columnGap = 10;
+    const columnWidth = (CONTENT_WIDTH - columnGap) / 2;
+    for (let index = 0; index < weeks.length; index += 2) {
+      const pair = weeks.slice(index, index + 2);
+      const lineSets = pair.map((week) => wrapText(week.detail, 8.1, columnWidth - 20));
+      const maxLines = Math.max(...lineSets.map((lines) => lines.length));
+      const height = 34 + maxLines * 10.4;
+      this.ensure(height + 8);
+      pair.forEach((week, pairIndex) => {
+        const x = MARGIN_X + pairIndex * (columnWidth + columnGap);
+        this.rect(x, this.y - height + 6, columnWidth, height, COLORS.cream, COLORS.line);
+        this.text(`WEEK ${index + pairIndex + 1}`, x + 10, this.y - 10, 6.8, true, COLORS.orange);
+        this.text(week.title, x + 10, this.y - 23, 9, true, COLORS.navy);
+        let lineY = this.y - 37;
+        lineSets[pairIndex].forEach((line) => {
+          this.text(line, x + 10, lineY, 8.1, false, COLORS.muted);
+          lineY -= 10.4;
+        });
+      });
+      this.y -= height + 9;
+    }
+  }
+
+  cuePair(cues) {
+    const columnGap = 10;
+    const columnWidth = (CONTENT_WIDTH - columnGap) / 2;
+    const lineSets = cues.map((cue) => ({
+      title: wrapText(cue.title, 8.5, columnWidth - 20, true),
+      detail: wrapText(cue.detail, 7.8, columnWidth - 20),
+    }));
+    const maxTitleLines = Math.max(...lineSets.map((item) => item.title.length));
+    const maxDetailLines = Math.max(...lineSets.map((item) => item.detail.length));
+    const height = 24 + maxTitleLines * 10.5 + maxDetailLines * 9.7;
+    this.ensure(height + 8);
+    cues.forEach((cue, index) => {
+      const x = MARGIN_X + index * (columnWidth + columnGap);
+      this.rect(x, this.y - height + 6, columnWidth, height, COLORS.paleBlue, COLORS.line);
+      this.text(index === 0 ? "PROOF DESIGN" : "BUYER PATH", x + 10, this.y - 10, 6.4, true, COLORS.blue);
+      let lineY = this.y - 24;
+      lineSets[index].title.forEach((line) => {
+        this.text(line, x + 10, lineY, 8.5, true, COLORS.navy);
+        lineY -= 10.5;
+      });
+      lineY -= 2;
+      lineSets[index].detail.forEach((line) => {
+        this.text(line, x + 10, lineY, 7.8, false, COLORS.muted);
+        lineY -= 9.7;
+      });
+    });
+    this.y -= height + 9;
+  }
+
+  keyValueGrid(snapshot) {
+    const columns = 3;
+    const columnGap = 7;
+    const columnWidth = (CONTENT_WIDTH - columnGap * (columns - 1)) / columns;
+    for (let index = 0; index < snapshot.length; index += columns) {
+      const pair = snapshot.slice(index, index + columns);
+      const lineSets = pair.map(([, value]) => wrapText(value, 7.9, columnWidth - 20));
+      const maxLines = Math.max(...lineSets.map((lines) => lines.length));
+      const height = 27 + maxLines * 10;
+      this.ensure(height + 5);
+      pair.forEach(([key], pairIndex) => {
+        const x = MARGIN_X + pairIndex * (columnWidth + columnGap);
+        this.rect(x, this.y - height + 5, columnWidth, height, COLORS.cream);
+        this.text(key.toUpperCase(), x + 9, this.y - 8, 6.2, true, COLORS.muted);
+        let lineY = this.y - 20;
+        lineSets[pairIndex].forEach((line) => {
+          this.text(line, x + 9, lineY, 7.9, false, COLORS.ink);
+          lineY -= 10;
+        });
+      });
+      this.y -= height + 5;
+    }
+  }
+}
+
+function renderReport(report) {
+  const pdf = new PdfLayout(report);
+
+  pdf.label(`${report.version}  /  ${report.state.ventureName}`);
+  pdf.paragraph(report.phase.title, {
+    size: 21,
+    lineHeight: 24,
+    bold: true,
+    color: COLORS.navy,
+    gapAfter: 5,
+  });
+  pdf.paragraph(`READINESS VERDICT: ${report.phase.label.toUpperCase()}`, {
+    size: 8.3,
+    bold: true,
+    color: COLORS.orange,
+    gapAfter: 7,
+  });
+  pdf.paragraph(report.phase.summary, {
+    size: 9.5,
+    lineHeight: 13.5,
+    color: COLORS.muted,
+    gapAfter: 10,
+  });
+  pdf.note("Focused opportunity", report.opportunity, COLORS.paleOrange, COLORS.navy);
+
+  if (report.mismatch) {
+    pdf.note("Evidence check", report.mismatch, [0.99, 0.94, 0.84], [0.52, 0.34, 0.07]);
+  }
+
+  pdf.heading("The next three actions");
+  report.actions.forEach((action, index) => {
+    pdf.bullet(action.title, action.detail, index + 1);
+  });
+  pdf.note("Evidence to advance", report.exitGate);
+
+  pdf.heading("Evidence gates");
+  pdf.readiness(report.readiness);
+
+  pdf.heading("Your 30-day plan");
+  pdf.weekGrid(report.weeks);
+
+  pdf.newPage();
+  pdf.label("Proof, adoption & capital");
+  pdf.cuePair([report.proofCue, report.buyerCue]);
+
+  pdf.heading("Critical adoption gates", { gapBefore: 0 });
+  report.barriers.forEach((risk, index) => {
+    pdf.bullet(risk.title, risk.detail, index + 1);
+  });
+
+  pdf.heading("Funding path", { gapBefore: 0 });
+  pdf.note("Now", report.funding.now, COLORS.paleBlue, COLORS.navy);
+  pdf.paragraph(`After the next milestone: ${report.funding.after}`, {
+    size: 8.6,
+    color: COLORS.muted,
+    gapAfter: 5,
+  });
+  pdf.paragraph(`Avoid for now: ${report.funding.avoid}`, {
+    size: 8.6,
+    color: COLORS.muted,
+    gapAfter: 10,
+  });
+
+  pdf.heading("Ready-to-send RDTS support request", { gapBefore: 0 });
+  pdf.note("Community ask", report.rdtsAsk, COLORS.navy, COLORS.white);
+
+  pdf.heading("Answer snapshot", { gapBefore: 0 });
+  pdf.keyValueGrid(report.snapshot);
+
+  pdf.heading("Important note", { gapBefore: 0, size: 9.5 });
+  pdf.paragraph(report.disclaimer, {
+    size: 7.5,
+    lineHeight: 10,
+    color: COLORS.muted,
+    gapAfter: 2,
+  });
+
+  return pdf.pages;
+}
+
+function assemblePdf(pageStreams) {
+  const objects = new Map();
+  const pageRefs = [];
+
+  objects.set(1, "<< /Type /Catalog /Pages 2 0 R >>");
+  objects.set(3, "<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>");
+  objects.set(4, "<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>");
+
+  pageStreams.forEach((commands, pageIndex) => {
+    const pageObject = 5 + pageIndex * 2;
+    const contentObject = pageObject + 1;
+    pageRefs.push(`${pageObject} 0 R`);
+    const stream = `${commands.join("\n")}\n`;
+    objects.set(
+      pageObject,
+      `<< /Type /Page /Parent 2 0 R /MediaBox [0 0 ${PAGE_WIDTH.toFixed(2)} ${PAGE_HEIGHT.toFixed(2)}] ` +
+      `/Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents ${contentObject} 0 R >>`,
+    );
+    objects.set(contentObject, `<< /Length ${stream.length} >>\nstream\n${stream}endstream`);
+  });
+
+  objects.set(2, `<< /Type /Pages /Kids [${pageRefs.join(" ")}] /Count ${pageRefs.length} >>`);
+
+  const maxObject = Math.max(...objects.keys());
+  let output = "%PDF-1.4\n% RDTS Action Brief\n";
+  const offsets = [0];
+  for (let objectNumber = 1; objectNumber <= maxObject; objectNumber += 1) {
+    offsets[objectNumber] = output.length;
+    output += `${objectNumber} 0 obj\n${objects.get(objectNumber)}\nendobj\n`;
+  }
+
+  const xrefOffset = output.length;
+  output += `xref\n0 ${maxObject + 1}\n`;
+  output += "0000000000 65535 f \n";
+  for (let objectNumber = 1; objectNumber <= maxObject; objectNumber += 1) {
+    output += `${String(offsets[objectNumber]).padStart(10, "0")} 00000 n \n`;
+  }
+  output +=
+    `trailer\n<< /Size ${maxObject + 1} /Root 1 0 R >>\n` +
+    `startxref\n${xrefOffset}\n%%EOF`;
+
+  return new TextEncoder().encode(output);
+}
+
+function createReportPdfBytes(report) {
+  return assemblePdf(renderReport(report));
+}
+
+function reportFilename(report) {
+  const venture = latinText(report.state.ventureName)
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "")
+    .slice(0, 48) || "energy-venture";
+  return `${venture}-founder-action-brief.pdf`;
+}
+
+function downloadReportPdf(report) {
+  const bytes = createReportPdfBytes(report);
+  const url = URL.createObjectURL(new Blob([bytes], { type: "application/pdf" }));
+  const anchor = document.createElement("a");
+  anchor.href = url;
+  anchor.download = reportFilename(report);
+  document.body.append(anchor);
+  anchor.click();
+  anchor.remove();
+  window.setTimeout(() => URL.revokeObjectURL(url), 2000);
+}
+
+
+const stepMeta = [
+  { title: "Your situation", percent: 25 },
+  { title: "Problem evidence", percent: 50 },
+  { title: "Proof & commitment", percent: 75 },
+  { title: "Adoption constraints", percent: 100 },
+  { title: "Your action brief", percent: 100 },
+];
+
+const form = document.querySelector("#navigatorForm");
+const guide = document.querySelector("#guide");
+const hero = document.querySelector("#hero");
+const method = document.querySelector("#method");
+const closingNote = document.querySelector("#closingNote");
+const startButton = document.querySelector("#startButton");
+const howItWorksButton = document.querySelector("#howItWorksButton");
+const nextButton = document.querySelector("#nextButton");
+const backButton = document.querySelector("#backButton");
+const formActions = document.querySelector("#formActions");
+const progressBar = document.querySelector("#progressBar");
+const progressTrack = document.querySelector(".progress-track");
+const mobileStepLabel = document.querySelector("#mobileStepLabel");
+const mobileStepTitle = document.querySelector("#mobileStepTitle");
+const mobileProgressText = document.querySelector("#mobileProgressText");
+const sidebarTitle = document.querySelector("#sidebarTitle");
+const runwayField = document.querySelector("#runwayField");
+const toast = document.querySelector("#toast");
+const resultContent = document.querySelector("#resultContent");
+const questionScreens = [...document.querySelectorAll(".question-screen")];
+const resultScreen = document.querySelector(".result-screen");
+const stepButtons = [...document.querySelectorAll(".step-nav-item")];
+
+let currentStep = 0;
+let maxUnlockedStep = 0;
+let activeReport = null;
+let toastTimer = null;
+
+function element(tag, className = "", text = "") {
+  const node = document.createElement(tag);
+  if (className) node.className = className;
+  if (text !== "") node.textContent = text;
+  return node;
+}
+
+function append(parent, ...children) {
+  children.filter(Boolean).forEach((child) => parent.append(child));
+  return parent;
+}
+
+function showToast(message) {
+  window.clearTimeout(toastTimer);
+  toast.textContent = message;
+  toast.classList.add("visible");
+  toastTimer = window.setTimeout(() => toast.classList.remove("visible"), 2600);
+}
+
+function readState() {
+  const data = new FormData(form);
+  const resourceNeed = String(data.get("resourceNeed") ?? "");
+  return {
+    ventureName: String(data.get("ventureName") ?? ""),
+    solutionType: String(data.get("solutionType") ?? ""),
+    buyer: String(data.get("buyer") ?? ""),
+    problem: String(data.get("problem") ?? ""),
+    customerEvidence: String(data.get("customerEvidence") ?? ""),
+    decisionPath: String(data.get("decisionPath") ?? ""),
+    focus: String(data.get("focus") ?? ""),
+    technicalProof: String(data.get("technicalProof") ?? ""),
+    commitment: String(data.get("commitment") ?? ""),
+    successMetric: String(data.get("successMetric") ?? ""),
+    barriers: data.getAll("barriers").map(String),
+    resourceNeed,
+    runway: shouldAskRunway(resourceNeed)
+      ? String(data.get("runway") ?? "")
+      : "not_needed",
+  };
+}
+
+function clearFieldError(fieldName) {
+  const field = form.querySelector(`[data-required-field="${fieldName}"]`);
+  if (!field) return;
+  field.classList.remove("invalid");
+  field.removeAttribute("aria-invalid");
+  const error = form.querySelector(`[data-error-for="${fieldName}"]`);
+  if (error) error.textContent = "";
+  field.querySelectorAll("input, textarea").forEach((control) => {
+    control.removeAttribute("aria-invalid");
+  });
+}
+
+function clearStepErrors(stepIndex) {
+  const screen = questionScreens[stepIndex];
+  if (!screen) return;
+  screen.querySelectorAll("[data-required-field]").forEach((field) => {
+    clearFieldError(field.dataset.requiredField);
+  });
+}
+
+function showErrors(errors) {
+  let firstControl = null;
+  for (const [fieldName, message] of Object.entries(errors)) {
+    const field = form.querySelector(`[data-required-field="${fieldName}"]`);
+    const error = form.querySelector(`[data-error-for="${fieldName}"]`);
+    if (!field) continue;
+    field.classList.add("invalid");
+    field.setAttribute("aria-invalid", "true");
+    if (error) error.textContent = message;
+    const control = field.querySelector("input:not([disabled]), textarea:not([disabled])");
+    if (control) {
+      control.setAttribute("aria-invalid", "true");
+      if (!firstControl) firstControl = control;
+    }
+  }
+  firstControl?.focus();
+}
+
+function updateRunwayVisibility() {
+  const state = readState();
+  const visible = shouldAskRunway(state.resourceNeed);
+  runwayField.hidden = !visible;
+  runwayField.querySelectorAll("input").forEach((input) => {
+    input.disabled = !visible;
+    if (!visible) input.checked = false;
+  });
+  if (!visible) clearFieldError("runway");
+}
+
+function updateCounters() {
+  const problem = form.elements.problem;
+  const metric = form.elements.successMetric;
+  document.querySelector("#problemCount").textContent = `${problem.value.length} / 160`;
+  document.querySelector("#metricCount").textContent = `${metric.value.length} / 120`;
+  const selected = form.querySelectorAll('input[name="barriers"]:checked').length;
+  document.querySelector("#barrierSelectionCount").textContent = `${selected} / 3 selected`;
+}
+
+function updateProgress() {
+  const meta = stepMeta[currentStep];
+  progressBar.style.width = `${meta.percent}%`;
+  progressTrack.setAttribute("aria-valuenow", String(meta.percent));
+  mobileStepLabel.textContent =
+    currentStep < 4 ? `Step ${currentStep + 1} of 4` : "Complete";
+  mobileStepTitle.textContent = meta.title;
+  mobileProgressText.textContent = `${meta.percent}%`;
+  sidebarTitle.textContent = meta.title;
+
+  stepButtons.forEach((button, index) => {
+    button.classList.toggle("active", index === currentStep);
+    button.classList.toggle("complete", index < currentStep || (currentStep === 4 && index < 4));
+    button.disabled = index > maxUnlockedStep;
+    if (index === currentStep) {
+      button.setAttribute("aria-current", "step");
+    } else {
+      button.removeAttribute("aria-current");
+    }
+    const marker = button.querySelector(":scope > span:first-child");
+    if (marker) marker.textContent = index < currentStep || (currentStep === 4 && index < 4) ? "✓" : `0${index + 1}`;
+  });
+}
+
+function goToStep(step, options = {}) {
+  const target = Math.max(0, Math.min(step, 4));
+  if (target > maxUnlockedStep) return;
+  currentStep = target;
+
+  questionScreens.forEach((screen, index) => {
+    const active = index === target;
+    screen.hidden = !active;
+    screen.classList.toggle("active", active);
+  });
+  resultScreen.hidden = target !== 4;
+  formActions.hidden = target === 4;
+  backButton.hidden = target === 0;
+  if (target < 4) {
+    nextButton.textContent = "";
+    nextButton.append(
+      document.createTextNode(target === 3 ? "Build my brief " : "Continue "),
+      element("span", "", "→"),
+    );
+    nextButton.querySelector("span").setAttribute("aria-hidden", "true");
+  }
+
+  updateProgress();
+
+  if (options.scroll !== false) {
+    guide.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
+  const heading =
+    target < 4
+      ? questionScreens[target].querySelector("h2")
+      : resultContent.querySelector("h2");
+  if (heading) {
+    heading.tabIndex = -1;
+    window.setTimeout(() => heading.focus({ preventScroll: true }), 280);
+  }
+}
+
+function addActionItem(container, action, index) {
+  const item = element("div", "action-item");
+  const number = element("span", "action-number", String(index + 1));
+  const copy = element("div");
+  append(copy, element("strong", "", action.title), element("p", "", action.detail));
+  append(item, number, copy);
+  container.append(item);
+}
+
+function addWeekCard(container, week, index) {
+  const card = element("div", "week-card");
+  append(
+    card,
+    element("span", "", `Week ${index + 1}`),
+    element("strong", "", week.title),
+    element("p", "", week.detail),
+  );
+  container.append(card);
+}
+
+function reportCard(kicker, title, className = "") {
+  const card = element("section", `report-card ${className}`.trim());
+  append(card, element("span", "report-kicker", kicker), element("h3", "", title));
+  return card;
+}
+
+function renderResult(report) {
+  resultContent.replaceChildren();
+
+  const heroBlock = element("div", "result-hero");
+  const phaseRow = element("div", "result-phase-row");
+  const phaseCopy = element("div");
+  const badge = element("span", "phase-badge");
+  append(badge, element("i"), document.createTextNode(` Readiness verdict · ${report.phase.label}`));
+  append(
+    phaseCopy,
+    badge,
+    element("h2", "", report.phase.title),
+    element("p", "result-summary", report.phase.summary),
+  );
+  append(phaseRow, phaseCopy, element("span", "phase-number", report.phase.number));
+  heroBlock.append(phaseRow);
+
+  const toolbar = element("div", "result-toolbar");
+  const downloadButton = element("button", "button button-primary", "Download PDF");
+  downloadButton.type = "button";
+  downloadButton.addEventListener("click", () => {
+    downloadReportPdf(report);
+    showToast("Your Founder Action Brief is downloading.");
+  });
+  const printButton = element("button", "button button-secondary", "Print / Save as PDF");
+  printButton.type = "button";
+  printButton.addEventListener("click", () => window.print());
+  const editButton = element("button", "button button-secondary", "Edit answers");
+  editButton.type = "button";
+  editButton.addEventListener("click", () => {
+    maxUnlockedStep = Math.max(maxUnlockedStep, 4);
+    goToStep(0);
+  });
+  const resetButton = element("button", "button button-secondary", "Start over");
+  resetButton.type = "button";
+  resetButton.addEventListener("click", resetGuide);
+  append(toolbar, downloadButton, printButton, editButton, resetButton);
+  heroBlock.append(toolbar);
+
+  const body = element("div", "result-body");
+  const mainColumn = element("div", "result-column");
+  const sideColumn = element("div", "result-column");
+
+  const opportunityCard = reportCard("Your focused opportunity", report.state.ventureName, "report-card-accent");
+  opportunityCard.append(element("div", "opportunity-statement", report.opportunity));
+  const trace = element("div", "why-trace");
+  report.trace.forEach((item) => trace.append(element("span", "", item)));
+  opportunityCard.append(trace);
+  if (report.mismatch) {
+    opportunityCard.append(element("p", "mismatch-note", report.mismatch));
+  }
+  mainColumn.append(opportunityCard);
+
+  const actionsCard = reportCard("Next best action", `Advance from ${report.phase.label}`);
+  const actionsList = element("div", "action-list");
+  report.actions.forEach((action, index) => addActionItem(actionsList, action, index));
+  actionsCard.append(actionsList);
+  const exitGate = element("div", "exit-gate");
+  append(exitGate, element("strong", "", "Evidence to advance"), document.createTextNode(report.exitGate));
+  actionsCard.append(exitGate);
+  mainColumn.append(actionsCard);
+
+  const cuesCard = reportCard("Proof or pilot brief", "Design for evidence and adoption");
+  const cueGrid = element("div", "cue-grid");
+  [report.proofCue, report.buyerCue].forEach((cue) => {
+    const cueItem = element("div", "cue-item");
+    append(cueItem, element("strong", "", cue.title), element("p", "", cue.detail));
+    cueGrid.append(cueItem);
+  });
+  cuesCard.append(cueGrid);
+  mainColumn.append(cuesCard);
+
+  const planCard = reportCard("30-day sprint", "Four weeks to the next decision");
+  const weekGrid = element("div", "week-grid");
+  report.weeks.forEach((week, index) => addWeekCard(weekGrid, week, index));
+  planCard.append(weekGrid);
+  mainColumn.append(planCard);
+
+  const readinessCard = reportCard("Evidence gates", "What is strong—and what is not");
+  const readinessList = element("div", "readiness-list");
+  report.readiness.forEach((gate) => {
+    const row = element("div", `readiness-row ${gate.status}`);
+    const bar = element("span", "readiness-bar");
+    const fill = element("i");
+    fill.style.width = `${gate.value}%`;
+    bar.append(fill);
+    append(row, element("span", "", gate.name), bar, element("strong", "", `${gate.value}%`));
+    readinessList.append(row);
+  });
+  readinessCard.append(readinessList);
+  sideColumn.append(readinessCard);
+
+  const risksCard = reportCard("Critical gates", report.barriers.length === 1 ? "One risk to clear" : "Risks to clear");
+  const riskList = element("div", "risk-list");
+  report.barriers.forEach((risk) => {
+    const riskItem = element("div", "risk-item");
+    append(riskItem, element("strong", "", risk.title), element("p", "", risk.detail));
+    riskList.append(riskItem);
+  });
+  risksCard.append(riskList);
+  sideColumn.append(risksCard);
+
+  const fundingCard = reportCard("Capital strategy", "Match money to the evidence gate");
+  const fundingNow = element("div", "funding-now");
+  append(fundingNow, element("span", "", "Now"), element("strong", "", report.funding.now));
+  const fundingAfter = element("p", "funding-after");
+  append(fundingAfter, element("strong", "", "After the next milestone: "), document.createTextNode(report.funding.after));
+  const avoidNow = element("p", "avoid-now");
+  append(avoidNow, element("strong", "", "Avoid for now: "), document.createTextNode(`${report.funding.avoid} ${report.avoid}`));
+  append(fundingCard, fundingNow, fundingAfter, avoidNow);
+  sideColumn.append(fundingCard);
+
+  const supportCard = reportCard("RDTS support request", "A specific ask gets a useful answer");
+  supportCard.append(element("div", "rdts-ask", report.rdtsAsk));
+  const copyButton = element("button", "copy-ask", "Copy this request");
+  copyButton.type = "button";
+  copyButton.addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText(report.rdtsAsk);
+      showToast("RDTS support request copied.");
+    } catch {
+      showToast("Copy was blocked. Select the text and copy it manually.");
+    }
+  });
+  supportCard.append(copyButton);
+
+  const details = element("details", "answer-details");
+  details.append(element("summary", "", "Review answer snapshot"));
+  const snapshot = element("div", "answer-snapshot");
+  report.snapshot.forEach(([key, value]) => {
+    const item = element("div");
+    append(item, element("span", "", key), element("strong", "", value));
+    snapshot.append(item);
+  });
+  details.append(snapshot);
+  supportCard.append(details);
+  supportCard.append(element("p", "report-disclaimer", report.disclaimer));
+  sideColumn.append(supportCard);
+
+  append(body, mainColumn, sideColumn);
+  append(resultContent, heroBlock, body);
+}
+
+function validateCurrentStep() {
+  clearStepErrors(currentStep);
+  const errors = validateStep(readState(), currentStep);
+  if (Object.keys(errors).length) {
+    showErrors(errors);
+    showToast("Complete the highlighted answer to continue.");
+    return false;
+  }
+  return true;
+}
+
+function advance() {
+  if (currentStep >= 4 || !validateCurrentStep()) return;
+
+  if (currentStep < 3) {
+    maxUnlockedStep = Math.max(maxUnlockedStep, currentStep + 1);
+    goToStep(currentStep + 1);
+    return;
+  }
+
+  try {
+    activeReport = buildReport(readState());
+    renderResult(activeReport);
+    maxUnlockedStep = 4;
+    goToStep(4);
+  } catch (error) {
+    if (error.fields) showErrors(error.fields);
+    showToast("A required answer is missing. Please review the highlighted field.");
+  }
+}
+
+function rebuildAndOpenResult() {
+  try {
+    activeReport = buildReport(readState());
+    renderResult(activeReport);
+    maxUnlockedStep = 4;
+    goToStep(4);
+  } catch (error) {
+    if (error.fields) {
+      const firstField = Object.keys(error.fields)[0];
+      const firstScreenIndex = questionScreens.findIndex((screen) =>
+        screen.querySelector(`[data-required-field="${firstField}"]`),
+      );
+      if (firstScreenIndex >= 0) goToStep(firstScreenIndex);
+      showErrors(error.fields);
+    }
+    showToast("A required answer is missing. Please review the highlighted field.");
+  }
+}
+
+function resetGuide() {
+  const confirmed = window.confirm(
+    "Clear these answers and start a new Founder Action Brief?",
+  );
+  if (!confirmed) return;
+  form.reset();
+  activeReport = null;
+  resultContent.replaceChildren();
+  maxUnlockedStep = 0;
+  updateRunwayVisibility();
+  updateCounters();
+  questionScreens.forEach((_, index) => clearStepErrors(index));
+  goToStep(0);
+}
+
+startButton?.addEventListener("click", () => {
+  guide.hidden = false;
+  if (closingNote) closingNote.hidden = true;
+  maxUnlockedStep = Math.max(maxUnlockedStep, 0);
+  goToStep(0);
+});
+
+howItWorksButton?.addEventListener("click", () => {
+  if (!method) return;
+  method.hidden = !method.hidden;
+  if (!method.hidden) method.scrollIntoView({ behavior: "smooth", block: "center" });
+});
+
+nextButton.addEventListener("click", advance);
+backButton.addEventListener("click", () => {
+  if (currentStep > 0 && currentStep <= 3) goToStep(currentStep - 1);
+});
+
+stepButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const target = Number(button.dataset.stepTarget);
+    if (!Number.isFinite(target) || target > maxUnlockedStep) return;
+    if (target === 4) {
+      rebuildAndOpenResult();
+      return;
+    }
+    goToStep(target);
+  });
+});
+
+form.addEventListener("change", (event) => {
+  const target = event.target;
+  if (!(target instanceof HTMLInputElement)) return;
+
+  if (target.name === "barriers") {
+    const barrierInputs = [...form.querySelectorAll('input[name="barriers"]')];
+    const unknown = barrierInputs.find((input) => input.value === "unknown");
+    if (target.checked && target.value === "unknown") {
+      barrierInputs.forEach((input) => {
+        if (input !== target) input.checked = false;
+      });
+    } else if (target.checked && unknown) {
+      unknown.checked = false;
+    }
+
+    const selected = barrierInputs.filter((input) => input.checked);
+    if (selected.length > 3) {
+      target.checked = false;
+      showToast("Choose up to three adoption barriers.");
+    }
+    updateCounters();
+  }
+
+  if (target.name === "resourceNeed") updateRunwayVisibility();
+  if (target.name) clearFieldError(target.name);
+});
+
+form.addEventListener("input", (event) => {
+  const target = event.target;
+  if (!(target instanceof HTMLInputElement || target instanceof HTMLTextAreaElement)) return;
+  if (target.name) clearFieldError(target.name);
+  updateCounters();
+});
+
+form.addEventListener("keydown", (event) => {
+  if (
+    event.key === "Enter" &&
+    !(event.target instanceof HTMLTextAreaElement) &&
+    event.target instanceof HTMLInputElement &&
+    event.target.type === "text"
+  ) {
+    event.preventDefault();
+    advance();
+  }
+});
+
+const params = new URLSearchParams(window.location.search);
+if (params.get("embed") === "1") {
+  document.body.classList.add("embed");
+  if (hero) hero.hidden = true;
+  if (method) method.hidden = true;
+  guide.hidden = false;
+  if (closingNote) closingNote.hidden = true;
+}
+
+updateRunwayVisibility();
+updateCounters();
+updateProgress();
+
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to the guide</a>
+
+    <header class="site-header">
+      <a class="brand original-brand" href="https://connect.spe.org/rdts/programs/ep" target="_blank" rel="noopener">
+        <img
+          class="header-logo"
+          src="https://higherlogicdownload.s3.amazonaws.com/SPE/MessageImages/7dc1243ee4e5484a936f51208f66e737.png"
+          alt="SPE International"
+        >
+        <span class="brand-copy">
+          <strong>SPE Research &amp; Development Technical Section</strong>
+          <span>Entrepreneurship Program</span>
+        </span>
+      </a>
+      <nav class="header-nav" aria-label="Page navigation">
+        <a href="#overview">Overview</a>
+        <a href="#pathway">7-Step Pathway</a>
+        <a href="#workbook">Interactive Workbook</a>
+        <a href="https://connect.spe.org/rdts/programs/ep" target="_blank" rel="noopener">Program Page</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero original-hero" id="hero">
+        <div class="original-hero-inner">
+          <p class="brand-eyebrow">SPE Research &amp; Development Technical Section</p>
+          <span class="version-pill">Entrepreneurship Program · 2026 Edition</span>
+          <h1>Entrepreneurship Program: <strong>From Idea to Energy Company</strong></h1>
+          <p class="hero-lede">
+            An interactive guide from the <strong>SPE Research &amp; Development Technical Section,
+            Entrepreneurship Program</strong> for technical founders moving from concept to execution in
+            energy and industrial systems. It emphasizes problem validation, focused market entry,
+            minimum viable proof, IP protection, pilots with commercial intent, funding strategy,
+            and the right communities.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary button-large" id="startButton" href="#workbook">
+              Start the Workbook <span aria-hidden="true">→</span>
+            </a>
+            <a class="button button-hero-secondary" href="#overview">Read the Overview</a>
+            <a class="button button-hero-secondary" href="https://connect.spe.org/rdts/programs/ep" target="_blank" rel="noopener">
+              Visit Program Page
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="overview-card" id="overview">
+        <div class="overview-head">
+          <h2>Purpose of the SPE Research &amp; Development Technical Section Entrepreneurship Program Playbook v2</h2>
+          <p>
+            This version reframes the original startup workbook as a practical playbook for energy founders
+            who need to bridge technical feasibility and commercial viability.
+          </p>
+        </div>
+
+        <div class="visual-grid">
+          <div class="body-copy">
+            <p>
+              The energy industry is full of people with strong technical ideas. Engineers, scientists,
+              geoscientists, and operators routinely identify inefficiencies, risks, and missed opportunities
+              that could become useful products or services. The goal of this playbook is to help promising
+              ideas move beyond a conversation or slide deck.
+            </p>
+            <p>
+              It is written for technical specialists, side-hustle innovators, academic pioneers, and industry
+              veterans working across traditional infrastructure, climate-tech and decarbonization, and the
+              digital layer of energy systems.
+            </p>
+            <div class="legacy-info-box orange">
+              <span aria-hidden="true">!</span>
+              <p>
+                <strong>Reality check:</strong> energy startups face long sales cycles, pilot requirements,
+                proprietary data, safety and reliability constraints, and extensive due diligence. These
+                barriers are real, but once a solution is proven and embedded into operations, they can become
+                a structural moat.
+              </p>
+            </div>
+          </div>
+          <figure class="visual-card">
+            <img
+              src="https://higherlogicdownload.s3.amazonaws.com/SPE/MessageImages/7e6059f323e1449096edfccd9facc0cf.jpg"
+              alt="Energy founders playbook reader and sector overview"
+              loading="lazy"
+            >
+          </figure>
+        </div>
+
+        <div class="visual-grid visual-grid-reverse" id="pathway">
+          <figure class="visual-card">
+            <img
+              src="https://higherlogicdownload.s3.amazonaws.com/SPE/MessageImages/99375cca7db741bcac4894e87eed28f5.jpg"
+              alt="Core principles of energy startups"
+              loading="lazy"
+            >
+          </figure>
+          <div class="body-copy principles-copy">
+            <p class="section-label">Guiding Principles</p>
+            <ul>
+              <li><strong>Problems matter more than solutions.</strong> A clear, expensive, recurring problem is the foundation.</li>
+              <li><strong>Radical focus beats broad application.</strong> Narrow entry points improve learning, credibility, and traction.</li>
+              <li><strong>Pilots must have commercial intent.</strong> Success criteria and next steps need to be explicit.</li>
+              <li><strong>Community is a strategic asset.</strong> SPE and RDTS connections can accelerate feedback, mentorship, and adoption while founders still protect confidential IP.</li>
+            </ul>
+          </div>
+        </div>
+
+        <figure class="pathway-figure">
+          <img
+            src="https://higherlogicdownload.s3.amazonaws.com/SPE/MessageImages/a981a01b763c406c8749245d3cf4e0c1.jpg"
+            alt="Seven-step pathway from idea to energy company"
+            loading="lazy"
+          >
+        </figure>
+      </section>
+
+      <section class="workbook-intro" id="workbook">
+        <div>
+          <p class="eyebrow">Interactive Workbook · Streamlined</p>
+          <h2>Turn nine decisions into your next 30 days.</h2>
+          <p>
+            This replaces only the long selection workbook below. The playbook context, figures, and
+            seven-step pathway above remain unchanged.
+          </p>
+        </div>
+        <ul aria-label="Workbook features">
+          <li><strong>~7 minutes</strong><span>Nine focused decisions</span></li>
+          <li><strong>Private</strong><span>Nothing is uploaded</span></li>
+          <li><strong>PDF brief</strong><span>Specific actions and gates</span></li>
+        </ul>
+      </section>
+
+      <section class="guide-shell" id="guide">
+        <aside class="guide-sidebar" aria-label="Guide progress">
+          <div class="sidebar-intro">
+            <span class="sidebar-kicker">Founder Action Brief</span>
+            <strong id="sidebarTitle">Your situation</strong>
+            <p>One short screen at a time.</p>
+          </div>
+          <nav class="step-nav" aria-label="Questionnaire steps">
+            <button class="step-nav-item active" type="button" data-step-target="0" aria-current="step">
+              <span>01</span><span><strong>Situation</strong><small>Venture &amp; buyer</small></span>
+            </button>
+            <button class="step-nav-item" type="button" data-step-target="1" disabled>
+              <span>02</span><span><strong>Evidence</strong><small>Problem &amp; focus</small></span>
+            </button>
+            <button class="step-nav-item" type="button" data-step-target="2" disabled>
+              <span>03</span><span><strong>Proof</strong><small>Test &amp; commitment</small></span>
+            </button>
+            <button class="step-nav-item" type="button" data-step-target="3" disabled>
+              <span>04</span><span><strong>Constraints</strong><small>Risk &amp; resources</small></span>
+            </button>
+            <button class="step-nav-item" type="button" data-step-target="4" disabled>
+              <span>05</span><span><strong>Your brief</strong><small>Priority &amp; plan</small></span>
+            </button>
+          </nav>
+          <div class="sidebar-note">
+            <span aria-hidden="true">◎</span>
+            <p><strong>Local by design</strong>Your answers stay in this browser tab and are never uploaded.</p>
+          </div>
+        </aside>
+
+        <div class="guide-main">
+          <div class="mobile-progress">
+            <div>
+              <span id="mobileStepLabel">Step 1 of 4</span>
+              <strong id="mobileStepTitle">Your situation</strong>
+            </div>
+            <span id="mobileProgressText">25%</span>
+          </div>
+          <div
+            class="progress-track"
+            role="progressbar"
+            aria-label="Questionnaire progress"
+            aria-valuemin="0"
+            aria-valuemax="100"
+            aria-valuenow="25"
+          >
+            <span id="progressBar" style="width: 25%"></span>
+          </div>
+
+          <form id="navigatorForm" novalidate>
+            <section class="question-screen active" data-step="0" aria-labelledby="step0Title">
+              <div class="screen-head">
+                <p class="screen-count">01 / 04</p>
+                <div>
+                  <p class="eyebrow">Your situation</p>
+                  <h2 id="step0Title">Give us the shape of the venture.</h2>
+                  <p>We only ask for information that can change the recommendation.</p>
+                </div>
+              </div>
+
+              <div class="field text-field optional-field">
+                <label for="ventureName">Venture name <span>Optional</span></label>
+                <input id="ventureName" name="ventureName" type="text" maxlength="80" autocomplete="organization" placeholder="e.g. ReservoirAI">
+              </div>
+
+              <fieldset class="field option-field" data-required-field="solutionType">
+                <legend>What are you bringing to market?</legend>
+                <p class="field-help" id="solutionTypeHelp">Choose the closest fit.</p>
+                <div class="option-grid option-grid-5" aria-describedby="solutionTypeHelp">
+                  <label class="option-card">
+                    <input type="radio" name="solutionType" value="software">
+                    <span class="option-index">A</span>
+                    <span class="option-copy"><strong>Software / data / AI</strong><small>Analytics, automation, digital workflows</small></span>
+                  </label>
+                  <label class="option-card">
+                    <input type="radio" name="solutionType" value="hardware">
+                    <span class="option-index">B</span>
+                    <span class="option-copy"><strong>Hardware / equipment</strong><small>Sensor, device, component, system</small></span>
+                  </label>
+                  <label class="option-card">
+                    <input type="radio" name="solutionType" value="process">
+                    <span class="option-index">C</span>
+                    <span class="option-copy"><strong>Process / material</strong><small>Industrial process, chemistry, material</small></span>
+                  </label>
+                  <label class="option-card">
+                    <input type="radio" name="solutionType" value="service">
+                    <span class="option-index">D</span>
+                    <span class="option-copy"><strong>Service / integration</strong><small>Engineering or expert delivery</small></span>
+                  </label>
+                  <label class="option-card">
+                    <input type="radio" name="solutionType" value="hybrid">
+                    <span class="option-index">E</span>
+                    <span class="option-copy"><strong>Hybrid solution</strong><small>Connected technical components</small></span>
+                  </label>
+                </div>
+                <p class="field-error" data-error-for="solutionType"></p>
+              </fieldset>
+
+              <fieldset class="field option-field" data-required-field="buyer">
+                <legend>Who is the first buyer?</legend>
+                <p class="field-help" id="buyerHelp">The organization expected to approve and pay—not only the end user.</p>
+                <div class="option-grid option-grid-2" aria-describedby="buyerHelp">
+                  <label class="option-card">
+                    <input type="radio" name="buyer" value="independent">
+                    <span class="option-index">A</span>
+                    <span class="option-copy"><strong>Independent operator or industrial SME</strong><small>Lean team, faster access, cost-sensitive</small></span>
+                  </label>
+                  <label class="option-card">
+                    <input type="radio" name="buyer" value="major">
+                    <span class="option-index">B</span>
+                    <span class="option-copy"><strong>Major operator, NOC, or utility</strong><small>Scale potential, longer qualification path</small></span>
+                  </label>
+                  <label class="option-card">
+                    <input type="radio" name="buyer" value="channel">
+                    <span class="option-index">C</span>
+                    <span class="option-copy"><strong>OEM, OFS, or system integrator</strong><small>Potential partner, channel, or competitor</small></span>
+                  </label>
+                  <label class="option-card">
+                    <input type="radio" name="buyer" value="regulated">
+                    <span class="option-index">D</span>
+                    <span class="option-copy"><strong>Public or regulated infrastructure owner</strong><small>Tender, standards, and budget-cycle driven</small></span>
+                  </label>
+                  <label class="option-card option-card-wide">
+                    <input type="radio" name="buyer" value="unknown">
+                    <span class="option-index">E</span>
+                    <span class="option-copy"><strong>Not clear yet</strong><small>We will make buyer selection part of the plan</small></span>
+                  </label>
+                </div>
+                <p class="field-error" data-error-for="buyer"></p>
+              </fieldset>
+
+              <div class="field text-field" data-required-field="problem">
+                <label for="problem">Who has what problem, in which workflow?</label>
+                <p class="field-help" id="problemHelp">Describe the pain, not your solution. Avoid confidential enabling details.</p>
+                <textarea
+                  id="problem"
+                  name="problem"
+                  rows="3"
+                  maxlength="160"
+                  aria-describedby="problemHelp problemCount"
+                  placeholder="Production engineers lose hours reconciling unreliable well data before they can act…"
+                ></textarea>
+                <div class="field-foot">
+                  <p class="field-error" data-error-for="problem"></p>
+                  <span class="char-count" id="problemCount">0 / 160</span>
+                </div>
+              </div>
+            </section>
+
+            <section class="question-screen" data-step="1" aria-labelledby="step1Title" hidden>
+              <div class="screen-head">
+                <p class="screen-count">02 / 04</p>
+                <div>
+                  <p class="eyebrow">Problem evidence</p>
+                  <h2 id="step1Title">How much do customers—not founders—know?</h2>
+                  <p>Choose the strongest statement you can support today.</p>
+                </div>
+              </div>
+
+              <fieldset class="field option-field" data-required-field="customerEvidence">
+                <legend>What customer evidence exists?</legend>
+                <div class="option-list">
+                  <label class="option-row">
+                    <input type="radio" name="customerEvidence" value="none">
+                    <span class="radio-ui"></span>
+                    <span><strong>No target-customer interviews yet</strong><small>The problem is still a founder hypothesis.</small></span>
+                  </label>
+                  <label class="option-row">
+                    <input type="radio" name="customerEvidence" value="exploratory">
+                    <span class="radio-ui"></span>
+                    <span><strong>1–5 conversations; no clear pattern</strong><small>Useful signals, but no repeatable evidence yet.</small></span>
+                  </label>
+                  <label class="option-row">
+                    <input type="radio" name="customerEvidence" value="repeated">
+                    <span class="radio-ui"></span>
+                    <span><strong>Several target customers repeat the same pain</strong><small>A pattern exists; value or urgency is not yet quantified.</small></span>
+                  </label>
+                  <label class="option-row">
+                    <input type="radio" name="customerEvidence" value="quantified">
+                    <span class="radio-ui"></span>
+                    <span><strong>Pain is quantified and a budget owner confirms urgency</strong><small>The cost, risk, trigger, and decision owner are understood.</small></span>
+                  </label>
+                  <label class="option-row">
+                    <input type="radio" name="customerEvidence" value="paid">
+                    <span class="radio-ui"></span>
+                    <span><strong>A customer has paid or purchased repeatedly</strong><small>Commercial behavior confirms the need.</small></span>
+                  </label>
+                </div>
+                <p class="field-error" data-error-for="customerEvidence"></p>
+              </fieldset>
+
+              <fieldset class="field option-field" data-required-field="decisionPath">
+                <legend>How well do you know the decision path?</legend>
+                <div class="option-grid option-grid-2 compact-options">
+                  <label class="option-card">
+                    <input type="radio" name="decisionPath" value="full">
+                    <span class="option-index">A</span>
+                    <span class="option-copy"><strong>Full path known</strong><small>User, champion, buyer, and approval gates</small></span>
+                  </label>
+                  <label class="option-card">
+                    <input type="radio" name="decisionPath" value="buyer_known">
+                    <span class="option-index">B</span>
+                    <span class="option-copy"><strong>Buyer known</strong><small>User/champion and buyer; gates unclear</small></span>
+                  </label>
+                  <label class="option-card">
+                    <input type="radio" name="decisionPath" value="champion_only">
+                    <span class="option-index">C</span>
+                    <span class="option-copy"><strong>Champion only</strong><small>A user or supporter, but no economic buyer</small></span>
+                  </label>
+                  <label class="option-card">
+                    <input type="radio" name="decisionPath" value="none">
+                    <span class="option-index">D</span>
+                    <span class="option-copy"><strong>No named stakeholder</strong><small>The decision path is still hypothetical</small></span>
+                  </label>
+                </div>
+                <p class="field-error" data-error-for="decisionPath"></p>
+              </fieldset>
+
+              <fieldset class="field option-field" data-required-field="focus">
+                <legend>How focused is the first use case?</legend>
+                <div class="option-grid option-grid-2 compact-options">
+                  <label class="option-card">
+                    <input type="radio" name="focus" value="sharp">
+                    <span class="option-index">A</span>
+                    <span class="option-copy"><strong>Sharp</strong><small>One buyer, workflow, context, and measurable outcome</small></span>
+                  </label>
+                  <label class="option-card">
+                    <input type="radio" name="focus" value="one_gap">
+                    <span class="option-index">B</span>
+                    <span class="option-copy"><strong>Almost there</strong><small>Only one of those elements is missing</small></span>
+                  </label>
+                  <label class="option-card">
+                    <input type="radio" name="focus" value="broad">
+                    <span class="option-index">C</span>
+                    <span class="option-copy"><strong>Still broad</strong><small>Several segments or use cases remain</small></span>
+                  </label>
+                  <label class="option-card">
+                    <input type="radio" name="focus" value="unclear">
+                    <span class="option-index">D</span>
+                    <span class="option-copy"><strong>Not defined</strong><small>No clear first use case yet</small></span>
+                  </label>
+                </div>
+                <p class="field-error" data-error-for="focus"></p>
+              </fieldset>
+            </section>
+
+            <section class="question-screen" data-step="2" aria-labelledby="step2Title" hidden>
+              <div class="screen-head">
+                <p class="screen-count">03 / 04</p>
+                <div>
+                  <p class="eyebrow">Proof &amp; commitment</p>
+                  <h2 id="step2Title">Separate technical interest from adoption evidence.</h2>
+                  <p>A strong proof answers one hard question. A strong pilot has a decision attached.</p>
+                </div>
+              </div>
+
+              <fieldset class="field option-field" data-required-field="technicalProof">
+                <legend>What is the strongest technical evidence?</legend>
+                <div class="option-list">
+                  <label class="option-row">
+                    <input type="radio" name="technicalProof" value="concept">
+                    <span class="radio-ui"></span>
+                    <span><strong>Concept only</strong><small>The technical hypothesis has not been tested.</small></span>
+                  </label>
+                  <label class="option-row">
+                    <input type="radio" name="technicalProof" value="lab">
+                    <span class="radio-ui"></span>
+                    <span><strong>Lab test or simulation</strong><small>Promising in controlled conditions.</small></span>
+                  </label>
+                  <label class="option-row">
+                    <input type="radio" name="technicalProof" value="representative">
+                    <span class="radio-ui"></span>
+                    <span><strong>Representative data or realistic test environment</strong><small>The hardest relevant constraints are present.</small></span>
+                  </label>
+                  <label class="option-row">
+                    <input type="radio" name="technicalProof" value="field">
+                    <span class="radio-ui"></span>
+                    <span><strong>Relevant field or site conditions</strong><small>Evidence comes from the intended operating context.</small></span>
+                  </label>
+                  <label class="option-row">
+                    <input type="radio" name="technicalProof" value="operational">
+                    <span class="radio-ui"></span>
+                    <span><strong>Reliable operational deployment</strong><small>The solution performs repeatedly in use.</small></span>
+                  </label>
+                </div>
+                <p class="field-error" data-error-for="technicalProof"></p>
+              </fieldset>
+
+              <fieldset class="field option-field" data-required-field="commitment">
+                <legend>What customer commitment exists?</legend>
+                <div class="option-grid option-grid-2 compact-options">
+                  <label class="option-card">
+                    <input type="radio" name="commitment" value="none">
+                    <span class="option-index">A</span>
+                    <span class="option-copy"><strong>None</strong><small>No active customer commitment</small></span>
+                  </label>
+                  <label class="option-card">
+                    <input type="radio" name="commitment" value="interest">
+                    <span class="option-index">B</span>
+                    <span class="option-copy"><strong>Interested contacts</strong><small>Positive conversations only</small></span>
+                  </label>
+                  <label class="option-card">
+                    <input type="radio" name="commitment" value="champion">
+                    <span class="option-index">C</span>
+                    <span class="option-copy"><strong>Champion + access</strong><small>Internal support and data/site access</small></span>
+                  </label>
+                  <label class="option-card">
+                    <input type="radio" name="commitment" value="loi_free">
+                    <span class="option-index">D</span>
+                    <span class="option-copy"><strong>LOI or proposed free trial</strong><small>Intent exists, but no paid commitment</small></span>
+                  </label>
+                  <label class="option-card">
+                    <input type="radio" name="commitment" value="paid_pilot">
+                    <span class="option-index">E</span>
+                    <span class="option-copy"><strong>Paid or cost-shared pilot</strong><small>Customer has committed resources</small></span>
+                  </label>
+                  <label class="option-card">
+                    <input type="radio" name="commitment" value="repeat">
+                    <span class="option-index">F</span>
+                    <span class="option-copy"><strong>Repeat paid deployment</strong><small>Commercial use has repeated</small></span>
+                  </label>
+                </div>
+                <p class="field-error" data-error-for="commitment"></p>
+              </fieldset>
+
+              <div class="field text-field" data-required-field="successMetric">
+                <label for="successMetric">What measurable result would make the next step successful?</label>
+                <p class="field-help" id="metricHelp">Use a baseline, target, time, cost, accuracy, safety, or adoption measure if you can.</p>
+                <textarea
+                  id="successMetric"
+                  name="successMetric"
+                  rows="3"
+                  maxlength="120"
+                  aria-describedby="metricHelp metricCount"
+                  placeholder="Reduce unplanned downtime by 15% during a 90-day field pilot…"
+                ></textarea>
+                <div class="field-foot">
+                  <p class="field-error" data-error-for="successMetric"></p>
+                  <span class="char-count" id="metricCount">0 / 120</span>
+                </div>
+              </div>
+            </section>
+
+            <section class="question-screen" data-step="3" aria-labelledby="step3Title" hidden>
+              <div class="screen-head">
+                <p class="screen-count">04 / 04</p>
+                <div>
+                  <p class="eyebrow">Adoption constraints</p>
+                  <h2 id="step3Title">Name the gates before they become surprises.</h2>
+                  <p>We will convert these into risk actions—not another checklist to complete.</p>
+                </div>
+              </div>
+
+              <fieldset class="field option-field" data-required-field="barriers">
+                <legend>Which barriers must be cleared before adoption?</legend>
+                <p class="field-help" id="barrierHelp">Select up to three. If you are unsure, choose “Not assessed.”</p>
+                <div class="checkbox-grid" aria-describedby="barrierHelp barrierSelectionCount">
+                  <label class="check-card">
+                    <input type="checkbox" name="barriers" value="ip">
+                    <span class="check-ui"></span>
+                    <span><strong>IP &amp; ownership</strong><small>Patentability, disclosure, FTO</small></span>
+                  </label>
+                  <label class="check-card">
+                    <input type="checkbox" name="barriers" value="data">
+                    <span class="check-ui"></span>
+                    <span><strong>Data &amp; integration</strong><small>Rights, cyber, connectivity</small></span>
+                  </label>
+                  <label class="check-card">
+                    <input type="checkbox" name="barriers" value="hse">
+                    <span class="check-ui"></span>
+                    <span><strong>HSE &amp; regulation</strong><small>Safety, permits, certification</small></span>
+                  </label>
+                  <label class="check-card">
+                    <input type="checkbox" name="barriers" value="delivery">
+                    <span class="check-ui"></span>
+                    <span><strong>Delivery</strong><small>Supply, install, support, reliability</small></span>
+                  </label>
+                  <label class="check-card">
+                    <input type="checkbox" name="barriers" value="procurement">
+                    <span class="check-ui"></span>
+                    <span><strong>Procurement</strong><small>MSA, insurance, budget, tender</small></span>
+                  </label>
+                  <label class="check-card">
+                    <input type="checkbox" name="barriers" value="champion">
+                    <span class="check-ui"></span>
+                    <span><strong>No champion</strong><small>No operational owner inside</small></span>
+                  </label>
+                  <label class="check-card check-card-wide">
+                    <input type="checkbox" name="barriers" value="unknown">
+                    <span class="check-ui"></span>
+                    <span><strong>Not assessed yet</strong><small>Run a pre-mortem across all adoption gates.</small></span>
+                  </label>
+                </div>
+                <div class="field-foot">
+                  <p class="field-error" data-error-for="barriers"></p>
+                  <span class="selection-count" id="barrierSelectionCount">0 / 3 selected</span>
+                </div>
+              </fieldset>
+
+              <fieldset class="field option-field" data-required-field="resourceNeed">
+                <legend>What does the next evidence milestone require?</legend>
+                <div class="option-grid option-grid-2 compact-options">
+                  <label class="option-card">
+                    <input type="radio" name="resourceNeed" value="under25">
+                    <span class="option-index">A</span>
+                    <span class="option-copy"><strong>Founder time or &lt;$25k</strong><small>A lean test is possible</small></span>
+                  </label>
+                  <label class="option-card">
+                    <input type="radio" name="resourceNeed" value="25to250">
+                    <span class="option-index">B</span>
+                    <span class="option-copy"><strong>$25k–$250k</strong><small>Structured external funding may help</small></span>
+                  </label>
+                  <label class="option-card">
+                    <input type="radio" name="resourceNeed" value="over250">
+                    <span class="option-index">C</span>
+                    <span class="option-copy"><strong>More than $250k</strong><small>Capital-intensive proof or field work</small></span>
+                  </label>
+                  <label class="option-card">
+                    <input type="radio" name="resourceNeed" value="access">
+                    <span class="option-index">D</span>
+                    <span class="option-copy"><strong>Access matters more than cash</strong><small>Customer data, site, or partner needed</small></span>
+                  </label>
+                  <label class="option-card option-card-wide">
+                    <input type="radio" name="resourceNeed" value="unknown">
+                    <span class="option-index">E</span>
+                    <span class="option-copy"><strong>Not estimated</strong><small>Scope the smallest evidence milestone first</small></span>
+                  </label>
+                </div>
+                <p class="field-error" data-error-for="resourceNeed"></p>
+              </fieldset>
+
+              <fieldset class="field option-field conditional-field" id="runwayField" data-required-field="runway" hidden>
+                <legend>How much runway remains?</legend>
+                <p class="field-help">Use company or founder runway—whichever ends first.</p>
+                <div class="segmented-options">
+                  <label><input type="radio" name="runway" value="under3"><span>&lt;3 months</span></label>
+                  <label><input type="radio" name="runway" value="3to9"><span>3–9 months</span></label>
+                  <label><input type="radio" name="runway" value="9to18"><span>9–18 months</span></label>
+                  <label><input type="radio" name="runway" value="over18"><span>18+ months</span></label>
+                  <label><input type="radio" name="runway" value="unknown"><span>Unknown</span></label>
+                </div>
+                <p class="field-error" data-error-for="runway"></p>
+              </fieldset>
+            </section>
+
+            <section class="result-screen" data-step="4" aria-labelledby="resultTitle" hidden>
+              <div id="resultContent"></div>
+            </section>
+
+            <div class="form-actions" id="formActions">
+              <button class="button button-secondary" id="backButton" type="button" hidden>
+                <span aria-hidden="true">←</span> Back
+              </button>
+              <div class="action-spacer"></div>
+              <span class="required-note">All questions on this screen are required unless marked optional.</span>
+              <button class="button button-primary" id="nextButton" type="button">
+                Continue <span aria-hidden="true">→</span>
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <div>
+        <strong>SPE Research &amp; Development Technical Section · Entrepreneurship Program</strong>
+        <span>From Idea to Energy Company · 2026 Edition</span>
+      </div>
+      <p>
+        Disclaimer: This playbook supplements, and does not replace, legal, technical, financial, regulatory,
+        IP, cybersecurity, safety, or environmental advice. Validate technology with appropriate experts and
+        do not take risks beyond your experience, training, or comfort level.
+      </p>
+    </footer>
+
+    <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+  </body>
+</html>
