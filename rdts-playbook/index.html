@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta
       name="description"
-      content="A free, private RDTS decision guide that turns nine answers into a focused 30-day action brief for an energy venture."
+      content="A free, private RDTS decision guide that turns focused evidence into a 30-day action brief for an energy venture."
     >
     <meta name="theme-color" content="#072f4a">
     <meta property="og:title" content="RDTS Energy Venture Navigator">
@@ -1539,7 +1539,7 @@ a {
 
 .segmented-options {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   overflow: hidden;
   border: 1px solid var(--line-strong);
   border-radius: 8px;
@@ -2545,7 +2545,6 @@ footer p {
   }
 
   .segmented-options label:last-child {
-    grid-column: 1 / -1;
     border-bottom: 0;
   }
 
@@ -2746,6 +2745,12 @@ const LABELS = {
     broad: "Several segments or use cases",
     unclear: "First use case not defined",
   },
+  commercialCase: {
+    none: "Market case not assessed",
+    mapped: "Market and competitors roughly mapped",
+    economics: "Sale economics and alternatives quantified",
+    validated: "Advantage and willingness to pay validated",
+  },
   technicalProof: {
     concept: "Concept only",
     lab: "Lab test or simulation",
@@ -2757,7 +2762,8 @@ const LABELS = {
     none: "No customer commitment",
     interest: "Interested contacts",
     champion: "Champion + data/site access",
-    loi_free: "LOI or proposed free trial",
+    free_trial: "Free trial without commercial terms",
+    loi: "Decision-backed LOI",
     paid_pilot: "Paid or cost-shared pilot",
     repeat: "Repeat paid deployment",
   },
@@ -2782,6 +2788,7 @@ const LABELS = {
     "3to9": "3–9 months",
     "9to18": "9–18 months",
     over18: "18+ months",
+    sustainable: "Cash-flow positive / no near-term constraint",
     unknown: "Unknown",
     not_needed: "Not requested",
   },
@@ -2789,7 +2796,7 @@ const LABELS = {
 
 const REQUIRED_BY_STEP = [
   ["solutionType", "buyer", "problem"],
-  ["customerEvidence", "decisionPath", "focus"],
+  ["customerEvidence", "decisionPath", "focus", "commercialCase"],
   ["technicalProof", "commitment", "successMetric"],
   ["barriers", "resourceNeed"],
 ];
@@ -2814,9 +2821,44 @@ const commitmentRank = {
   none: 0,
   interest: 1,
   champion: 2,
-  loi_free: 3,
+  free_trial: 2,
+  loi: 3,
   paid_pilot: 4,
   repeat: 5,
+};
+
+const commercialRank = {
+  none: 0,
+  mapped: 1,
+  economics: 2,
+  validated: 3,
+};
+
+const commercialCaseOverlays = {
+  none: {
+    label: "Market case",
+    title: "Build the commercial case before enlarging the product.",
+    detail:
+      "Estimate the first reachable market, likely annual unit or contract volume, attainable price, cost to serve, current alternatives, leading suppliers, and the advantage required to win.",
+  },
+  mapped: {
+    label: "Market case",
+    title: "Turn market description into sale economics.",
+    detail:
+      "Quantify likely price, volume, gross margin, sales cycle, qualification burden, and customer switching cost for the first wedge—not the whole energy market.",
+  },
+  economics: {
+    label: "Market case",
+    title: "Validate the competitive advantage with buyers.",
+    detail:
+      "Compare price, volume, margin, and customer outcome with the current workaround and named competitors. Test why a buyer would change, what they would pay, and which proof makes the advantage credible.",
+  },
+  validated: {
+    label: "Market case",
+    title: "Maintain a living market and economics file.",
+    detail:
+      "Update target-market size, annual volume, price, gross margin, sales-cycle, win/loss reasons, competitor moves, and cost-to-deliver as customer evidence replaces assumptions.",
+  },
 };
 
 const solutionProofOverlays = {
@@ -2856,7 +2898,7 @@ const buyerOverlays = {
   major: {
     title: "Run the technical and qualification paths in parallel.",
     detail:
-      "Pair a technical champion with an economic owner and start HSE, cybersecurity, procurement, vendor registration, and budget-cycle mapping early.",
+      "Pair an end-user champion with an economic buyer. Start HSE, cybersecurity, supplier registration, MSA, technical/financial qualification, digital invoicing, procurement, and budget-cycle mapping early.",
   },
   channel: {
     title: "Define the partner economics before sharing the market.",
@@ -2879,13 +2921,13 @@ const barrierActions = {
   ip: {
     title: "Establish the IP and ownership chain",
     detail:
-      "Document inventors, employer/university obligations, confidentiality, public disclosures, data ownership, and the need for qualified patentability or freedom-to-operate review.",
+      "Document inventors, dated development records, employer/university obligations, confidentiality, public disclosures, and ownership. Ask qualified IP counsel early about patents, trade secrets, copyright, trademarks, licensing, and freedom to operate.",
     rdts: "an IP commercialization mentor who can review ownership, disclosure timing, and the right questions for counsel",
   },
   data: {
     title: "Secure usable data and integration rights",
     detail:
-      "Create a data inventory and agree access, permitted use, retention, security, test environment, integration interfaces, and who can see the results.",
+      "Create a data inventory and formal agreement covering access, permitted use, retention, security, integration, and results. For field trials, seek the access and learning rights you need without assuming ownership of operator data.",
     rdts: "a data-access or industrial cybersecurity mentor and a realistic test-data introduction",
   },
   hse: {
@@ -2903,7 +2945,7 @@ const barrierActions = {
   procurement: {
     title: "Map procurement before the pilot ends",
     detail:
-      "Identify supplier registration, MSA, insurance, tender, cybersecurity, invoicing, budget owner, approval gates, and the dates that control a purchase.",
+      "Identify supplier registration, business documents and certifications, MSA/terms, insurance, operational-integrity and cybersecurity requirements, technical/financial qualification, e-invoicing, budget, and purchase dates.",
     rdts: "a procurement or MSA mentor who can review the customer’s path from pilot to purchase",
   },
   champion: {
@@ -2927,10 +2969,10 @@ const phases = {
     label: "Discover",
     title: "Prove the problem before the product.",
     summary:
-      "Your fastest route forward is customer evidence. Building, piloting, or fundraising now would lock in assumptions that are still cheap to test.",
+      "Your fastest route forward is customer evidence. If you began with a novel technology, use discovery to identify and compare real applications before building, piloting, or fundraising around an assumed problem.",
     actions: ({ buyerLabel, problem }) => [
       {
-        title: `Interview 8–10 people in one ${buyerLabel.toLowerCase()} context`,
+        title: `Interview 8–10 people in one ${buyerLabel} context`,
         detail:
           "Ask about the workflow, trigger event, current workaround, frequency, consequence, switching friction, and who owns the budget. Do not pitch the solution.",
       },
@@ -2941,14 +2983,14 @@ const phases = {
       {
         title: "Write a one-page evidence memo",
         detail:
-          "Capture repeated phrases, disconfirming evidence, the current alternative, the budget owner, and one narrower problem worth validating next.",
+          "Capture repeated phrases, disconfirming evidence, the current alternative, the budget owner, and one narrower problem worth validating next. Technology-first founders may compare up to three candidate applications before choosing one.",
       },
     ],
     exit:
-      "6 of 10 target interviews independently describe the same painful workflow, and at least two people identify a trigger and budget owner.",
-    avoid: "A large build, a broad business plan, or investor outreach before the customer pattern is visible.",
+      "Navigator working threshold: interview 8–10 target people and continue until a repeatable pattern emerges; at least two should independently identify the trigger and budget owner. Treat this as a learning signal, not an official RDTS pass/fail rule.",
+    avoid: "A large build, a polished long-form business plan, or investor outreach before the customer pattern is visible. Keep only a lean, living hypothesis document at this stage.",
     weeks: ({ buyerLabel }) => [
-      { title: "Recruit", detail: `Build a list of 20 people across users, champions, and buyers at ${buyerLabel.toLowerCase()} organizations.` },
+      { title: "Recruit", detail: `Build a list of 20 people across users, champions, and buyers at ${buyerLabel} organizations.` },
       { title: "Listen", detail: "Complete five problem interviews and capture exact customer language, workarounds, and consequences." },
       { title: "Quantify", detail: "Complete five more interviews; estimate frequency, cost/risk, urgency, and switching triggers." },
       { title: "Decide", detail: "Choose one pain to pursue, change, or stop based on the evidence—not enthusiasm." },
@@ -2965,10 +3007,10 @@ const phases = {
       {
         title: "Score no more than three entry wedges",
         detail:
-          "Compare pain severity, frequency, customer access, budget ownership, regulatory pull, switching friction, and time-to-proof. Pick one—not a portfolio.",
+          "Compare pain, access, budget, reachable market, likely sale value and margin, competitors, required advantage, switching friction, and time-to-proof. Pick one—not a portfolio.",
       },
       {
-        title: `Lock one ${buyerLabel.toLowerCase()} workflow and outcome`,
+        title: `Lock one ${buyerLabel} workflow and outcome`,
         detail: `Turn the first use case into: one buyer, one workflow or asset context, and the target result “${metric}”.`,
       },
       {
@@ -2978,7 +3020,7 @@ const phases = {
       },
     ],
     exit:
-      "Two target customers confirm the same buyer/workflow/context, quantify the pain, and agree on evidence that would justify a test.",
+      "Two target customers confirm the same buyer/workflow/context and evidence needed for a test; the first-wedge market, sale economics, alternatives, and advantage hypothesis are quantified well enough to challenge.",
     avoid: "Serving multiple customer segments, adding features for every conversation, or choosing a funding source before the evidence milestone is scoped.",
     weeks: () => [
       { title: "Compare", detail: "Score up to three wedges on pain, access, budget, competition, and time-to-proof." },
@@ -3003,7 +3045,7 @@ const phases = {
       {
         title: "Secure representative conditions and evidence rights",
         detail:
-          "Use realistic data, equipment, feedstock, environment, or workflow. Agree who owns inputs, outputs, learning, and any disclosure before the test.",
+          "Use realistic data, equipment, feedstock, weather, environment, or workflow. Agree access, ownership, permitted learning, and any disclosure before the test.",
       },
     ],
     exit:
@@ -3095,7 +3137,7 @@ const phases = {
       buyerOverlay,
     ],
     exit:
-      "At least three comparable wins show predictable sales, delivery, customer value, retention, and a credible contribution margin.",
+      "Comparable paid wins show predictable sales, delivery, customer value, retention, and a credible contribution margin before expansion.",
     avoid: "Expanding to several markets at once, hiring ahead of a repeatable delivery model, or raising growth capital to hide weak unit economics.",
     weeks: () => [
       { title: "Instrument", detail: "Baseline sales cycle, implementation time, support load, margin, reliability, and retention." },
@@ -3114,26 +3156,32 @@ function label(group, value) {
   return LABELS[group]?.[value] ?? clean(value, "Not answered");
 }
 
+function lowerInitial(value) {
+  if (!value || /^[A-Z]{2}/.test(value)) return value;
+  return value.charAt(0).toLowerCase() + value.slice(1);
+}
+
 function normalizeState(raw) {
   return {
-    ventureName: clean(raw.ventureName, "Your venture"),
+    ventureName: clean(raw.ventureName, "Unnamed venture"),
     solutionType: clean(raw.solutionType),
     buyer: clean(raw.buyer),
     problem: clean(raw.problem),
     customerEvidence: clean(raw.customerEvidence),
     decisionPath: clean(raw.decisionPath),
     focus: clean(raw.focus),
+    commercialCase: clean(raw.commercialCase),
     technicalProof: clean(raw.technicalProof),
     commitment: clean(raw.commitment),
     successMetric: clean(raw.successMetric),
     barriers: Array.isArray(raw.barriers) ? [...new Set(raw.barriers)] : [],
     resourceNeed: clean(raw.resourceNeed),
-    runway: clean(raw.runway, "not_needed"),
+    runway: clean(raw.runway),
   };
 }
 
 function shouldAskRunway(resourceNeed) {
-  return ["25to250", "over250", "unknown"].includes(resourceNeed);
+  return Boolean(resourceNeed);
 }
 
 function validateStep(rawState, stepIndex) {
@@ -3151,7 +3199,7 @@ function validateStep(rawState, stepIndex) {
       } else if (state.barriers.length > 3) {
         errors[key] = "Select no more than three barriers.";
       }
-    } else if (!state[key]) {
+    } else if (!state[key] || (key === "runway" && state[key] === "not_needed")) {
       errors[key] = "Choose or enter an answer to continue.";
     }
   }
@@ -3169,8 +3217,10 @@ function derivePhase(rawState) {
 
   if (
     state.buyer === "unknown" ||
-    ["broad", "unclear"].includes(state.focus) ||
-    evidenceRank[state.customerEvidence] === 2
+    state.decisionPath === "champion_only" ||
+    ["one_gap", "broad", "unclear"].includes(state.focus) ||
+    evidenceRank[state.customerEvidence] === 2 ||
+    commercialRank[state.commercialCase] <= 1
   ) {
     return phases.focus;
   }
@@ -3192,7 +3242,7 @@ function derivePhase(rawState) {
 
 function claimedPhaseFromCommitment(state) {
   if (state.commitment === "repeat") return "scale";
-  if (["loi_free", "paid_pilot"].includes(state.commitment)) return "convert";
+  if (["loi", "paid_pilot"].includes(state.commitment)) return "convert";
   if (state.commitment === "champion") return "prepare";
   if (proofRank[state.technicalProof] >= 2) return "prepare";
   if (proofRank[state.technicalProof] >= 1) return "prove";
@@ -3230,23 +3280,33 @@ function readiness(state) {
     none: 10,
     interest: 27,
     champion: 50,
-    loi_free: 66,
+    free_trial: 42,
+    loi: 66,
     paid_pilot: 83,
     repeat: 100,
   }[state.commitment];
   if (state.barriers.includes("unknown")) adoption = Math.min(adoption, 42);
   if (state.barriers.includes("champion")) adoption = Math.min(adoption, 35);
 
+  const commercial = {
+    none: 10,
+    mapped: 38,
+    economics: 72,
+    validated: 100,
+  }[state.commercialCase];
+
   const toGate = (name, value, need) => ({
     name,
     value,
     status: value >= 75 ? "high" : value >= 45 ? "medium" : "low",
+    level: value >= 75 ? "Strong" : value >= 45 ? "Partial" : "Emerging",
     need,
   });
 
   return [
     toGate("Problem", problem, "Repeated, quantified customer pain and a known trigger."),
     toGate("Buyer path", buyer, "Named user, champion, economic buyer, and approval gates."),
+    toGate("Market case", commercial, "Reachable market, sale economics, alternatives, and a credible advantage."),
     toGate("Technical proof", proof, "A reproducible result under representative operating constraints."),
     toGate("Adoption", adoption, "Committed owner, access, decision criteria, and a purchase path."),
   ];
@@ -3259,11 +3319,11 @@ function fundingPath(state, phase) {
   if (state.resourceNeed === "access") {
     return {
       now:
-        "Seek a data/site agreement, deployment partner, or customer-backed test—not an equity round.",
+        `${shortRunway ? "Founder or company runway is under three months: protect personal liquidity, cut nonessential scope, and pursue the fastest decision-changing evidence. " : ""}Seek a data/site agreement, deployment partner, or customer-backed test—not an equity round.`,
       after:
         "After representative evidence and a decision-backed pilot path, consider customer cost share, a strategic partner, or aligned non-dilutive funding.",
       avoid:
-        "Avoid raising cash to compensate for missing access. Capital cannot replace customer permission or operating context.",
+        "Avoid raising cash to compensate for missing access. Capital cannot replace customer permission or operating context, and a slow enterprise access process cannot be the only runway plan.",
     };
   }
 
@@ -3299,7 +3359,7 @@ function fundingPath(state, phase) {
       "Do not finance the full product before the highest-risk technical assumption passes a representative test.";
   } else if (["prepare", "convert"].includes(phase.id)) {
     now =
-      "Make customer-paid or cost-shared pilot funding the first choice. Use grants, strategic partners, CVC, angels, or seed only to reach a defined commercial milestone.";
+      "Make customer-paid or cost-shared pilot funding the first choice. Use grants, strategic partners, CVC, angels, or seed only to reach a defined commercial milestone. CVC may add domain access; financial VC may add fundraising speed and follow-on networks.";
     after =
       "After a successful conversion, choose capital based on repeatable sales, delivery economics, and whether speed creates a defensible advantage.";
     avoid =
@@ -3315,13 +3375,71 @@ function fundingPath(state, phase) {
 
   if (shortRunway) {
     now =
-      "Runway is under three months: reduce the milestone to the fastest paid or decision-changing evidence, pursue immediate customer/bridge cash, and cut nonessential scope. " +
+      "Founder or company runway is under three months: reduce the milestone to the fastest paid or decision-changing evidence, pursue immediate customer/bridge cash, protect personal liquidity, and cut nonessential scope. Assume formal external funding can take two to three times longer than the optimistic case. " +
       now;
     avoid +=
       " Do not rely solely on a slow grant or enterprise procurement process.";
   }
 
+  if (["25to250", "over250"].includes(state.resourceNeed)) {
+    if (!shortRunway) {
+      now +=
+        " Stress-test the cash plan on the assumption that formal external funding takes two to three times longer than the optimistic case.";
+    }
+    after +=
+      " Before accepting angel or strategic capital, align in writing on product direction, company direction, governance, and major decision rights.";
+  }
+
   return { now, after, avoid };
+}
+
+function businessPlanPath(state, phase) {
+  const common =
+    "Keep a living plan covering company/problem, first market and competitors, offer/IP, team, go-to-market, operations, cash/funding, and an evidence appendix. Before disclosure or partner sharing, document inventorship and employer/university ownership obligations; take formal IP questions to qualified counsel early.";
+
+  if (["discover", "focus"].includes(phase.id)) {
+    return {
+      label: "Living plan",
+      title: "Use a lean business-plan shell—not a polished forecast.",
+      detail:
+        `${common} Mark assumptions clearly; update the problem, market case, competitive advantage, and cash runway as interviews replace guesses.`,
+    };
+  }
+  if (phase.id === "prove") {
+    return {
+      label: "Living plan",
+      title: "Convert proof learning into the living business plan.",
+      detail:
+        `${common} Add the test evidence, layered IP approach, operating constraints, development budget, and the smallest funding request tied to the next gate.`,
+    };
+  }
+  if (["prepare", "convert"].includes(phase.id)) {
+    return {
+      label: "Living plan",
+      title: "Make the pilot economics and adoption path investable.",
+      detail:
+        `${common} Add pilot price and cost, supplier qualification, sales and procurement path, rollout economics, data/IP terms, and a milestone-based funding request.`,
+    };
+  }
+  return {
+    label: "Living plan",
+    title: "Build the operating and financial plan from repeatable evidence.",
+    detail:
+      `${common} Extend to 3–5 year income, cash-flow, balance-sheet, break-even, hiring, supply, support, and one evidence-backed expansion vector.`,
+  };
+}
+
+function rdtsSupportPath(state, phase) {
+  if (state.barriers.some((barrier) => ["ip", "data", "hse", "procurement", "delivery"].includes(barrier))) {
+    return "Use the RDTS mentor network for a targeted review with experience in operations, safety, data, procurement, commercialization, or fundraising.";
+  }
+  if (["discover", "focus", "prove"].includes(phase.id)) {
+    return "Bring the evidence gap to a monthly RDTS clinic for targeted learning and peer feedback.";
+  }
+  if (["prepare", "convert"].includes(phase.id)) {
+    return "Use a quarterly RDTS demo or pitch session to test the message, adoption path, and commercial decision before the customer review.";
+  }
+  return "Use the RDTS mentor network and pitch community to challenge repeatability, delivery economics, and the chosen expansion path.";
 }
 
 function rdtsRequest(state, phase) {
@@ -3341,7 +3459,8 @@ function rdtsRequest(state, phase) {
     if (phase.id === "scale") need = "a scale-up operator who can challenge delivery economics and channel choices";
   }
 
-  return `I’m building ${state.ventureName}. Our current priority is ${phase.label.toLowerCase()}. Could RDTS connect me with ${need}? I’d like a 30-minute conversation focused on one outcome: ${state.successMetric}`;
+  const venturePhrase = state.ventureName === "Unnamed venture" ? "an energy venture" : state.ventureName;
+  return `I’m building ${venturePhrase}. Our current priority is ${phase.label.toLowerCase()}. Could RDTS connect me with ${need}? I’d like a 30-minute conversation focused on one outcome: ${state.successMetric}`;
 }
 
 function mismatchNote(state, phase) {
@@ -3349,6 +3468,51 @@ function mismatchNote(state, phase) {
   const claimed = claimedPhaseFromCommitment(state);
   if (order.indexOf(claimed) <= order.indexOf(phase.id)) return "";
   return `Your customer commitment or proof suggests “${phases[claimed].label},” but earlier evidence is incomplete. This roadmap starts at the earliest unmet gate: ${phase.label}.`;
+}
+
+function consistencyNotes(state) {
+  const notes = [];
+  if (state.commercialCase === "validated" && evidenceRank[state.customerEvidence] <= 1) {
+    notes.push("The commercial case is marked buyer-validated, but target-customer evidence is still exploratory; confirm both answers against specific conversations.");
+  }
+  if (state.barriers.includes("champion") && commitmentRank[state.commitment] >= 2) {
+    notes.push("Customer commitment and 'no operational champion' conflict; name the person who owns the workflow or downgrade the commitment claim.");
+  }
+  if (
+    ["paid_pilot", "repeat"].includes(state.commitment) &&
+    (state.buyer === "unknown" || ["none", "champion_only"].includes(state.decisionPath))
+  ) {
+    notes.push("Paid activity is reported without a complete buyer path; identify the economic buyer, procurement approver, and purchase mechanism before treating it as adoption evidence.");
+  }
+  if (["paid_pilot", "repeat"].includes(state.commitment) && state.customerEvidence !== "paid") {
+    notes.push("Paid customer commitment should normally be supported by paid customer evidence; review the evidence selection.");
+  }
+  return notes;
+}
+
+function pdfEvidenceCheck(state, phase) {
+  const conflicts = [];
+  const order = ["discover", "focus", "prove", "prepare", "convert", "scale"];
+  const claimed = claimedPhaseFromCommitment(state);
+  if (order.indexOf(claimed) > order.indexOf(phase.id)) {
+    conflicts.push(`later evidence suggests ${phases[claimed].label}, but the earliest unmet gate is ${phase.label}`);
+  }
+  if (state.commercialCase === "validated" && evidenceRank[state.customerEvidence] <= 1) {
+    conflicts.push("buyer validation lacks matching customer interviews");
+  }
+  if (state.barriers.includes("champion") && commitmentRank[state.commitment] >= 2) {
+    conflicts.push("commitment lacks an operational champion");
+  }
+  if (
+    ["paid_pilot", "repeat"].includes(state.commitment) &&
+    (state.buyer === "unknown" || ["none", "champion_only"].includes(state.decisionPath))
+  ) {
+    conflicts.push("paid activity lacks a complete buyer path");
+  }
+  if (["paid_pilot", "repeat"].includes(state.commitment) && state.customerEvidence !== "paid") {
+    conflicts.push("paid commitment lacks paid customer evidence");
+  }
+  return conflicts.length ? `Review conflicting answers: ${conflicts.join("; ")}.` : "";
 }
 
 function buildSnapshot(state) {
@@ -3359,12 +3523,21 @@ function buildSnapshot(state) {
     ["Customer evidence", label("customerEvidence", state.customerEvidence)],
     ["Decision path", label("decisionPath", state.decisionPath)],
     ["First-use focus", label("focus", state.focus)],
+    ["Market case", label("commercialCase", state.commercialCase)],
     ["Technical proof", label("technicalProof", state.technicalProof)],
     ["Customer commitment", label("commitment", state.commitment)],
     ["Adoption barriers", state.barriers.map((item) => label("barriers", item)).join(", ")],
     ["Next-milestone resources", label("resourceNeed", state.resourceNeed)],
     ["Runway", label("runway", state.runway)],
   ];
+}
+
+function compactBriefText(value, maxCharacters) {
+  const text = String(value ?? "").replace(/\s+/g, " ").trim();
+  if (text.length <= maxCharacters) return text;
+  const sliced = text.slice(0, Math.max(1, maxCharacters - 3));
+  const atWordBoundary = sliced.replace(/\s+\S*$/, "").trim();
+  return `${atWordBoundary || sliced.trim()}...`;
 }
 
 function buildReport(rawState, options = {}) {
@@ -3380,13 +3553,29 @@ function buildReport(rawState, options = {}) {
   }
 
   const phase = derivePhase(state);
-  const buyerLabel = label("buyer", state.buyer);
+  const buyerLabel =
+    state.buyer === "unknown" ? "candidate buyer segment" : lowerInitial(label("buyer", state.buyer));
+  const metric = state.successMetric.replace(/[.!?]+$/, "");
+  const phaseMismatch = mismatchNote(state, phase);
+  const consistency = consistencyNotes(state);
+  const pdfMismatch = pdfEvidenceCheck(state, phase);
   const context = {
     buyerLabel,
     problem: state.problem,
-    metric: state.successMetric,
+    metric,
     solutionOverlay: solutionProofOverlays[state.solutionType],
     buyerOverlay: buyerOverlays[state.buyer],
+  };
+  const pdfState = {
+    ...state,
+    ventureName: compactBriefText(state.ventureName, 44),
+    problem: compactBriefText(state.problem, 220),
+    successMetric: compactBriefText(state.successMetric, 120),
+  };
+  const pdfContext = {
+    ...context,
+    problem: pdfState.problem,
+    metric: pdfState.successMetric.replace(/[.!?]+$/, ""),
   };
 
   const barriers = state.barriers.map((barrier) => ({
@@ -3403,7 +3592,7 @@ function buildReport(rawState, options = {}) {
   }).format(createdAt);
 
   return {
-    version: "Prototype 1.0 · based on current RDTS web workbook",
+    version: "Aligned with SPE RDTS Entrepreneurship Playbook v2 · 2026",
     createdAt: createdAt.toISOString(),
     createdDate,
     state,
@@ -3414,26 +3603,42 @@ function buildReport(rawState, options = {}) {
       title: phase.title,
       summary: phase.summary,
     },
-    opportunity: `For ${buyerLabel.toLowerCase()}, address this problem: ${state.problem} Target evidence outcome: ${state.successMetric}`,
+    opportunity: `For ${buyerLabel}, address this problem: ${/[.!?]$/.test(state.problem) ? state.problem : `${state.problem}.`} Target evidence outcome: ${state.successMetric} Commercial case: ${label("commercialCase", state.commercialCase)}.`,
     trace: [
       `Customer: ${label("customerEvidence", state.customerEvidence)}`,
+      `Market: ${label("commercialCase", state.commercialCase)}`,
       `Proof: ${label("technicalProof", state.technicalProof)}`,
       `Commitment: ${label("commitment", state.commitment)}`,
     ],
-    mismatch: mismatchNote(state, phase),
+    mismatch: [phaseMismatch, ...consistency].filter(Boolean).join(" "),
+    pdfMismatch,
+    pdfVentureName: pdfState.ventureName,
+    pdfOpportunity: `For ${buyerLabel}, address this problem: ${/[.!?]$/.test(pdfState.problem) ? pdfState.problem : `${pdfState.problem}.`} Target evidence outcome: ${pdfState.successMetric} Commercial case: ${label("commercialCase", state.commercialCase)}.`,
+    pdfActions: phase.actions(pdfContext),
+    pdfRdtsAsk: rdtsRequest(pdfState, phase),
+    pdfCompactPageOne:
+      state.problem.length > 180 ||
+      state.successMetric.length > 105 ||
+      state.ventureName.length > 44 ||
+      pdfMismatch.length > 210,
     actions: phase.actions(context),
     exitGate: phase.exit,
     weeks: phase.weeks(context),
     proofCue: solutionProofOverlays[state.solutionType],
     buyerCue: buyerOverlays[state.buyer],
+    commercialCue: commercialCaseOverlays[state.commercialCase],
+    businessPlanCue: businessPlanPath(state, phase),
     barriers,
     readiness: readiness(state),
     funding: fundingPath(state, phase),
     rdtsAsk: rdtsRequest(state, phase),
+    rdtsSupport: rdtsSupportPath(state, phase),
     avoid: phase.avoid,
     snapshot: buildSnapshot(state),
     disclaimer:
-      "This quick guide is a provisional decision aid derived from the current RDTS Entrepreneurship Program web workbook. Recommendations should be checked against the playbook PDF when it becomes available. It supplements—not replaces—qualified legal, IP, technical, financial, HSE, regulatory, cybersecurity, or environmental advice.",
+      "This action brief is aligned with the SPE RDTS Entrepreneurship Playbook v2 and supplements—not replaces—qualified legal, IP, technical, financial, HSE, regulatory, cybersecurity, or environmental advice. Validate the technology with appropriate experts, take responsibility for financial risk, and do not exceed your experience, training, or comfort level.",
+    methodNote:
+      "Navigator stages, evidence levels, and thresholds are directional working aids—not an RDTS certification or official pass/fail standard.",
   };
 }
 
@@ -3463,16 +3668,23 @@ const COLORS = {
 function latinText(value) {
   return String(value ?? "")
     .replaceAll("–", "-")
-    .replaceAll("—", "-")
+    .replaceAll("—", " - ")
     .replaceAll("’", "'")
     .replaceAll("‘", "'")
     .replaceAll("“", '"')
     .replaceAll("”", '"')
     .replaceAll("…", "...")
     .replaceAll("•", "-")
+    .replaceAll("·", "/")
     .replaceAll("→", "->")
     .replaceAll("≤", "<=")
     .replaceAll("≥", ">=")
+    .replaceAll("≈", "about ")
+    .replace(/[₀₁₂₃₄₅₆₇₈₉]/g, (character) => String("₀₁₂₃₄₅₆₇₈₉".indexOf(character)))
+    .replaceAll("°", " deg ")
+    .replaceAll("±", "+/-")
+    .replaceAll("×", "x")
+    .replaceAll("€", "EUR ")
     .replaceAll("ß", "ss")
     .normalize("NFKD")
     .replace(/[\u0300-\u036f]/g, "")
@@ -3548,8 +3760,9 @@ function wrapText(value, size, maxWidth, bold = false) {
 }
 
 class PdfLayout {
-  constructor(report) {
+  constructor(report, options = {}) {
     this.report = report;
+    this.compact = Boolean(options.compact);
     this.pages = [];
     this.page = null;
     this.y = TOP;
@@ -3568,6 +3781,15 @@ class PdfLayout {
     this.text("FOUNDER ACTION BRIEF", PAGE_WIDTH - MARGIN_X, PAGE_HEIGHT - 16, 7.3, true, COLORS.white, "right");
     this.text(this.report.createdDate, PAGE_WIDTH - MARGIN_X, 25, 7.2, false, COLORS.muted, "right");
     this.text(`Page ${this.pageNumber}`, MARGIN_X, 25, 7.2, false, COLORS.muted);
+    this.text(
+      "Directional Navigator aid - not RDTS certification or qualified legal, technical, financial, HSE, regulatory or IP advice.",
+      PAGE_WIDTH / 2,
+      37,
+      6.2,
+      false,
+      COLORS.muted,
+      "center",
+    );
   }
 
   ensure(height, forceNew = false) {
@@ -3625,7 +3847,11 @@ class PdfLayout {
   }
 
   heading(value, options = {}) {
-    const { size = 12.2, gapBefore = 8, gapAfter = 7 } = options;
+    const {
+      size = this.compact ? 11.5 : 12.2,
+      gapBefore = this.compact ? 6 : 8,
+      gapAfter = this.compact ? 5 : 7,
+    } = options;
     this.ensure(size * 1.5 + gapBefore + gapAfter);
     this.y -= gapBefore;
     this.text(value, MARGIN_X, this.y, size, true, COLORS.navy);
@@ -3639,36 +3865,40 @@ class PdfLayout {
   }
 
   bullet(title, detail, index) {
-    const detailLines = wrapText(detail, 8.7, CONTENT_WIDTH - 35, false);
-    const height = 19 + detailLines.length * 11.4 + 5;
+    const detailSize = this.compact ? 8.2 : 8.7;
+    const detailLineHeight = this.compact ? 10.4 : 11.4;
+    const detailLines = wrapText(detail, detailSize, CONTENT_WIDTH - 35, false);
+    const height = (this.compact ? 17 : 19) + detailLines.length * detailLineHeight + (this.compact ? 3 : 5);
     this.ensure(height);
     this.rect(MARGIN_X, this.y - 16, 20, 20, COLORS.navy);
     this.text(String(index), MARGIN_X + 10, this.y - 9, 8.1, true, COLORS.white, "center");
-    this.text(title, MARGIN_X + 31, this.y, 9.4, true, COLORS.navy);
-    this.y -= 14;
+    this.text(title, MARGIN_X + 31, this.y, this.compact ? 9 : 9.4, true, COLORS.navy);
+    this.y -= this.compact ? 12.5 : 14;
     detailLines.forEach((line) => {
-      this.text(line, MARGIN_X + 31, this.y, 8.7, false, COLORS.muted);
-      this.y -= 11.4;
+      this.text(line, MARGIN_X + 31, this.y, detailSize, false, COLORS.muted);
+      this.y -= detailLineHeight;
     });
-    this.y -= 6;
+    this.y -= this.compact ? 4 : 6;
   }
 
   note(title, detail, color = COLORS.paleGreen, ink = COLORS.green) {
-    const lines = wrapText(detail, 8.6, CONTENT_WIDTH - 24, false);
-    const height = 27 + lines.length * 11.2;
+    const detailSize = this.compact ? 8.1 : 8.6;
+    const detailLineHeight = this.compact ? 10.2 : 11.2;
+    const lines = wrapText(detail, detailSize, CONTENT_WIDTH - 24, false);
+    const height = (this.compact ? 24 : 27) + lines.length * detailLineHeight;
     this.ensure(height + 6);
     this.rect(MARGIN_X, this.y - height + 6, CONTENT_WIDTH, height, color);
     this.text(title.toUpperCase(), MARGIN_X + 12, this.y - 10, 7, true, ink);
     let lineY = this.y - 24;
     lines.forEach((line) => {
-      this.text(line, MARGIN_X + 12, lineY, 8.6, false, ink);
-      lineY -= 11.2;
+      this.text(line, MARGIN_X + 12, lineY, detailSize, false, ink);
+      lineY -= detailLineHeight;
     });
-    this.y -= height + 8;
+    this.y -= height + (this.compact ? 6 : 8);
   }
 
   readiness(gates) {
-    const rowHeight = 24;
+    const rowHeight = this.compact ? 17 : 20;
     this.ensure(gates.length * rowHeight + 8);
     gates.forEach((gate) => {
       this.text(gate.name, MARGIN_X, this.y, 8.5, true, COLORS.muted);
@@ -3682,7 +3912,7 @@ class PdfLayout {
             ? [0.82, 0.55, 0.13]
             : [0.63, 0.25, 0.21];
       this.rect(barX, this.y - 1, barWidth * (gate.value / 100), 6, fillColor);
-      this.text(`${gate.value}%`, PAGE_WIDTH - MARGIN_X, this.y, 8.1, true, COLORS.muted, "right");
+      this.text(gate.level, PAGE_WIDTH - MARGIN_X, this.y, 8.1, true, COLORS.muted, "right");
       this.y -= rowHeight;
     });
     this.y -= 2;
@@ -3691,24 +3921,26 @@ class PdfLayout {
   weekGrid(weeks) {
     const columnGap = 10;
     const columnWidth = (CONTENT_WIDTH - columnGap) / 2;
+    const detailSize = this.compact ? 7.7 : 8.1;
+    const detailLineHeight = this.compact ? 9.5 : 10.4;
     for (let index = 0; index < weeks.length; index += 2) {
       const pair = weeks.slice(index, index + 2);
-      const lineSets = pair.map((week) => wrapText(week.detail, 8.1, columnWidth - 20));
+      const lineSets = pair.map((week) => wrapText(week.detail, detailSize, columnWidth - 20));
       const maxLines = Math.max(...lineSets.map((lines) => lines.length));
-      const height = 34 + maxLines * 10.4;
+      const height = 34 + maxLines * detailLineHeight;
       this.ensure(height + 8);
       pair.forEach((week, pairIndex) => {
         const x = MARGIN_X + pairIndex * (columnWidth + columnGap);
         this.rect(x, this.y - height + 6, columnWidth, height, COLORS.cream, COLORS.line);
         this.text(`WEEK ${index + pairIndex + 1}`, x + 10, this.y - 10, 6.8, true, COLORS.orange);
-        this.text(week.title, x + 10, this.y - 23, 9, true, COLORS.navy);
-        let lineY = this.y - 37;
+        this.text(week.title, x + 10, this.y - 23, this.compact ? 8.6 : 9, true, COLORS.navy);
+        let lineY = this.y - (this.compact ? 34 : 37);
         lineSets[pairIndex].forEach((line) => {
-          this.text(line, x + 10, lineY, 8.1, false, COLORS.muted);
-          lineY -= 10.4;
+          this.text(line, x + 10, lineY, detailSize, false, COLORS.muted);
+          lineY -= detailLineHeight;
         });
       });
-      this.y -= height + 9;
+      this.y -= height + (this.compact ? 7 : 9);
     }
   }
 
@@ -3726,7 +3958,7 @@ class PdfLayout {
     cues.forEach((cue, index) => {
       const x = MARGIN_X + index * (columnWidth + columnGap);
       this.rect(x, this.y - height + 6, columnWidth, height, COLORS.paleBlue, COLORS.line);
-      this.text(index === 0 ? "PROOF DESIGN" : "BUYER PATH", x + 10, this.y - 10, 6.4, true, COLORS.blue);
+      this.text(cue.label ?? (index === 0 ? "PROOF DESIGN" : "BUYER PATH"), x + 10, this.y - 10, 6.4, true, COLORS.blue);
       let lineY = this.y - 24;
       lineSets[index].title.forEach((line) => {
         this.text(line, x + 10, lineY, 8.5, true, COLORS.navy);
@@ -3767,12 +3999,12 @@ class PdfLayout {
 }
 
 function renderReport(report) {
-  const pdf = new PdfLayout(report);
+  const pdf = new PdfLayout(report, { compact: report.pdfCompactPageOne });
 
-  pdf.label(`${report.version}  /  ${report.state.ventureName}`);
+  pdf.label(`${report.version}  /  ${report.pdfVentureName}`);
   pdf.paragraph(report.phase.title, {
-    size: 21,
-    lineHeight: 24,
+    size: report.pdfCompactPageOne ? 19.5 : 21,
+    lineHeight: report.pdfCompactPageOne ? 21.5 : 24,
     bold: true,
     color: COLORS.navy,
     gapAfter: 5,
@@ -3784,32 +4016,46 @@ function renderReport(report) {
     gapAfter: 7,
   });
   pdf.paragraph(report.phase.summary, {
-    size: 9.5,
-    lineHeight: 13.5,
+    size: report.pdfCompactPageOne ? 9 : 9.5,
+    lineHeight: report.pdfCompactPageOne ? 12.2 : 13.5,
     color: COLORS.muted,
     gapAfter: 10,
   });
-  pdf.note("Focused opportunity", report.opportunity, COLORS.paleOrange, COLORS.navy);
+  pdf.note("Focused opportunity", report.pdfOpportunity, COLORS.paleOrange, COLORS.navy);
 
-  if (report.mismatch) {
-    pdf.note("Evidence check", report.mismatch, [0.99, 0.94, 0.84], [0.52, 0.34, 0.07]);
+  if (report.pdfMismatch) {
+    if (report.pdfCompactPageOne) {
+      pdf.label("Evidence check", [0.52, 0.34, 0.07]);
+      pdf.paragraph(report.pdfMismatch, {
+        size: 8,
+        lineHeight: 10.4,
+        color: [0.52, 0.34, 0.07],
+        gapAfter: 6,
+      });
+    } else {
+      pdf.note("Evidence check", report.pdfMismatch, [0.99, 0.94, 0.84], [0.52, 0.34, 0.07]);
+    }
   }
 
   pdf.heading("The next three actions");
-  report.actions.forEach((action, index) => {
+  report.pdfActions.forEach((action, index) => {
     pdf.bullet(action.title, action.detail, index + 1);
   });
   pdf.note("Evidence to advance", report.exitGate);
 
-  pdf.heading("Evidence gates");
+  pdf.heading("Directional evidence gates");
   pdf.readiness(report.readiness);
 
   pdf.heading("Your 30-day plan");
   pdf.weekGrid(report.weeks);
 
+  pdf.compact = false;
   pdf.newPage();
   pdf.label("Proof, adoption & capital");
   pdf.cuePair([report.proofCue, report.buyerCue]);
+
+  pdf.heading("Market and living business plan", { gapBefore: 0 });
+  pdf.cuePair([report.commercialCue, report.businessPlanCue]);
 
   pdf.heading("Critical adoption gates", { gapBefore: 0 });
   report.barriers.forEach((risk, index) => {
@@ -3823,25 +4069,19 @@ function renderReport(report) {
     color: COLORS.muted,
     gapAfter: 5,
   });
-  pdf.paragraph(`Avoid for now: ${report.funding.avoid}`, {
+  pdf.paragraph(`Avoid for now: ${report.funding.avoid} ${report.avoid}`, {
     size: 8.6,
     color: COLORS.muted,
     gapAfter: 10,
   });
 
   pdf.heading("Ready-to-send RDTS support request", { gapBefore: 0 });
-  pdf.note("Community ask", report.rdtsAsk, COLORS.navy, COLORS.white);
-
-  pdf.heading("Answer snapshot", { gapBefore: 0 });
-  pdf.keyValueGrid(report.snapshot);
-
-  pdf.heading("Important note", { gapBefore: 0, size: 9.5 });
-  pdf.paragraph(report.disclaimer, {
-    size: 7.5,
-    lineHeight: 10,
-    color: COLORS.muted,
-    gapAfter: 2,
-  });
+  pdf.note(
+    "Community ask",
+    `${report.pdfRdtsAsk} Contact: sperdts@gmail.com | connect.spe.org/rdts/programs/ep`,
+    COLORS.navy,
+    COLORS.white,
+  );
 
   return pdf.pages;
 }
@@ -3964,11 +4204,18 @@ function append(parent, ...children) {
   return parent;
 }
 
-function showToast(message) {
+function clearToast() {
   window.clearTimeout(toastTimer);
+  toastTimer = null;
+  toast.classList.remove("visible");
+  toast.textContent = "";
+}
+
+function showToast(message) {
+  clearToast();
   toast.textContent = message;
   toast.classList.add("visible");
-  toastTimer = window.setTimeout(() => toast.classList.remove("visible"), 2600);
+  toastTimer = window.setTimeout(clearToast, 2600);
 }
 
 function readState() {
@@ -3982,6 +4229,7 @@ function readState() {
     customerEvidence: String(data.get("customerEvidence") ?? ""),
     decisionPath: String(data.get("decisionPath") ?? ""),
     focus: String(data.get("focus") ?? ""),
+    commercialCase: String(data.get("commercialCase") ?? ""),
     technicalProof: String(data.get("technicalProof") ?? ""),
     commitment: String(data.get("commitment") ?? ""),
     successMetric: String(data.get("successMetric") ?? ""),
@@ -4045,7 +4293,7 @@ function updateRunwayVisibility() {
 function updateCounters() {
   const problem = form.elements.problem;
   const metric = form.elements.successMetric;
-  document.querySelector("#problemCount").textContent = `${problem.value.length} / 160`;
+  document.querySelector("#problemCount").textContent = `${problem.value.length} / 220`;
   document.querySelector("#metricCount").textContent = `${metric.value.length} / 120`;
   const selected = form.querySelectorAll('input[name="barriers"]:checked').length;
   document.querySelector("#barrierSelectionCount").textContent = `${selected} / 3 selected`;
@@ -4146,11 +4394,13 @@ function renderResult(report) {
   const phaseRow = element("div", "result-phase-row");
   const phaseCopy = element("div");
   const badge = element("span", "phase-badge");
+  const resultTitle = element("h2", "", report.phase.title);
+  resultTitle.id = "resultTitle";
   append(badge, element("i"), document.createTextNode(` Readiness verdict · ${report.phase.label}`));
   append(
     phaseCopy,
     badge,
-    element("h2", "", report.phase.title),
+    resultTitle,
     element("p", "result-summary", report.phase.summary),
   );
   append(phaseRow, phaseCopy, element("span", "phase-number", report.phase.number));
@@ -4201,9 +4451,9 @@ function renderResult(report) {
   actionsCard.append(exitGate);
   mainColumn.append(actionsCard);
 
-  const cuesCard = reportCard("Proof or pilot brief", "Design for evidence and adoption");
+  const cuesCard = reportCard("Proof, market & business plan", "Design for evidence and adoption");
   const cueGrid = element("div", "cue-grid");
-  [report.proofCue, report.buyerCue].forEach((cue) => {
+  [report.proofCue, report.buyerCue, report.commercialCue, report.businessPlanCue].forEach((cue) => {
     const cueItem = element("div", "cue-item");
     append(cueItem, element("strong", "", cue.title), element("p", "", cue.detail));
     cueGrid.append(cueItem);
@@ -4217,7 +4467,7 @@ function renderResult(report) {
   planCard.append(weekGrid);
   mainColumn.append(planCard);
 
-  const readinessCard = reportCard("Evidence gates", "What is strong—and what is not");
+  const readinessCard = reportCard("Directional evidence gates", "What is strong—and what is not");
   const readinessList = element("div", "readiness-list");
   report.readiness.forEach((gate) => {
     const row = element("div", `readiness-row ${gate.status}`);
@@ -4225,10 +4475,11 @@ function renderResult(report) {
     const fill = element("i");
     fill.style.width = `${gate.value}%`;
     bar.append(fill);
-    append(row, element("span", "", gate.name), bar, element("strong", "", `${gate.value}%`));
+    append(row, element("span", "", gate.name), bar, element("strong", "", gate.level));
     readinessList.append(row);
   });
   readinessCard.append(readinessList);
+  readinessCard.append(element("p", "result-summary", report.methodNote));
   sideColumn.append(readinessCard);
 
   const risksCard = reportCard("Critical gates", report.barriers.length === 1 ? "One risk to clear" : "Risks to clear");
@@ -4252,7 +4503,23 @@ function renderResult(report) {
   sideColumn.append(fundingCard);
 
   const supportCard = reportCard("RDTS support request", "A specific ask gets a useful answer");
+  supportCard.append(element("p", "result-summary", report.rdtsSupport));
   supportCard.append(element("div", "rdts-ask", report.rdtsAsk));
+  const contactLine = element("p", "result-summary");
+  const contactEmail = element("a", "", "sperdts@gmail.com");
+  contactEmail.href = "mailto:sperdts@gmail.com";
+  const programLink = element("a", "", "RDTS Entrepreneurship Program page");
+  programLink.href = "https://connect.spe.org/rdts/programs/ep";
+  programLink.target = "_blank";
+  programLink.rel = "noopener";
+  append(
+    contactLine,
+    document.createTextNode("Contact RDTS: "),
+    contactEmail,
+    document.createTextNode(" · "),
+    programLink,
+  );
+  supportCard.append(contactLine);
   const copyButton = element("button", "copy-ask", "Copy this request");
   copyButton.type = "button";
   copyButton.addEventListener("click", async () => {
@@ -4290,6 +4557,7 @@ function validateCurrentStep() {
     showToast("Complete the highlighted answer to continue.");
     return false;
   }
+  clearToast();
   return true;
 }
 
@@ -4304,6 +4572,7 @@ function advance() {
 
   try {
     activeReport = buildReport(readState());
+    clearToast();
     renderResult(activeReport);
     maxUnlockedStep = 4;
     goToStep(4);
@@ -4340,6 +4609,7 @@ function resetGuide() {
   form.reset();
   activeReport = null;
   resultContent.replaceChildren();
+  clearToast();
   maxUnlockedStep = 0;
   updateRunwayVisibility();
   updateCounters();
@@ -4558,14 +4828,14 @@ updateProgress();
       <section class="workbook-intro" id="workbook">
         <div>
           <p class="eyebrow">Interactive Workbook · Streamlined</p>
-          <h2>Turn nine decisions into your next 30 days.</h2>
+          <h2>Turn focused evidence into your next 30 days.</h2>
           <p>
             This replaces only the long selection workbook below. The playbook context, figures, and
             seven-step pathway above remain unchanged.
           </p>
         </div>
         <ul aria-label="Workbook features">
-          <li><strong>~7 minutes</strong><span>Nine focused decisions</span></li>
+          <li><strong>~8 minutes</strong><span>Four short screens</span></li>
           <li><strong>Private</strong><span>Nothing is uploaded</span></li>
           <li><strong>PDF brief</strong><span>Specific actions and gates</span></li>
         </ul>
@@ -4703,19 +4973,19 @@ updateProgress();
               </fieldset>
 
               <div class="field text-field" data-required-field="problem">
-                <label for="problem">Who has what problem, in which workflow?</label>
-                <p class="field-help" id="problemHelp">Describe the pain, not your solution. Avoid confidential enabling details.</p>
+                <label for="problem">Who has what problem, in which asset, workflow, and operating context?</label>
+                <p class="field-help" id="problemHelp">Include the current workaround. Describe the pain, not your solution, and avoid confidential enabling details.</p>
                 <textarea
                   id="problem"
                   name="problem"
                   rows="3"
-                  maxlength="160"
+                  maxlength="220"
                   aria-describedby="problemHelp problemCount"
-                  placeholder="Production engineers lose hours reconciling unreliable well data before they can act…"
+                  placeholder="Production engineers on offshore assets lose hours reconciling unreliable well data; today they export and compare spreadsheets manually…"
                 ></textarea>
                 <div class="field-foot">
                   <p class="field-error" data-error-for="problem"></p>
-                  <span class="char-count" id="problemCount">0 / 160</span>
+                  <span class="char-count" id="problemCount">0 / 220</span>
                 </div>
               </div>
             </section>
@@ -4815,6 +5085,34 @@ updateProgress();
                 </div>
                 <p class="field-error" data-error-for="focus"></p>
               </fieldset>
+
+              <fieldset class="field option-field" data-required-field="commercialCase">
+                <legend>How strong is the first-wedge commercial case?</legend>
+                <p class="field-help" id="commercialCaseHelp">Use the first reachable market—not a broad industry total.</p>
+                <div class="option-grid option-grid-2 compact-options" aria-describedby="commercialCaseHelp">
+                  <label class="option-card">
+                    <input type="radio" name="commercialCase" value="none">
+                    <span class="option-index">A</span>
+                    <span class="option-copy"><strong>Not assessed</strong><small>Market, alternatives, and sale economics are assumptions</small></span>
+                  </label>
+                  <label class="option-card">
+                    <input type="radio" name="commercialCase" value="mapped">
+                    <span class="option-index">B</span>
+                    <span class="option-copy"><strong>Market mapped</strong><small>Customers and competitors known; economics still rough</small></span>
+                  </label>
+                  <label class="option-card">
+                    <input type="radio" name="commercialCase" value="economics">
+                    <span class="option-index">C</span>
+                    <span class="option-copy"><strong>Economics quantified</strong><small>Likely volume, price, margin, and alternatives estimated</small></span>
+                  </label>
+                  <label class="option-card">
+                    <input type="radio" name="commercialCase" value="validated">
+                    <span class="option-index">D</span>
+                    <span class="option-copy"><strong>Buyer validated</strong><small>Advantage and willingness to pay tested with customers</small></span>
+                  </label>
+                </div>
+                <p class="field-error" data-error-for="commercialCase"></p>
+              </fieldset>
             </section>
 
             <section class="question-screen" data-step="2" aria-labelledby="step2Title" hidden>
@@ -4878,18 +5176,23 @@ updateProgress();
                     <span class="option-copy"><strong>Champion + access</strong><small>Internal support and data/site access</small></span>
                   </label>
                   <label class="option-card">
-                    <input type="radio" name="commitment" value="loi_free">
+                    <input type="radio" name="commitment" value="free_trial">
                     <span class="option-index">D</span>
-                    <span class="option-copy"><strong>LOI or proposed free trial</strong><small>Intent exists, but no paid commitment</small></span>
+                    <span class="option-copy"><strong>Free trial proposed</strong><small>No commercial terms, decision date, or purchase path</small></span>
+                  </label>
+                  <label class="option-card">
+                    <input type="radio" name="commitment" value="loi">
+                    <span class="option-index">E</span>
+                    <span class="option-copy"><strong>Decision-backed LOI</strong><small>Named owner, success criteria, decision date, and next step</small></span>
                   </label>
                   <label class="option-card">
                     <input type="radio" name="commitment" value="paid_pilot">
-                    <span class="option-index">E</span>
+                    <span class="option-index">F</span>
                     <span class="option-copy"><strong>Paid or cost-shared pilot</strong><small>Customer has committed resources</small></span>
                   </label>
                   <label class="option-card">
                     <input type="radio" name="commitment" value="repeat">
-                    <span class="option-index">F</span>
+                    <span class="option-index">G</span>
                     <span class="option-copy"><strong>Repeat paid deployment</strong><small>Commercial use has repeated</small></span>
                   </label>
                 </div>
@@ -5004,12 +5307,13 @@ updateProgress();
 
               <fieldset class="field option-field conditional-field" id="runwayField" data-required-field="runway" hidden>
                 <legend>How much runway remains?</legend>
-                <p class="field-help">Use company or founder runway—whichever ends first.</p>
+                <p class="field-help">Use company or founder runway—whichever ends first. Plan for formal funding to take two to three times longer than the optimistic case.</p>
                 <div class="segmented-options">
                   <label><input type="radio" name="runway" value="under3"><span>&lt;3 months</span></label>
                   <label><input type="radio" name="runway" value="3to9"><span>3–9 months</span></label>
                   <label><input type="radio" name="runway" value="9to18"><span>9–18 months</span></label>
                   <label><input type="radio" name="runway" value="over18"><span>18+ months</span></label>
+                  <label><input type="radio" name="runway" value="sustainable"><span>Cash-flow positive</span></label>
                   <label><input type="radio" name="runway" value="unknown"><span>Unknown</span></label>
                 </div>
                 <p class="field-error" data-error-for="runway"></p>
