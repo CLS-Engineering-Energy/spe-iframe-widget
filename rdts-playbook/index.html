@@ -1014,7 +1014,7 @@ a {
   display: flex;
   align-items: flex-start;
   gap: 9px;
-  margin-top: auto;
+  margin: 0 0 20px;
   padding: 15px 13px;
   color: rgba(255, 255, 255, 0.63);
   background: rgba(255, 255, 255, 0.055);
@@ -1039,12 +1039,39 @@ a {
   font-size: 11px;
 }
 
+.sidebar-config-actions {
+  display: grid;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 22px;
+}
+
+.sidebar-config-actions .button {
+  width: 100%;
+  min-height: 40px;
+  padding: 9px 10px;
+  color: rgba(255, 255, 255, 0.86);
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.18);
+  box-shadow: none;
+  font-size: 11px;
+}
+
+.sidebar-config-actions .button:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.32);
+}
+
 .guide-main {
   min-width: 0;
   background: var(--paper);
 }
 
 .mobile-progress {
+  display: none;
+}
+
+.mobile-config-actions {
   display: none;
 }
 
@@ -2197,6 +2224,142 @@ footer p {
   transform: translateY(0);
 }
 
+.disclaimer-dialog {
+  position: fixed;
+  inset: 50% auto auto 50%;
+  z-index: 9999;
+  width: min(720px, calc(100vw - 32px));
+  max-height: min(84vh, 820px);
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  transform: translate(-50%, -50%);
+  color: var(--ink-950);
+  background: white;
+  border: 0;
+  border-radius: 15px;
+  box-shadow: 0 28px 80px rgba(0, 28, 45, 0.34);
+}
+
+.disclaimer-dialog::backdrop {
+  background: rgba(3, 27, 42, 0.78);
+  backdrop-filter: blur(3px);
+}
+
+body.disclaimer-fallback-open {
+  overflow: hidden;
+}
+
+body.disclaimer-fallback-open::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  background: rgba(3, 27, 42, 0.78);
+}
+
+body.disclaimer-fallback-open > *:not(.disclaimer-dialog):not(.toast) {
+  pointer-events: none;
+  user-select: none;
+}
+
+.disclaimer-dialog[open] {
+  display: flex;
+  flex-direction: column;
+}
+
+.disclaimer-head {
+  padding: 24px 28px 18px;
+  color: white;
+  background: var(--navy-950);
+  border-top: 4px solid var(--orange-500);
+}
+
+.disclaimer-head .eyebrow {
+  color: #e7a276;
+}
+
+.disclaimer-head h2 {
+  margin: 7px 0 0;
+  color: white;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 27px;
+  font-weight: 500;
+  letter-spacing: -0.025em;
+}
+
+.disclaimer-head p:last-child {
+  margin: 8px 0 0;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.disclaimer-copy {
+  padding: 22px 28px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.disclaimer-copy h3 {
+  margin: 19px 0 6px;
+  color: var(--navy-950);
+  font-size: 13px;
+}
+
+.disclaimer-copy h3:first-child {
+  margin-top: 0;
+}
+
+.disclaimer-copy p {
+  margin: 0 0 10px;
+  color: var(--ink-650);
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.disclaimer-copy .legal-emphasis {
+  color: var(--ink-950);
+  font-weight: 720;
+}
+
+.disclaimer-actions {
+  padding: 17px 28px 21px;
+  background: var(--cream);
+  border-top: 1px solid var(--line);
+}
+
+.disclaimer-acceptance {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: var(--navy-950);
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.disclaimer-acceptance input {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  accent-color: var(--orange-600);
+  flex: 0 0 auto;
+}
+
+.disclaimer-actions .button {
+  width: 100%;
+  margin-top: 14px;
+}
+
+.disclaimer-actions .button:disabled {
+  cursor: not-allowed;
+  opacity: 0.48;
+  transform: none;
+  box-shadow: none;
+}
+
 .embed .site-header,
 .embed .hero,
 .embed .method-strip,
@@ -2322,6 +2485,21 @@ footer p {
     margin-top: 2px;
     color: var(--navy-950);
     font-size: 13px;
+  }
+
+  .mobile-config-actions {
+    display: flex;
+    gap: 8px;
+    padding: 10px 25px 12px;
+    background: var(--cream);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .mobile-config-actions .button {
+    flex: 1;
+    min-height: 39px;
+    padding: 8px 10px;
+    font-size: 11px;
   }
 
   .result-body {
@@ -2482,6 +2660,11 @@ footer p {
     padding-inline: 18px;
   }
 
+  .mobile-config-actions {
+    padding-right: 18px;
+    padding-left: 18px;
+  }
+
   .question-screen {
     padding: 30px 18px 18px;
   }
@@ -2600,6 +2783,17 @@ footer p {
     padding-bottom: 62px;
   }
 
+  .disclaimer-head,
+  .disclaimer-copy,
+  .disclaimer-actions {
+    padding-right: 19px;
+    padding-left: 19px;
+  }
+
+  .disclaimer-head h2 {
+    font-size: 23px;
+  }
+
   footer {
     align-items: flex-start;
     flex-direction: column;
@@ -2644,6 +2838,7 @@ footer p {
   .workbook-intro,
   .guide-sidebar,
   .mobile-progress,
+  .mobile-config-actions,
   .progress-track,
   .form-actions,
   .closing-note,
@@ -2651,6 +2846,10 @@ footer p {
   .toast,
   .result-toolbar,
   .copy-ask {
+    display: none !important;
+  }
+
+  .disclaimer-dialog {
     display: none !important;
   }
 
@@ -2839,13 +3038,13 @@ const commercialCaseOverlays = {
     label: "Market case",
     title: "Build the commercial case before enlarging the product.",
     detail:
-      "Estimate the first reachable market, likely annual unit or contract volume, attainable price, cost to serve, current alternatives, leading suppliers, and the advantage required to win.",
+      "Estimate the first reachable market, annual volume, price, cost to serve, alternatives, competitors, and entry burden. Decide whether this is a better solution in a recognized category or market creation that requires customer education, more time, and more capital.",
   },
   mapped: {
     label: "Market case",
     title: "Turn market description into sale economics.",
     detail:
-      "Quantify likely price, volume, gross margin, sales cycle, qualification burden, and customer switching cost for the first wedge—not the whole energy market.",
+      "Quantify likely price, volume, gross margin, sales cycle, qualification and insurance burden, certifications, procurement complexity, pilot-site access, and switching cost for the first wedge—not the whole energy market.",
   },
   economics: {
     label: "Market case",
@@ -2921,7 +3120,7 @@ const barrierActions = {
   ip: {
     title: "Establish the IP and ownership chain",
     detail:
-      "Document inventors, dated development records, employer/university obligations, confidentiality, public disclosures, and ownership. Ask qualified IP counsel early about patents, trade secrets, copyright, trademarks, licensing, and freedom to operate.",
+      "Document inventors, dated records, employer/university obligations, confidentiality, disclosure, and ownership. Ask qualified IP counsel early about freedom to operate and layered protection. For software/AI, compare jurisdiction-specific patent eligibility with trade secrets, copyright, contracts, data advantages, and execution; search trademarks and domains before investing in a brand.",
     rdts: "an IP commercialization mentor who can review ownership, disclosure timing, and the right questions for counsel",
   },
   data: {
@@ -2945,7 +3144,7 @@ const barrierActions = {
   procurement: {
     title: "Map procurement before the pilot ends",
     detail:
-      "Identify supplier registration, business documents and certifications, MSA/terms, insurance, operational-integrity and cybersecurity requirements, technical/financial qualification, e-invoicing, budget, and purchase dates.",
+      "Identify supplier registration, business documents and certifications, MSA/terms, budget, purchase dates, operational-integrity and cybersecurity requirements, technical/financial qualification, and e-invoicing. Confirm insurance types, limits, cost, and legal advice before promising pilot scope or price.",
     rdts: "a procurement or MSA mentor who can review the customer’s path from pilot to purchase",
   },
   champion: {
@@ -3007,7 +3206,7 @@ const phases = {
       {
         title: "Score no more than three entry wedges",
         detail:
-          "Compare pain, access, budget, reachable market, likely sale value and margin, competitors, required advantage, switching friction, and time-to-proof. Pick one—not a portfolio.",
+          "Compare pain, access, budget, reachable market, sale value and margin, competition, sales cycle, regulation, certification, insurance, customization, procurement, and pilot-site access. Distinguish a recognized category from market creation, then pick one wedge—not a portfolio.",
       },
       {
         title: `Lock one ${buyerLabel} workflow and outcome`,
@@ -3074,7 +3273,7 @@ const phases = {
       {
         title: "Write the adoption path into the pilot brief",
         detail:
-          "Include HSE, data, IP, cybersecurity, integration, procurement, pricing, scale-up barriers, and the commercial action triggered if criteria are met.",
+          "Before work starts, document HSE, cybersecurity, integration, insurance, procurement, pricing and cost share; ownership and permitted use of field data, derived data, results, new IP, and learning; and the commercial action triggered if criteria are met. Use qualified legal and insurance advice.",
       },
     ],
     exit:
@@ -3395,7 +3594,7 @@ function fundingPath(state, phase) {
 
 function businessPlanPath(state, phase) {
   const common =
-    "Keep a living plan covering company/problem, first market and competitors, offer/IP, team, go-to-market, operations, cash/funding, and an evidence appendix. Before disclosure or partner sharing, document inventorship and employer/university ownership obligations; take formal IP questions to qualified counsel early.";
+    "Keep a living plan covering company/problem, first market and competitors, offer/IP, team, go-to-market, operations, cash/funding, and an evidence appendix. Review it quarterly and after a pilot, new market, major product change, or financing. Before disclosure or partner sharing, document inventorship and employer/university ownership obligations; take formal IP questions to qualified counsel early.";
 
   if (["discover", "focus"].includes(phase.id)) {
     return {
@@ -3592,7 +3791,7 @@ function buildReport(rawState, options = {}) {
   }).format(createdAt);
 
   return {
-    version: "Aligned with SPE RDTS Entrepreneurship Playbook v2 · 2026",
+    version: "Aligned with SPE RDTS Entrepreneurship Playbook v3 · September 2026",
     createdAt: createdAt.toISOString(),
     createdDate,
     state,
@@ -3636,7 +3835,7 @@ function buildReport(rawState, options = {}) {
     avoid: phase.avoid,
     snapshot: buildSnapshot(state),
     disclaimer:
-      "This action brief is aligned with the SPE RDTS Entrepreneurship Playbook v2 and supplements—not replaces—qualified legal, IP, technical, financial, HSE, regulatory, cybersecurity, or environmental advice. Validate the technology with appropriate experts, take responsibility for financial risk, and do not exceed your experience, training, or comfort level.",
+      "This action brief is aligned with the SPE RDTS Entrepreneurship Playbook v3 and supplements—not replaces—qualified legal, IP, technical, financial, HSE, regulatory, compliance, cybersecurity, risk-management, insurance, or environmental advice. Validate the technology with appropriate experts and take responsibility for financial, compliance, and risk-management decisions.",
     methodNote:
       "Navigator stages, evidence levels, and thresholds are directional working aids—not an RDTS certification or official pass/fail standard.",
   };
@@ -4155,6 +4354,220 @@ function downloadReportPdf(report) {
   window.setTimeout(() => URL.revokeObjectURL(url), 2000);
 }
 
+const CONFIG_KIND = "spe-rdts-founder-action-brief";
+const CONFIG_SCHEMA_MAJOR = 1;
+const CONFIG_SCHEMA_MINOR = 0;
+const CONFIG_MAX_BYTES = 256 * 1024;
+const CONFIG_TEXT_FIELDS = {
+  ventureName: 80,
+  problem: 220,
+  successMetric: 120,
+};
+const CONFIG_ENUM_FIELDS = [
+  "solutionType",
+  "buyer",
+  "customerEvidence",
+  "decisionPath",
+  "focus",
+  "commercialCase",
+  "technicalProof",
+  "commitment",
+  "resourceNeed",
+  "runway",
+];
+const CONFIG_ANSWER_FIELDS = [
+  "ventureName",
+  "solutionType",
+  "buyer",
+  "problem",
+  "customerEvidence",
+  "decisionPath",
+  "focus",
+  "commercialCase",
+  "technicalProof",
+  "commitment",
+  "successMetric",
+  "barriers",
+  "resourceNeed",
+  "runway",
+];
+
+function isPlainConfigurationObject(value) {
+  return Object.prototype.toString.call(value) === "[object Object]";
+}
+
+function configurationError(message) {
+  const error = new Error(message);
+  error.name = "ConfigurationError";
+  return error;
+}
+
+function cleanConfigurationText(value, fieldName, maxLength) {
+  if (value === undefined || value === null) return "";
+  if (typeof value !== "string") {
+    throw configurationError(`The ${fieldName} answer must be text.`);
+  }
+  const normalized = value.replace(/\r\n?/g, "\n");
+  if (/[\u0000-\u0008\u000b\u000c\u000e-\u001f\u007f]/.test(normalized)) {
+    throw configurationError(`The ${fieldName} answer contains unsupported control characters.`);
+  }
+  if (normalized.length > maxLength) {
+    throw configurationError(`The ${fieldName} answer is longer than this version allows.`);
+  }
+  return normalized;
+}
+
+function validateConfigurationAnswers(rawAnswers, options = {}) {
+  if (!isPlainConfigurationObject(rawAnswers)) {
+    throw configurationError("The configuration does not contain a valid answers object.");
+  }
+
+  const legacy = Boolean(options.legacy);
+  const answers = {};
+  for (const [fieldName, maxLength] of Object.entries(CONFIG_TEXT_FIELDS)) {
+    answers[fieldName] = cleanConfigurationText(rawAnswers[fieldName], fieldName, maxLength);
+  }
+
+  for (const fieldName of CONFIG_ENUM_FIELDS) {
+    let value = rawAnswers[fieldName];
+    if (value === undefined || value === null) value = "";
+    if (typeof value !== "string") {
+      throw configurationError(`The ${fieldName} answer must be text.`);
+    }
+    if (legacy && fieldName === "commitment" && value === "loi_free") value = "free_trial";
+    if (fieldName === "runway" && value === "not_needed") value = "";
+    if (value && (!Object.hasOwn(LABELS[fieldName], value) || (fieldName === "runway" && value === "not_needed"))) {
+      throw configurationError(`The ${fieldName} answer is not supported by this version.`);
+    }
+    answers[fieldName] = value;
+  }
+
+  const rawBarriers = rawAnswers.barriers ?? [];
+  if (!Array.isArray(rawBarriers)) {
+    throw configurationError("The barriers answer must be a list.");
+  }
+  if (rawBarriers.length > 3) {
+    throw configurationError("A configuration can contain no more than three barriers.");
+  }
+  const barriers = [];
+  for (const value of rawBarriers) {
+    if (typeof value !== "string" || !Object.hasOwn(LABELS.barriers, value)) {
+      throw configurationError("The configuration contains an unsupported barrier.");
+    }
+    if (barriers.includes(value)) {
+      throw configurationError("The configuration contains the same barrier more than once.");
+    }
+    barriers.push(value);
+  }
+  if (barriers.includes("unknown") && barriers.length > 1) {
+    throw configurationError("“Not assessed yet” cannot be combined with another barrier.");
+  }
+  answers.barriers = barriers;
+
+  if (!answers.resourceNeed && answers.runway) {
+    throw configurationError("Runway cannot be set without a resource requirement.");
+  }
+  return answers;
+}
+
+function createConfiguration(rawState, savedStep = 0, options = {}) {
+  const source = isPlainConfigurationObject(rawState) ? { ...rawState } : {};
+  if (source.runway === "not_needed" || !source.resourceNeed) source.runway = "";
+  const answers = validateConfigurationAnswers(source);
+  const currentStep = Number.isInteger(savedStep) ? Math.max(0, Math.min(savedStep, 4)) : 0;
+  const now = options.now instanceof Date ? options.now : new Date();
+  return {
+    kind: CONFIG_KIND,
+    schema: { major: CONFIG_SCHEMA_MAJOR, minor: CONFIG_SCHEMA_MINOR },
+    playbookVersion: "3",
+    savedAt: now.toISOString(),
+    answers,
+    ui: { currentStep },
+  };
+}
+
+function serializeConfiguration(rawState, savedStep = 0, options = {}) {
+  return `${JSON.stringify(createConfiguration(rawState, savedStep, options), null, 2)}\n`;
+}
+
+function parseConfigurationText(text) {
+  if (typeof text !== "string" || !text.trim()) {
+    throw configurationError("The selected configuration file is empty.");
+  }
+  if (new TextEncoder().encode(text).length > CONFIG_MAX_BYTES) {
+    throw configurationError("The selected configuration file is too large.");
+  }
+
+  let parsed;
+  try {
+    parsed = JSON.parse(text);
+  } catch {
+    throw configurationError("The selected file is not valid JSON.");
+  }
+  if (!isPlainConfigurationObject(parsed)) {
+    throw configurationError("The selected file is not an RDTS configuration object.");
+  }
+
+  const warnings = [];
+  const legacy = !Object.hasOwn(parsed, "schema") && !Object.hasOwn(parsed, "kind");
+  let sourceAnswers;
+  let currentStep = null;
+
+  if (legacy) {
+    sourceAnswers = isPlainConfigurationObject(parsed.answers) ? parsed.answers : parsed;
+    if (!CONFIG_ANSWER_FIELDS.some((fieldName) => Object.hasOwn(sourceAnswers, fieldName))) {
+      throw configurationError("The selected file does not contain recognizable RDTS answers.");
+    }
+    warnings.push("A legacy configuration was migrated to the current format.");
+  } else {
+    if (parsed.kind !== CONFIG_KIND) {
+      throw configurationError("The selected file is not an SPE RDTS Founder Action Brief configuration.");
+    }
+    if (
+      !isPlainConfigurationObject(parsed.schema) ||
+      !Number.isInteger(parsed.schema.major) ||
+      !Number.isInteger(parsed.schema.minor) ||
+      parsed.schema.major < 0 ||
+      parsed.schema.minor < 0
+    ) {
+      throw configurationError("The configuration schema is missing or invalid.");
+    }
+    if (parsed.schema.major > CONFIG_SCHEMA_MAJOR) {
+      throw configurationError("This file was created by a newer incompatible version.");
+    }
+    if (parsed.schema.major < CONFIG_SCHEMA_MAJOR) {
+      throw configurationError("This configuration version is no longer supported.");
+    }
+    if (parsed.schema.minor > CONFIG_SCHEMA_MINOR) {
+      warnings.push("This file was created by a newer compatible version; unrecognized fields were ignored.");
+    }
+    sourceAnswers = parsed.answers;
+  }
+
+  if (isPlainConfigurationObject(parsed.ui) && Object.hasOwn(parsed.ui, "currentStep")) {
+    if (!Number.isInteger(parsed.ui.currentStep) || parsed.ui.currentStep < 0 || parsed.ui.currentStep > 4) {
+      throw configurationError("The saved screen number is invalid.");
+    }
+    currentStep = parsed.ui.currentStep;
+  }
+
+  return {
+    answers: validateConfigurationAnswers(sourceAnswers, { legacy }),
+    currentStep,
+    warnings,
+  };
+}
+
+function configurationFilename(rawState) {
+  const name = cleanConfigurationText(rawState?.ventureName ?? "", "ventureName", 80);
+  const venture = latinText(name)
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "")
+    .slice(0, 48) || "energy-venture";
+  return `${venture}-rdts-playbook-configuration.json`;
+}
+
 
 const stepMeta = [
   { title: "Your situation", percent: 25 },
@@ -4170,6 +4583,7 @@ const hero = document.querySelector("#hero");
 const method = document.querySelector("#method");
 const closingNote = document.querySelector("#closingNote");
 const startButton = document.querySelector("#startButton");
+const workbookNavLink = document.querySelector("#workbookNavLink");
 const howItWorksButton = document.querySelector("#howItWorksButton");
 const nextButton = document.querySelector("#nextButton");
 const backButton = document.querySelector("#backButton");
@@ -4183,6 +4597,12 @@ const sidebarTitle = document.querySelector("#sidebarTitle");
 const runwayField = document.querySelector("#runwayField");
 const toast = document.querySelector("#toast");
 const resultContent = document.querySelector("#resultContent");
+const configurationFileInput = document.querySelector("#configurationFileInput");
+const configurationDownloadButtons = [...document.querySelectorAll(".download-configuration")];
+const configurationLoadButtons = [...document.querySelectorAll(".load-configuration")];
+const disclaimerDialog = document.querySelector("#disclaimerDialog");
+const disclaimerAcceptance = document.querySelector("#disclaimerAcceptance");
+const disclaimerContinue = document.querySelector("#disclaimerContinue");
 const questionScreens = [...document.querySelectorAll(".question-screen")];
 const resultScreen = document.querySelector(".result-screen");
 const stepButtons = [...document.querySelectorAll(".step-nav-item")];
@@ -4191,6 +4611,7 @@ let currentStep = 0;
 let maxUnlockedStep = 0;
 let activeReport = null;
 let toastTimer = null;
+let disclaimerAccepted = false;
 
 function element(tag, className = "", text = "") {
   const node = document.createElement(tag);
@@ -4297,6 +4718,171 @@ function updateCounters() {
   document.querySelector("#metricCount").textContent = `${metric.value.length} / 120`;
   const selected = form.querySelectorAll('input[name="barriers"]:checked').length;
   document.querySelector("#barrierSelectionCount").textContent = `${selected} / 3 selected`;
+}
+
+function downloadConfiguration() {
+  const json = serializeConfiguration(readState(), currentStep);
+  const url = URL.createObjectURL(new Blob([json], { type: "application/json;charset=utf-8" }));
+  const anchor = document.createElement("a");
+  anchor.href = url;
+  anchor.download = configurationFilename(readState());
+  document.body.append(anchor);
+  anchor.click();
+  anchor.remove();
+  window.setTimeout(() => URL.revokeObjectURL(url), 2000);
+  showToast("Configuration downloaded. Keep the file private—it contains your answers.");
+}
+
+function hasMeaningfulAnswer(state) {
+  return CONFIG_ANSWER_FIELDS.some((fieldName) => {
+    const value = state[fieldName];
+    if (Array.isArray(value)) return value.length > 0;
+    return typeof value === "string" && value !== "" && value !== "not_needed";
+  });
+}
+
+function setTextControl(fieldName, value) {
+  const control = form.elements.namedItem(fieldName);
+  if (control instanceof HTMLInputElement || control instanceof HTMLTextAreaElement) {
+    control.value = value;
+  }
+}
+
+function setChoiceControls(fieldName, selectedValues) {
+  const values = new Set(Array.isArray(selectedValues) ? selectedValues : [selectedValues]);
+  form.querySelectorAll(`[name="${fieldName}"]`).forEach((control) => {
+    if (control instanceof HTMLInputElement) control.checked = values.has(control.value);
+  });
+}
+
+function writeAnswersToForm(answers) {
+  form.reset();
+  for (const fieldName of Object.keys(CONFIG_TEXT_FIELDS)) {
+    setTextControl(fieldName, answers[fieldName]);
+  }
+  for (const fieldName of CONFIG_ENUM_FIELDS.filter((name) => !["resourceNeed", "runway"].includes(name))) {
+    setChoiceControls(fieldName, answers[fieldName]);
+  }
+  setChoiceControls("barriers", answers.barriers);
+  setChoiceControls("resourceNeed", answers.resourceNeed);
+  updateRunwayVisibility();
+  if (answers.resourceNeed) setChoiceControls("runway", answers.runway);
+  updateCounters();
+}
+
+function stageConfiguration(configuration) {
+  const answers = validateConfigurationAnswers(configuration.answers);
+
+  const firstInvalid = [0, 1, 2, 3].find(
+    (stepIndex) => Object.keys(validateStep(answers, stepIndex)).length > 0,
+  );
+  const safeMax = firstInvalid === undefined ? 4 : firstInvalid;
+  const requestedStep = configuration.currentStep === null ? safeMax : configuration.currentStep;
+  const targetStep = Math.max(0, Math.min(requestedStep, safeMax));
+  const report = targetStep === 4 ? buildReport(answers) : null;
+  return { answers, report, safeMax, targetStep };
+}
+
+function applyConfiguration(configuration) {
+  const staged = stageConfiguration(configuration);
+  const previous = {
+    answers: createConfiguration(readState(), currentStep).answers,
+    activeReport,
+    currentStep,
+    guideHidden: guide.hidden,
+    maxUnlockedStep,
+    closingHidden: closingNote?.hidden ?? true,
+  };
+
+  try {
+    activeReport = null;
+    resultContent.replaceChildren();
+    clearToast();
+    questionScreens.forEach((_, index) => clearStepErrors(index));
+    writeAnswersToForm(staged.answers);
+    maxUnlockedStep = staged.safeMax;
+
+    if (staged.report) {
+      activeReport = staged.report;
+      renderResult(activeReport);
+    }
+    guide.hidden = false;
+    if (closingNote) closingNote.hidden = true;
+    goToStep(staged.targetStep);
+  } catch (error) {
+    writeAnswersToForm(previous.answers);
+    maxUnlockedStep = previous.maxUnlockedStep;
+    activeReport = previous.activeReport;
+    resultContent.replaceChildren();
+    if (activeReport) renderResult(activeReport);
+    guide.hidden = previous.guideHidden;
+    if (closingNote) closingNote.hidden = previous.closingHidden;
+    if (!guide.hidden) goToStep(previous.currentStep, { scroll: false });
+    throw error;
+  }
+
+  const warning = configuration.warnings[0];
+  showToast(warning ? `Configuration loaded. ${warning}` : "Configuration loaded.");
+}
+
+async function loadConfigurationFile(file) {
+  if (!file) return;
+  if (!file.name.toLowerCase().endsWith(".json")) {
+    throw configurationError("Choose a JSON configuration file.");
+  }
+  if (!file.size) throw configurationError("The selected configuration file is empty.");
+  if (file.size > CONFIG_MAX_BYTES) throw configurationError("The selected configuration file is too large.");
+  const parsed = parseConfigurationText(await file.text());
+  if (
+    hasMeaningfulAnswer(readState()) &&
+    !window.confirm("Replace the answers currently in this workbook with the loaded configuration?")
+  ) {
+    return;
+  }
+  applyConfiguration(parsed);
+}
+
+let pendingDisclaimerAction = null;
+
+function openDisclaimer(action) {
+  if (disclaimerAccepted) {
+    action?.();
+    return;
+  }
+  pendingDisclaimerAction = action ?? null;
+  disclaimerAcceptance.checked = false;
+  disclaimerContinue.disabled = true;
+  if (typeof disclaimerDialog.showModal === "function") {
+    if (!disclaimerDialog.open) disclaimerDialog.showModal();
+  } else {
+    document.body.classList.add("disclaimer-fallback-open");
+    disclaimerDialog.setAttribute("open", "");
+  }
+  window.setTimeout(() => disclaimerAcceptance.focus(), 0);
+}
+
+document.addEventListener("keydown", (event) => {
+  if (!document.body.classList.contains("disclaimer-fallback-open")) return;
+  if (event.key === "Escape") {
+    event.preventDefault();
+    event.stopPropagation();
+    return;
+  }
+  if (event.key !== "Tab") return;
+  const focusable = [disclaimerAcceptance, disclaimerContinue].filter((control) => !control.disabled);
+  const position = focusable.indexOf(document.activeElement);
+  const nextPosition = event.shiftKey
+    ? (position <= 0 ? focusable.length - 1 : position - 1)
+    : (position + 1) % focusable.length;
+  event.preventDefault();
+  focusable[nextPosition]?.focus();
+});
+
+function openGuide() {
+  guide.hidden = false;
+  if (closingNote) closingNote.hidden = true;
+  maxUnlockedStep = Math.max(maxUnlockedStep, 0);
+  goToStep(currentStep);
 }
 
 function updateProgress() {
@@ -4617,11 +5203,56 @@ function resetGuide() {
   goToStep(0);
 }
 
-startButton?.addEventListener("click", () => {
-  guide.hidden = false;
-  if (closingNote) closingNote.hidden = true;
-  maxUnlockedStep = Math.max(maxUnlockedStep, 0);
-  goToStep(0);
+startButton?.addEventListener("click", (event) => {
+  event.preventDefault();
+  openDisclaimer(openGuide);
+});
+
+workbookNavLink?.addEventListener("click", (event) => {
+  event.preventDefault();
+  openDisclaimer(openGuide);
+});
+
+disclaimerAcceptance?.addEventListener("change", () => {
+  disclaimerContinue.disabled = !disclaimerAcceptance.checked;
+});
+
+disclaimerDialog?.addEventListener("cancel", (event) => {
+  event.preventDefault();
+});
+
+disclaimerContinue?.addEventListener("click", () => {
+  if (!disclaimerAcceptance.checked) return;
+  disclaimerAccepted = true;
+  if (typeof disclaimerDialog.close === "function") disclaimerDialog.close();
+  else disclaimerDialog.removeAttribute("open");
+  document.body.classList.remove("disclaimer-fallback-open");
+  const action = pendingDisclaimerAction;
+  pendingDisclaimerAction = null;
+  action?.();
+});
+
+configurationDownloadButtons.forEach((button) => {
+  button.addEventListener("click", () => openDisclaimer(downloadConfiguration));
+});
+
+configurationLoadButtons.forEach((button) => {
+  button.addEventListener("click", () => openDisclaimer(() => configurationFileInput.click()));
+});
+
+configurationFileInput?.addEventListener("change", async () => {
+  const [file] = configurationFileInput.files ?? [];
+  try {
+    await loadConfigurationFile(file);
+  } catch (error) {
+    showToast(
+      error?.name === "ConfigurationError"
+        ? `${error.message} Current answers were not changed.`
+        : "The configuration could not be loaded. Current answers were not changed.",
+    );
+  } finally {
+    configurationFileInput.value = "";
+  }
 });
 
 howItWorksButton?.addEventListener("click", () => {
@@ -4698,8 +5329,8 @@ if (params.get("embed") === "1") {
   document.body.classList.add("embed");
   if (hero) hero.hidden = true;
   if (method) method.hidden = true;
-  guide.hidden = false;
   if (closingNote) closingNote.hidden = true;
+  openDisclaimer(openGuide);
 }
 
 updateRunwayVisibility();
@@ -4726,7 +5357,7 @@ updateProgress();
       <nav class="header-nav" aria-label="Page navigation">
         <a href="#overview">Overview</a>
         <a href="#pathway">7-Step Pathway</a>
-        <a href="#workbook">Interactive Workbook</a>
+        <a id="workbookNavLink" href="#workbook">Interactive Workbook</a>
         <a href="https://connect.spe.org/rdts/programs/ep" target="_blank" rel="noopener">Program Page</a>
       </nav>
     </header>
@@ -4735,7 +5366,7 @@ updateProgress();
       <section class="hero original-hero" id="hero">
         <div class="original-hero-inner">
           <p class="brand-eyebrow">SPE Research &amp; Development Technical Section</p>
-          <span class="version-pill">Entrepreneurship Program · 2026 Edition</span>
+          <span class="version-pill">Entrepreneurship Program · Playbook v3 · September 2026</span>
           <h1>Entrepreneurship Program: <strong>From Idea to Energy Company</strong></h1>
           <p class="hero-lede">
             An interactive guide from the <strong>SPE Research &amp; Development Technical Section,
@@ -4758,7 +5389,7 @@ updateProgress();
 
       <section class="overview-card" id="overview">
         <div class="overview-head">
-          <h2>Purpose of the SPE Research &amp; Development Technical Section Entrepreneurship Program Playbook v2</h2>
+          <h2>Purpose of the SPE Research &amp; Development Technical Section Entrepreneurship Program Playbook v3</h2>
           <p>
             This version reframes the original startup workbook as a practical playbook for energy founders
             who need to bridge technical feasibility and commercial viability.
@@ -4841,8 +5472,12 @@ updateProgress();
         </ul>
       </section>
 
-      <section class="guide-shell" id="guide">
+      <section class="guide-shell" id="guide" hidden>
         <aside class="guide-sidebar" aria-label="Guide progress">
+          <div class="sidebar-note">
+            <span aria-hidden="true">◎</span>
+            <p><strong>Local by design</strong>Your answers stay in this browser tab and are never uploaded.</p>
+          </div>
           <div class="sidebar-intro">
             <span class="sidebar-kicker">Founder Action Brief</span>
             <strong id="sidebarTitle">Your situation</strong>
@@ -4865,9 +5500,9 @@ updateProgress();
               <span>05</span><span><strong>Your brief</strong><small>Priority &amp; plan</small></span>
             </button>
           </nav>
-          <div class="sidebar-note">
-            <span aria-hidden="true">◎</span>
-            <p><strong>Local by design</strong>Your answers stay in this browser tab and are never uploaded.</p>
+          <div class="sidebar-config-actions" aria-label="Configuration file actions">
+            <button class="button download-configuration" type="button">Download configuration</button>
+            <button class="button load-configuration" type="button" aria-controls="configurationFileInput">Load configuration</button>
           </div>
         </aside>
 
@@ -4888,6 +5523,10 @@ updateProgress();
             aria-valuenow="25"
           >
             <span id="progressBar" style="width: 25%"></span>
+          </div>
+          <div class="mobile-config-actions" aria-label="Configuration file actions">
+            <button class="button button-secondary download-configuration" type="button">Download configuration</button>
+            <button class="button button-secondary load-configuration" type="button" aria-controls="configurationFileInput">Load configuration</button>
           </div>
 
           <form id="navigatorForm" novalidate>
@@ -5338,19 +5977,74 @@ updateProgress();
         </div>
       </section>
 
+      <input id="configurationFileInput" type="file" accept=".json,application/json" hidden>
+
     </main>
 
     <footer>
       <div>
         <strong>SPE Research &amp; Development Technical Section · Entrepreneurship Program</strong>
-        <span>From Idea to Energy Company · 2026 Edition</span>
+        <span>From Idea to Energy Company · Playbook v3 · September 2026</span>
       </div>
       <p>
-        Disclaimer: This playbook supplements, and does not replace, legal, technical, financial, regulatory,
-        IP, cybersecurity, safety, or environmental advice. Validate technology with appropriate experts and
-        do not take risks beyond your experience, training, or comfort level.
+        This playbook supplements, and does not replace, qualified legal, technical, financial, regulatory,
+        compliance, IP, cybersecurity, insurance, safety, risk-management, or environmental advice. The complete
+        disclaimer and conditions of use must be accepted before opening the tool.
       </p>
     </footer>
+
+    <dialog
+      class="disclaimer-dialog"
+      id="disclaimerDialog"
+      aria-labelledby="disclaimerTitle"
+      aria-describedby="disclaimerSummary"
+    >
+      <div class="disclaimer-head">
+        <p class="eyebrow">SPE RDTS · September 21, 2026</p>
+        <h2 id="disclaimerTitle">Disclaimer and conditions of use</h2>
+        <p id="disclaimerSummary">Read the complete disclaimer below. Acceptance is required each time the tool is opened.</p>
+      </div>
+      <div class="disclaimer-copy" tabindex="0">
+        <h3>Advice, responsibility, and risk</h3>
+        <p>
+          The information in this book is meant to supplement, not replace, legal, technical, and financial advice. Like As with any endeavor involving calculations, computational, regulatory, compliance and risk management but also environmental factors, entrepreneurship poses inherent risk. The authors advise readers to take full responsibility for their financial, compliance and risk management requirements. Further for readers to know their or your own boundaries, their or your capacities, in order to protect their or your well-being.
+        </p>
+        <p>
+          Before practicing the principles described in this book, ensure that your technology or theory is well tested and validated by experts, and do not take risks beyond your level of experience, aptitude, training, and comfort level.
+        </p>
+
+        <h3>Liability</h3>
+        <p>
+          Although the authors and publishers have made every effort to ensure that the information in this guidebook was correct at the time of compilation, the authors and publishers do not assume and hereby disclaim any and all liability to any and all party or parties for any loss, damage, or disruption caused by errors or omissions, whether such errors or omissions result from negligence, accident, or any other cause.
+        </p>
+
+        <h3>SPE, SPERDTS, and SPERDTS-EP terms</h3>
+        <p>
+          Both the Society of Petroleum Engineers (hereafter the SPE) and the Society of Petroleum Engineers’ Research &amp; Development Technical Section (hereafter the SPERDTS) together and in conjunction with the SPERDTS, Entrepreneurship Program (hereafter the SPERDTS-EP) SEVERALLY AND COLLECTIVELY reserve the right to make changes without further notice to this book (the product) to, for example, provide improvements in readability, design or to meet any regulatory or compliance requirements.
+        </p>
+        <p>
+          The SPE, the SPERDTS and the SPERDTS-EP SEVERALLY AND COLLECTIVELY do not assume any liability arising out of the application or use of the product or any of the items, methods or approaches described herein; neither do the SPE nor the SPERDTS, nor the SPERDTS-EP convey any license under any of their Intellectual Property rights or Copyright rights (collectively “IP” or “IP rights”) nor the IP rights of others.
+        </p>
+        <p>
+          This product of the SPERDTS, the SPERDTS-EP and the SPE, SEVERALLY AND COLLECTIVELY is not designed, intended, or authorized for any application/applications or any product/products in which the failure of any such applications/applications or product/products could create a situation where personal injury or death may occur.
+        </p>
+        <p>
+          Should Buyer or User Purchase or Use the SPE, the SPERDTS and the SPERDTS-EP product for any such unintended or unauthorized application, Buyer or User shall indemnify and hold the SPE, the SPERDTS and the SPERDTS-EP and its officers, employees, members, subsidiaries, affiliates, and distributors SEVERALLY AND COLLECTIVELY harmless against all claims, costs, damages, and expenses, and attorney fees arising out of, directly or indirectly, any claim of personal injury or death associated with such unintended or unauthorized use, even if such claim alleges the SPE, the SPERDTS and the SPERDTS-EP and its officers, employees, members, subsidiaries, affiliates, and distributors SEVERALLY AND COLLECTIVELY were negligent regarding the design or content of the product.
+        </p>
+
+        <h3>Governing law, copyright, and contact</h3>
+        <p class="legal-emphasis">All Legal claims, disputes and litigation and any Legal claims of any nature shall be covered by the Laws of the state of Texas, United States of America.</p>
+        <p>Copyright © 2026 SPE RDTS Entrepreneurship Committee. All rights reserved. This book, or parts thereof, may not be reproduced in any form without permission. Independently published.</p>
+        <p>Society of Petroleum Engineers’ Research &amp; Development Technical Section email: sperdts@gmail.com</p>
+      </div>
+      <div class="disclaimer-actions">
+        <label class="disclaimer-acceptance" for="disclaimerAcceptance">
+          <input id="disclaimerAcceptance" type="checkbox">
+          <span>I have read and accept this disclaimer and the conditions of use.</span>
+        </label>
+        <button class="button button-primary" id="disclaimerContinue" type="button" disabled>Accept and continue</button>
+      </div>
+    </dialog>
 
     <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
   </body>
