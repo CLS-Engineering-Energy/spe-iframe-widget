@@ -3835,7 +3835,7 @@ function buildReport(rawState, options = {}) {
     avoid: phase.avoid,
     snapshot: buildSnapshot(state),
     disclaimer:
-      "This action brief is aligned with the SPE RDTS Entrepreneurship Playbook v3 and supplements—not replaces—qualified legal, IP, technical, financial, HSE, regulatory, compliance, cybersecurity, risk-management, insurance, or environmental advice. Validate the technology with appropriate experts and take responsibility for financial, compliance, and risk-management decisions.",
+      "This action brief is aligned with the SPE RDTS Entrepreneurship Playbook v3 and supplements—not replaces—qualified legal, IP, technical, financial, HSE, regulatory, compliance, cybersecurity, risk-management, insurance, or environmental advice. Validate the technology with appropriate experts and take responsibility for financial, compliance, and risk-management decisions. This material was not reviewed by the Society of Petroleum Engineers (hereafter the SPE) nor is it endorsed by the SPE.",
     methodNote:
       "Navigator stages, evidence levels, and thresholds are directional working aids—not an RDTS certification or official pass/fail standard.",
   };
@@ -3978,13 +3978,22 @@ class PdfLayout {
     this.rect(0, PAGE_HEIGHT - 23, PAGE_WIDTH, 23, COLORS.navy);
     this.text("RDTS  /  ENTREPRENEURSHIP PROGRAM", MARGIN_X, PAGE_HEIGHT - 16, 7.3, true, COLORS.white);
     this.text("FOUNDER ACTION BRIEF", PAGE_WIDTH - MARGIN_X, PAGE_HEIGHT - 16, 7.3, true, COLORS.white, "right");
-    this.text(this.report.createdDate, PAGE_WIDTH - MARGIN_X, 25, 7.2, false, COLORS.muted, "right");
-    this.text(`Page ${this.pageNumber}`, MARGIN_X, 25, 7.2, false, COLORS.muted);
+    this.text(this.report.createdDate, PAGE_WIDTH - MARGIN_X, 18, 7.2, false, COLORS.muted, "right");
+    this.text(`Page ${this.pageNumber}`, MARGIN_X, 18, 7.2, false, COLORS.muted);
+    this.text(
+      "This material was not reviewed by the Society of Petroleum Engineers (hereafter the SPE) nor is it endorsed by the SPE.",
+      PAGE_WIDTH / 2,
+      42,
+      5.4,
+      false,
+      COLORS.muted,
+      "center",
+    );
     this.text(
       "Directional Navigator aid - not RDTS certification or qualified legal, technical, financial, HSE, regulatory or IP advice.",
       PAGE_WIDTH / 2,
-      37,
-      6.2,
+      31,
+      5.8,
       false,
       COLORS.muted,
       "center",
@@ -5989,7 +5998,8 @@ updateProgress();
       <p>
         This playbook supplements, and does not replace, qualified legal, technical, financial, regulatory,
         compliance, IP, cybersecurity, insurance, safety, risk-management, or environmental advice. The complete
-        disclaimer and conditions of use must be accepted before opening the tool.
+        disclaimer and conditions of use must be accepted before opening the tool. This material was not reviewed
+        by the Society of Petroleum Engineers (hereafter the SPE) nor is it endorsed by the SPE.
       </p>
     </footer>
 
@@ -6000,14 +6010,14 @@ updateProgress();
       aria-describedby="disclaimerSummary"
     >
       <div class="disclaimer-head">
-        <p class="eyebrow">SPE RDTS · September 21, 2026</p>
+        <p class="eyebrow">SPE RDTS · September 29, 2026</p>
         <h2 id="disclaimerTitle">Disclaimer and conditions of use</h2>
         <p id="disclaimerSummary">Read the complete disclaimer below. Acceptance is required each time the tool is opened.</p>
       </div>
       <div class="disclaimer-copy" tabindex="0">
         <h3>Advice, responsibility, and risk</h3>
         <p>
-          The information in this book is meant to supplement, not replace, legal, technical, and financial advice. Like As with any endeavor involving calculations, computational, regulatory, compliance and risk management but also environmental factors, entrepreneurship poses inherent risk. The authors advise readers to take full responsibility for their financial, compliance and risk management requirements. Further for readers to know their or your own boundaries, their or your capacities, in order to protect their or your well-being.
+          The information in this book is meant to supplement, not replace, legal, technical, and financial advice. As with any endeavor involving calculations, computational, regulatory, compliance and risk management but also environmental factors, entrepreneurship poses inherent risk. The authors advise readers to take full responsibility for their financial, compliance and risk management requirements. Further for readers to know their or your own boundaries, their or your capacities, in order to protect their or your well-being.
         </p>
         <p>
           Before practicing the principles described in this book, ensure that your technology or theory is well tested and validated by experts, and do not take risks beyond your level of experience, aptitude, training, and comfort level.
@@ -6015,12 +6025,12 @@ updateProgress();
 
         <h3>Liability</h3>
         <p>
-          Although the authors and publishers have made every effort to ensure that the information in this guidebook was correct at the time of compilation, the authors and publishers do not assume and hereby disclaim any and all liability to any and all party or parties for any loss, damage, or disruption caused by errors or omissions, whether such errors or omissions result from negligence, accident, or any other cause.
+          Although the authors and publishers have made every effort to ensure that the information in this guidebook was correct at the time of compilation, the authors and publishers do not assume and hereby disclaim any and all liability to any and all party or parties for any loss, damage, or disruption caused by errors or omissions, whether such errors or omissions result from negligence, accident, or any other cause. This material was not reviewed by the Society of Petroleum Engineers (hereafter the SPE) nor is it endorsed by the SPE.
         </p>
 
         <h3>SPE, SPERDTS, and SPERDTS-EP terms</h3>
         <p>
-          Both the Society of Petroleum Engineers (hereafter the SPE) and the Society of Petroleum Engineers’ Research &amp; Development Technical Section (hereafter the SPERDTS) together and in conjunction with the SPERDTS, Entrepreneurship Program (hereafter the SPERDTS-EP) SEVERALLY AND COLLECTIVELY reserve the right to make changes without further notice to this book (the product) to, for example, provide improvements in readability, design or to meet any regulatory or compliance requirements.
+          Both the SPE and the Society of Petroleum Engineers’ Research &amp; Development Technical Section (hereafter the SPERDTS) together and in conjunction with the SPERDTS, Entrepreneurship Program (hereafter the SPERDTS-EP) SEVERALLY AND COLLECTIVELY reserve the right to make changes without further notice to this book (the product) to, for example, provide improvements in readability, design or to meet any regulatory or compliance requirements.
         </p>
         <p>
           The SPE, the SPERDTS and the SPERDTS-EP SEVERALLY AND COLLECTIVELY do not assume any liability arising out of the application or use of the product or any of the items, methods or approaches described herein; neither do the SPE nor the SPERDTS, nor the SPERDTS-EP convey any license under any of their Intellectual Property rights or Copyright rights (collectively “IP” or “IP rights”) nor the IP rights of others.

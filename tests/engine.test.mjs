@@ -109,6 +109,8 @@ test("adds playbook-v3 commercial, business-plan, community, and runway guidance
   assert.match(report.funding.now, /two to three times longer/i);
   assert.doesNotMatch(report.disclaimer, /when it becomes available/i);
   assert.match(report.disclaimer, /compliance|risk-management/i);
+  assert.match(report.disclaimer, /not reviewed.+Society of Petroleum Engineers/i);
+  assert.match(report.disclaimer, /nor is it endorsed by the SPE/i);
   assert.ok(report.snapshot.some(([key]) => key === "Market case"));
 });
 
@@ -120,6 +122,7 @@ test("generates a compact valid PDF containing the updated guidance", () => {
   assert.equal((pdf.match(/\/Type \/Page\b/g) || []).length, 2);
   assert.match(pdf, /Market and living business plan/);
   assert.match(pdf, /SPE RDTS ENTREPRENEURSHIP PLAYBOOK V3/i);
+  assert.match(pdf, /not reviewed by the Society of Petroleum Engineers/i);
   assert.doesNotMatch(pdf, /undefined|CO\?/);
   assert.equal(reportFilename(report), "elan-co2-north-sea-founder-action-brief.pdf");
 });
@@ -273,6 +276,10 @@ test("gates the workbook with the disclaimer and keeps local controls in the int
   assert.equal((html.match(/class="button[^\"]* load-configuration"/g) || []).length, 2);
   assert.match(html, /<input id="configurationFileInput" type="file" accept="\.json,application\/json" hidden>/);
   assert.doesNotMatch(html, /localStorage|sessionStorage/);
+  assert.match(html, /SPE RDTS · September 29, 2026/);
+  assert.doesNotMatch(html, /Like As with any endeavor/);
+  assert.match(html, /This material was not reviewed by the Society of Petroleum Engineers \(hereafter the SPE\) nor is it endorsed by the SPE\./);
+  assert.match(html, /Both the SPE and the Society of Petroleum Engineers’ Research &amp; Development Technical Section/);
 
   const sidebar = html.match(/<aside class="guide-sidebar"[\s\S]*?<\/aside>/)?.[0] ?? "";
   assert.ok(sidebar.indexOf("sidebar-note") >= 0);
